@@ -5,6 +5,24 @@ module.exports = {
     title: `Rory Breslin`,
     description: `Rory Breslin is a leading designer and producer of bronze figurative and portrait sculpture in Ireland`,
     author: `Sol Breslin`,
+    menuLinks: [
+      {
+        name: "public",
+        link: "/public",
+      },
+      {
+        name: "portrait",
+        link: "/portrait",
+      },
+      {
+        name: "exhibition",
+        link: "/exhibition",
+      },
+      {
+        name: "masks",
+        link: "/masks",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-styled-components`,

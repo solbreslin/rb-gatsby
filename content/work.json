@@ -8,5 +8,15 @@
     "path": "portrait",
     "name": "portrait",
     "items": [1, 2, 3]
+  },
+  {
+    "path": "exhibition",
+    "name": "exhibition",
+    "items": [1, 2, 3]
+  },
+  {
+    "path": "masks",
+    "name": "masks",
+    "items": [1, 2, 3]
   }
 ]

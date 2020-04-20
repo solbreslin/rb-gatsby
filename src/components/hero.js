@@ -24,6 +24,40 @@ const HeroImage = styled.img`
   width: 100%;
 `;
 
+const Overlay = styled.div`
+  background-image: linear-gradient(to bottom, transparent 30%, #515951);
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+`;
+
+const TextContainer = styled.div`
+  bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  margin: auto;
+  max-width: 1200px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+`;
+
+const Title = styled.h1`
+  color: white;
+  font-size: 6rem;
+`;
+
+const Subtitle = styled.h3`
+  color: white;
+  font-size: 4rem;
+`;
+
 const THROTTLE_TIME = 120;
 
 class Hero extends React.Component {
@@ -102,7 +136,14 @@ class Hero extends React.Component {
       );
     });
     return (
-      <HeroContainer onMouseMove={this.onMouseMove}>{images}</HeroContainer>
+      <HeroContainer onMouseMove={this.onMouseMove}>
+        {images}
+        <TextContainer>
+          <Title>Rory Breslin</Title>
+          <Subtitle>Artist | Sculptor</Subtitle>
+        </TextContainer>
+        <Overlay></Overlay>
+      </HeroContainer>
     );
   };
 }

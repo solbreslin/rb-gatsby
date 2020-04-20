@@ -44,7 +44,7 @@ class Hero extends React.Component {
     );
   }
 
-  setZones() {
+  setZones = () => {
     const ww = window.innerWidth;
     const segW = ww / this.imageTotal;
 
@@ -54,9 +54,9 @@ class Hero extends React.Component {
         finish: (i + 1) * segW,
       });
     }
-  }
+  };
 
-  generatePaths() {
+  generatePaths = () => {
     const baseURL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto/`;
     const paths = [];
 
@@ -75,22 +75,22 @@ class Hero extends React.Component {
     this.imageTotal = paths.length;
 
     return paths;
-  }
+  };
 
-  throttledMouseMove(e) {
+  throttledMouseMove = e => {
     this.zones.forEach((zone, index) => {
       if (e.pageX > zone.start && e.pageX < zone.finish) {
         this.setState({ activeZone: index });
       }
     });
-  }
+  };
 
   onMouseMove = e => {
     e.persist();
     this.throttledMouseMove(e);
   };
 
-  render() {
+  render = () => {
     const images = this.generatePaths().map((path, index) => {
       return (
         <HeroItem
@@ -104,7 +104,7 @@ class Hero extends React.Component {
     return (
       <HeroContainer onMouseMove={this.onMouseMove}>{images}</HeroContainer>
     );
-  }
+  };
 }
 
 export default Hero;

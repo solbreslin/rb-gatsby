@@ -2,9 +2,9 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Rory Breslin`,
+    description: `Rory Breslin is a leading designer and producer of bronze figurative and portrait sculpture in Ireland`,
+    author: `Sol Breslin`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

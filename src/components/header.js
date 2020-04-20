@@ -1,34 +1,29 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import styled from "styled-components";
+import MenuData from "../../content/menu.json";
+
+const HeaderEl = styled.header`
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+`;
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          test
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <HeaderEl>
+    <Link to="/">{siteTitle}</Link>
+    <ul>
+      {MenuData.items.map((data, index) => {
+        return (
+          <li key={`menu_item_${index}`}>
+            <Link to="/{{data}}">{data}</Link>
+          </li>
+        );
+      })}
+    </ul>
+  </HeaderEl>
 );
 
 Header.propTypes = {
@@ -36,7 +31,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: "",
 };
 
 export default Header;

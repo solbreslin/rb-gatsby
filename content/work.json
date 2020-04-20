@@ -1,0 +1,12 @@
+[
+  {
+    "path": "public",
+    "name": "public",
+    "items": [1, 2, 3]
+  },
+  {
+    "path": "portrait",
+    "name": "portrait",
+    "items": [1, 2, 3]
+  }
+]

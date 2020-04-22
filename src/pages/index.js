@@ -11,8 +11,8 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const heroImages = data.allCloudinaryMedia.edges;
-    const cards = data.site.siteMetadata.menuLinks.map(link => {
-      return <Card link={link.link} name={link.name}></Card>;
+    const cards = data.site.siteMetadata.menuLinks.map((link, index) => {
+      return <Card key={link.name + '-' + index} link={link.link} name={link.name}></Card>;
     });
 
     return (

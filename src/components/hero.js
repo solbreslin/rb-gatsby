@@ -1,5 +1,5 @@
 import React from "react";
-import { get, throttle } from "lodash";
+import { get, throttle, debounce } from "lodash";
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
@@ -59,6 +59,7 @@ const Subtitle = styled.h3`
 `;
 
 const THROTTLE_TIME = 120;
+const RESIZE_DEBOUNCE_TIME = 120;
 
 class Hero extends React.Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class Hero extends React.Component {
     this.zones = [];
     this.state = {
       activeZone: 1,
+      windowWidth: window.innerWidth,
     };
     this.setZones();
 
@@ -76,11 +78,19 @@ class Hero extends React.Component {
       this.throttledMouseMove.bind(this),
       THROTTLE_TIME
     );
+
+    this.handleResize = debounce(() => {
+      this.setState({ windowWidth: window.innerWidth });
+      this.setZones();
+    }, RESIZE_DEBOUNCE_TIME);
   }
 
   setZones = () => {
-    const ww = window.innerWidth;
-    const segW = ww / this.imageTotal;
+    if (this.zones.length) {
+      this.zones = [];
+    }
+
+    const segW = this.state.windowWidth / this.imageTotal;
 
     for (let i = 0; i < this.imageTotal; i++) {
       this.zones.push({
@@ -88,6 +98,9 @@ class Hero extends React.Component {
         finish: (i + 1) * segW,
       });
     }
+
+    console.log(this.zones);
+    console.log(this.state.windowWidth);
   };
 
   generatePaths = () => {
@@ -123,6 +136,14 @@ class Hero extends React.Component {
     e.persist();
     this.throttledMouseMove(e);
   };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
 
   render = () => {
     const images = this.generatePaths().map((path, index) => {

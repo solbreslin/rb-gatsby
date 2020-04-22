@@ -70,9 +70,8 @@ class Hero extends React.Component {
     this.zones = [];
     this.state = {
       activeZone: 1,
-      windowWidth: window.innerWidth,
+      windowWidth: 0,
     };
-    this.setZones();
 
     this.throttledMouseMove = throttle(
       this.throttledMouseMove.bind(this),
@@ -86,7 +85,7 @@ class Hero extends React.Component {
   }
 
   setZones = () => {
-    if (this.zones.length) {
+    if (this.zones && this.zones.length) {
       this.zones = [];
     }
 
@@ -98,9 +97,6 @@ class Hero extends React.Component {
         finish: (i + 1) * segW,
       });
     }
-
-    console.log(this.zones);
-    console.log(this.state.windowWidth);
   };
 
   generatePaths = () => {
@@ -138,6 +134,13 @@ class Hero extends React.Component {
   };
 
   componentDidMount() {
+    this.setState(
+      {
+        windowWidth: window.innerWidth,
+      },
+      this.setZones
+    );
+
     window.addEventListener("resize", this.handleResize);
   }
 

@@ -1,0 +1,38 @@
+// @import url("//hello.myfonts.net/count/3b69c9");
+
+@font-face {
+  font-family: "NeuzeitGro-Reg";
+  src: url("./../fonts/NeuzeitGro-Reg/font.woff2") format("woff2"),
+    url("./../fonts/NeuzeitGro-Reg/font.woff") format("woff");
+}
+@font-face {
+  font-family: "NeuzeitGro-Bol";
+  src: url("./../fonts/NeuzeitGro-Bol/font.woff2") format("woff2"),
+    url("./../fonts/NeuzeitGro-Bol/font.woff") format("woff");
+}
+
+html {
+  font-size: calc(var(--base-font-size-mobile) / 16 * 100%);
+
+  @include respond-to(mobile-l) {
+    font-size: calc(var(--base-font-size) / 16 * 100%);
+  }
+}
+
+body {
+  font-family: NeuzeitGro-Reg, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: var(--line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: inherit;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 // import { Link } from "gatsby";
 
 import Layout from "../components/layout";
@@ -12,7 +13,13 @@ class IndexPage extends React.Component {
     const { data } = this.props;
     const heroImages = data.allCloudinaryMedia.edges;
     const cards = data.site.siteMetadata.menuLinks.map((link, index) => {
-      return <Card key={link.name + '-' + index} link={link.link} name={link.name}></Card>;
+      return (
+        <Card
+          key={link.name + "-" + index}
+          link={link.link}
+          name={link.name}
+        ></Card>
+      );
     });
 
     return (

@@ -1,0 +1,40 @@
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media screen and (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+@mixin font($style) {
+  @if $style=='default' {
+    font-size: 1rem;
+  }
+
+  @else if $style=='s' {
+    font-size: calc(var(--base-font-size-mobile) / var(--ratio) * 1px);
+
+    @include respond-to(mobile-l) {
+      font-size: calc(var(--base-font-size) / var(--ratio) * 1px);
+    }
+  }
+
+  @else if $style=='m' {
+    font-size: calc(var(--ratio) * 1rem);
+    letter-spacing: .0125em;
+  }
+
+  @else if $style=='l' {
+    font-size: calc(var(--ratio) * var(--ratio) * 1rem);
+  }
+}
+
+
+@mixin font-bold {
+  font-family: NeuzeitGro-Bol, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}

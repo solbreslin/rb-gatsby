@@ -1,0 +1,17 @@
+.gallery {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -3rem; /* gutter size offset */
+  width: auto;
+}
+.gallery-col {
+  padding-left: 3rem; /* gutter size */
+  background-clip: padding-box;
+}
+ 
+/* Style your items */
+.gallery-col > a { /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 3rem;
+}

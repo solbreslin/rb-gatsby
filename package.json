@@ -28,7 +28,8 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "react-masonry-css": "^1.0.14"
   },
   "keywords": [
     "gatsby"

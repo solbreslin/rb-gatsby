@@ -26,7 +26,7 @@ const GalleryFigure = styled.figure`
 const GalleryFigcaption = styled.figcaption`
   background-color: white;
   bottom: 0;
-  padding: .675rem 0 2rem;
+  padding: 0.675rem 0 2rem;
   width: 100%;
 `;
 
@@ -46,12 +46,12 @@ const getCollections = data => {
 
     if (current !== project) {
       collections.push({
-        project,
+        name: project,
         items: [str],
       });
       current = project;
     } else {
-      const index = collections.findIndex(n => (n.project = project));
+      const index = collections.findIndex(n => n.name === project);
       collections[index].items.push(str);
     }
   });
@@ -69,7 +69,7 @@ function Gallery({ imagePaths }) {
           alt={n.project}
           src={BASE_URL + n.items[0]}
         ></GalleryImage>
-        <GalleryFigcaption>{n.project}</GalleryFigcaption>
+        <GalleryFigcaption>{n.name}</GalleryFigcaption>
       </GalleryFigure>
     </GalleryLink>
   ));

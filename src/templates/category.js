@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import Gallery from "../components/gallery";
+import { startCase } from "lodash";
 
 const getImagePaths = (data, name) => {
   const test = str => {
@@ -13,13 +14,17 @@ const getImagePaths = (data, name) => {
 };
 
 export default ({ data }) => {
-  const item = data.allSitePage.edges[0].node.context;
-  const imagePaths = getImagePaths(data.allCloudinaryMedia.edges, item.name);
+  const category = data.allSitePage.edges[0].node.context;
+  const imagePaths = getImagePaths(
+    data.allCloudinaryMedia.edges,
+    category.name
+  );
+  const pageTitle = startCase(category.name);
 
   return (
     <Layout>
-      <h1>{item.name}</h1>
-      <Gallery imagePaths={imagePaths}></Gallery>
+      <h1>{pageTitle}</h1>
+      <Gallery imagePaths={imagePaths} projectData={category.items}></Gallery>
     </Layout>
   );
 };
@@ -30,8 +35,14 @@ export const query = graphql`
       edges {
         node {
           context {
+            items {
+              path
+              display_name
+              details {
+                material
+              }
+            }
             name
-            items
           }
         }
       }

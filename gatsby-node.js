@@ -4,21 +4,37 @@ const data = require("./content/work.json");
 exports.createPages = ({ actions }) => {
   const { createPage } = actions;
 
-  const template = path.resolve("./src/templates/page.js");
+  const categoryTemplate = path.resolve("./src/templates/category.js");
+  const projectTemplate = path.resolve("./src/templates/project.js");
 
-  data.forEach(page => {
-    const path = page.path;
-
-    const name = page.name;
-    const items = page.items;
+  data.forEach(category => {
+    const path = category.path;
+    const name = category.name;
+    const items = category.items;
 
     createPage({
       path,
-      component: template,
+      component: categoryTemplate,
       context: {
         name,
         items,
       },
+    });
+
+    items.forEach(project => {
+      const path = project.path;
+      const name = project.display_name;
+      const details = project.details;
+
+      createPage({
+        path,
+        component: projectTemplate,
+        context: {
+          pagePath: path,
+          name,
+          details,
+        },
+      });
     });
   });
 };

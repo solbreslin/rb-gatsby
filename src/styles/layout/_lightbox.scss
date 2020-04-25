@@ -1,0 +1,53 @@
+.lightbox {
+  --lightbox-padding-top: 50px;
+  --lightbox-padding-bottom: 100px;
+
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.lightbox-header {
+  height: var(--lightbox-padding-top);
+}
+
+.lightbox-image {
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.lightbox-footer {
+  align-items: center;
+  display: flex;
+  height: var(--lightbox-padding-bottom);
+  justify-content: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.lightbox-navigation {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  > button {
+    font-size: 2rem;
+    pointer-events: auto;
+  }
+}

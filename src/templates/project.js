@@ -1,18 +1,20 @@
 import React from "react";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
+import Lightbox from "../components/lightbox";
 
-const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_600/";
-
-const mapImagesToProject = (imagePaths, pagePath) => {
+const mapImagesToProject = (imageData, pagePath) => {
   const projectImages = [];
 
-  imagePaths.forEach(path => {
-    const project = path.node.public_id.split("/")[3];
+  imageData.forEach(obj => {
+    const project = obj.node.public_id.split("/")[3];
 
     if (project === pagePath) {
-      projectImages.push(path.node.public_id);
+      projectImages.push({
+        height: obj.node.height,
+        url: obj.node.public_id,
+        width: obj.node.width 
+      });
     }
   });
 
@@ -20,18 +22,15 @@ const mapImagesToProject = (imagePaths, pagePath) => {
 };
 
 export default ({ data }) => {
-  const imagePaths = data.allCloudinaryMedia.edges;
+  const imageData = data.allCloudinaryMedia.edges;
   const path = data.allSitePage.edges[0].node.context.pagePath;
 
-  const projectImages = mapImagesToProject(imagePaths, path);
+  const projectImages = mapImagesToProject(imageData, path);
   const pageTitle = data.allSitePage.edges[0].node.context.name;
-
-  const images = projectImages.map((n, i) => <img alt={path} src={BASE_URL + n} />);
 
   return (
     <Layout>
-      <h1>{pageTitle}</h1>
-      {images}
+      <Lightbox title={pageTitle} images={projectImages}></Lightbox>
     </Layout>
   );
 };
@@ -54,7 +53,9 @@ export const query = graphql`
     allCloudinaryMedia {
       edges {
         node {
+          height
           public_id
+          width
         }
       }
     }

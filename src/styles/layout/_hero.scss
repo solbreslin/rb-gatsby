@@ -1,8 +1,56 @@
 .hero {
+  .image {
+    position: relative;
+
+    &:after {
+      background-image: linear-gradient(
+        to bottom,
+        transparent,
+        hsla(0, 0, 0, 0.5)
+      );
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
   img {
     height: inherit;
     object-fit: cover;
     max-height: calc(100vh - var(--header-height));
+    position: relative;
     width: 100%;
+  }
+
+  .text {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 20vw;
+    padding: 0 0 15vh;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    > * {
+      color: hsl(72, 10%, 90%);
+      @include font-bold;
+      letter-spacing: -0.0225em;
+      line-height: 1.2;
+      margin: 0;
+      // text-shadow: 0 0 10px hsla(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 7rem;
+    }
+
+    h3 {
+      font-size: 4rem;
+    }
   }
 }

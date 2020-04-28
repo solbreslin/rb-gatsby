@@ -32,10 +32,18 @@ class Hero extends React.Component {
   };
 
   render = () => {
+    console.log(this.props);
+    const title = this.props.title;
+    const subtitle = this.props.subtitle;
+
     return (
       <section class="hero">
-        <div>
+        <div class="image">
           <img src={this.state.image_path} alt="Autoportrait" />
+        </div>
+        <div className="text">
+          <h1>{title}</h1>
+          <h3>{subtitle}</h3>
         </div>
       </section>
     );

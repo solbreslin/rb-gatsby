@@ -1,11 +1,9 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
 import SEO from "../components/seo";
-
-import homeJSON from "../../content/home.json";
 
 class IndexPage extends React.Component {
   render = () => {
@@ -21,13 +19,17 @@ class IndexPage extends React.Component {
       );
     });
 
+    const heroTitle = data.allHomeJson.edges[0].node.hero.title;
+    const heroSubtitle = data.allHomeJson.edges[0].node.hero.subtitle;
+
     return (
       <Layout>
         <SEO title="Home" />
+
         <Hero
           heroImages={heroImages}
-          title={homeJSON.hero.title}
-          subtitle={homeJSON.hero.subtitle}
+          title={heroTitle}
+          subtitle={heroSubtitle}
         />
         {cards}
         {/* <Link to="/page-2/">Go to page 2</Link> */}
@@ -51,6 +53,16 @@ export const pageQuery = graphql`
         menuLinks {
           name
           link
+        }
+      }
+    }
+    allHomeJson {
+      edges {
+        node {
+          hero {
+            title
+            subtitle
+          }
         }
       }
     }

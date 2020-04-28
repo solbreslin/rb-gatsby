@@ -1,5 +1,5 @@
 const path = require("path");
-const data = require("./content/work.json");
+const workJSON = require("./content/work.json");
 
 exports.createPages = ({ actions }) => {
   const { createPage } = actions;
@@ -7,7 +7,7 @@ exports.createPages = ({ actions }) => {
   const categoryTemplate = path.resolve("./src/templates/category.js");
   const projectTemplate = path.resolve("./src/templates/project.js");
 
-  data.forEach(category => {
+  workJSON.forEach(category => {
     const path = category.path;
     const name = category.name;
     const items = category.items;

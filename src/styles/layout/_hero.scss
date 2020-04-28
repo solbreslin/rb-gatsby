@@ -1,0 +1,8 @@
+.hero {
+  img {
+    height: inherit;
+    object-fit: cover;
+    max-height: calc(100vh - var(--header-height));
+    width: 100%;
+  }
+}

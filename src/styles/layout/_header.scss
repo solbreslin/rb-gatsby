@@ -1,6 +1,29 @@
-header {
-  left: 0;
-  padding: 1rem;
+// Sticky header
+:root {
+  --header-height: 0;
+}
+
+html:not([data-scroll="0"]) body {
+  padding-top: var(--header-height);
+}
+
+html:not([data-scroll="0"]) header {
+  background: hsl(0, 0, 100%);
   position: fixed;
   top: 0;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .brand {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }

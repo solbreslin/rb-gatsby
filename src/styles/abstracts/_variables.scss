@@ -2,17 +2,19 @@ $black: hsl(0, 0, 0%);
 $white: hsl(0, 0, 100%);
 $grey: hsl(0, 0, 50%);
 
-$blue: #8CBECF;
+$blue: #8cbecf;
 
-$breakpoints: ('mobile-l': 480px,
-  'tablet': 769px,
-  'desktop': 960px,
-  'widescreen': 1152px,
-  'full-hd': 1344px);
+$breakpoints: (
+  "mobile-l": 480px,
+  "tablet": 769px,
+  "desktop": 960px,
+  "widescreen": 1152px,
+  "full-hd": 1344px,
+);
 
 $line-height: 1.414;
 $base-font-size-mobile: 18;
-$base-font-size: 26;
+$base-font-size: 21;
 
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};

@@ -9,12 +9,29 @@ class IndexPage extends React.Component {
   render = () => {
     const { data } = this.props;
     const heroImages = data.allCloudinaryMedia.edges;
+
+    const cardImages = data.allCloudinaryMedia.edges.map(item => {
+      if (item.node.public_id.includes("Boxes")) {
+        return item.node.public_id;
+      }
+    });
+
     const cards = data.site.siteMetadata.menuLinks.map((link, index) => {
+      let imageURL = "";
+
+      cardImages.forEach(path => {
+        if (path) {
+          if (path.includes(link.name)) {
+            imageURL = path;
+          }
+        }
+      });
       return (
         <Card
           key={link.name + "-" + index}
           link={link.link}
           name={link.name}
+          image={imageURL}
         ></Card>
       );
     });

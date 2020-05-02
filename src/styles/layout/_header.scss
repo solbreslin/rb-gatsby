@@ -11,7 +11,7 @@ html:not([data-scroll="0"]) header {
   background: hsl(0, 0, 100%);
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   right: 0;
 }
@@ -19,7 +19,7 @@ html:not([data-scroll="0"]) header {
 header {
   display: flex;
   justify-content: space-between;
-  padding: var(--box-width) var(--box-width) 0;
+  padding: var(--box-width) calc(var(--box-width) + 1rem) 0;
 
   .brand {
     color: var(--nav-link-color);

@@ -1,3 +1,53 @@
 .cards {
   columns: 2;
+  column-gap: 6rem;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 6rem;
+}
+
+.card {
+  display: flex;
+  height: 400px;
+
+  figure {
+    margin: 0 0 4rem;
+    position: relative;
+    width: 100%;
+
+    &:after {
+      background-image: linear-gradient(
+        to bottom,
+        transparent,
+        hsla(0, 0, 0%, 0.5)
+      );
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  figcaption {
+    bottom: 0;
+    color: hsl(0, 0, 100%);
+    font-size: 2rem;
+    padding: 1rem;
+    position: absolute;
+    text-transform: capitalize;
+    z-index: 2;
+  }
+
+  &:first-child {
+    margin-top: 6rem;
+  }
 }

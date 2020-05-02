@@ -1,4 +1,7 @@
 .hero {
+  max-height: 100vh;
+  position: relative;
+
   .image {
     position: relative;
 
@@ -18,6 +21,7 @@
   }
 
   img {
+    display: block;
     height: inherit;
     object-fit: cover;
     max-height: calc(100vh - var(--header-height));

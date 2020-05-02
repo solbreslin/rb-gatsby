@@ -31,7 +31,7 @@ class IndexPage extends React.Component {
           title={heroTitle}
           subtitle={heroSubtitle}
         />
-        {cards}
+        <section className="cards">{cards}</section>
         {/* <Link to="/page-2/">Go to page 2</Link> */}
       </Layout>
     );

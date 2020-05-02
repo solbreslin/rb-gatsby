@@ -3,7 +3,7 @@
   --header-height: 0;
 }
 
-html:not([data-scroll="0"]) body {
+html:not([data-scroll="0"]) main {
   padding-top: var(--header-height);
 }
 
@@ -19,11 +19,14 @@ html:not([data-scroll="0"]) header {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: var(--box-width) var(--box-width) 0;
 
   .brand {
     color: var(--nav-link-color);
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    line-height: 1;
+    padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
   }
 }

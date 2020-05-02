@@ -7,9 +7,12 @@
 @import "base/reset";
 @import "base/typography";
 
+@import "page/base";
+
 @import "layout/layout";
 @import "layout/gallery";
 @import "layout/header";
 @import "layout/nav";
 @import "layout/lightbox";
 @import "layout/hero";
+@import "layout/home-cards";

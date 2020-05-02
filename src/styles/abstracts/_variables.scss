@@ -21,13 +21,7 @@ $base-font-size: 21;
   --base-font-size: #{$base-font-size};
   --line-height: #{$line-height};
   --ratio: 1.414;
-
   --max-page-width: 1270px;
-  --header-height: 0;
-
-  --orb-blue: hsl(201, 68%, 53%);
-
   --body-bg-colour: hsl(0, 0, 0);
-  --work-title-colour: hsl(0, 0, 0);
-  --link-colour: var(--orb-blue);
+  --letter-spacing: 0.05em;
 }

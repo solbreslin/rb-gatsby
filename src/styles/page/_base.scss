@@ -1,0 +1,31 @@
+:root {
+  --box-width: 0.5rem;
+  --box-colour: hsl(0, 0%, 0%);
+}
+
+body {
+  position: relative;
+
+  &:after {
+    border: var(--box-width) solid var(--box-colour);
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 100vh;
+    left: 0;
+    pointer-events: none;
+    position: sticky;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
+section:not(.hero) {
+  margin: 0 auto;
+  max-width: var(--max-page-width);
+}
+
+main {
+  padding: 0 var(--box-width) var(--box-width);
+}

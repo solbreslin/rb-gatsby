@@ -3,13 +3,8 @@
   --header-height: 0;
 }
 
-html:not([data-scroll="0"]) main {
-  padding-top: var(--header-height);
-}
-
-html:not([data-scroll="0"]) header {
-  background: hsl(0, 0, 100%);
-  position: fixed;
+header {
+  position: sticky;
   top: 0;
   z-index: 10;
   left: 0;
@@ -17,6 +12,7 @@ html:not([data-scroll="0"]) header {
 }
 
 header {
+  background: hsl(0, 0, 0%);
   display: flex;
   justify-content: space-between;
   padding: var(--box-width) calc(var(--box-width) + 1rem) 0;

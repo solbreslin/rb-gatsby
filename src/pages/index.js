@@ -48,7 +48,10 @@ class IndexPage extends React.Component {
           title={heroTitle}
           subtitle={heroSubtitle}
         />
-        <section className="cards">{cards}</section>
+        <section className="cards">
+          <h1>Selected Work</h1>
+          {cards}
+        </section>
         {/* <Link to="/page-2/">Go to page 2</Link> */}
       </Layout>
     );

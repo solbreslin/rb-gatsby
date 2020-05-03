@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
+import Footer from "./footer";
 import "./../styles/global.scss";
 
 const debounce = fn => {
@@ -34,7 +35,7 @@ class Layout extends React.Component {
   };
 
   storeScroll = () => {
-    document.documentElement.dataset.scroll = window.scrollY;
+    document.documentElement.style.setProperty("--scroll-y", window.scrollY);
   };
 
   render = () => {
@@ -64,6 +65,7 @@ class Layout extends React.Component {
           )}
         />
         <main>{children}</main>
+        <Footer></Footer>
       </>
     );
   };

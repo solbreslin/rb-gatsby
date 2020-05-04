@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import Headroom from "react-headroom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -35,22 +36,24 @@ class Header extends React.Component {
     const { siteTitle, menuLinks } = this.props;
 
     return (
-      <header ref={element => (this.headerEl = element)}>
-        <nav>
-          <ul>
-            {menuLinks.map(link => (
-              <li key={link.name}>
-                <Link to={link.link} activeClassName="active">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <Link to="/" className="brand">
-          {siteTitle}
-        </Link>
-      </header>
+      <Headroom>
+        <header ref={element => (this.headerEl = element)}>
+          <nav>
+            <ul>
+              {menuLinks.map(link => (
+                <li key={link.name}>
+                  <Link to={link.link} activeClassName="active">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <Link to="/" className="brand">
+            {siteTitle}
+          </Link>
+        </header>
+      </Headroom>
     );
   };
 }

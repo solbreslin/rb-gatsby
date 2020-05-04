@@ -7,7 +7,6 @@ class WorkPage extends React.Component {
     return (
       <Layout>
         <SEO title="Work" />
-        <div>Sol says hi</div>
       </Layout>
     );
   };

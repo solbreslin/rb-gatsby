@@ -23,18 +23,23 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
 
-    this.storeScroll = debounce(this.storeScroll.bind(this));
+    this.onScroll = debounce(this.onScroll.bind(this));
   }
 
   componentDidMount = () => {
-    window.addEventListener("scroll", this.storeScroll);
+    this.updateCSSVar();
+    window.addEventListener("scroll", this.onScroll);
   };
 
   componentWillUnmount = () => {
-    window.removeEventListener("scroll", this.storeScroll);
+    window.removeEventListener("scroll", this.onScroll);
   };
 
-  storeScroll = () => {
+  onScroll = e => {
+    this.updateCSSVar();
+  };
+
+  updateCSSVar = () => {
     document.documentElement.style.setProperty("--scroll-y", window.scrollY);
   };
 

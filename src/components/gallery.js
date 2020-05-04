@@ -71,7 +71,7 @@ function Gallery({ imagePaths, projectData }) {
   const projects = mapImagesToProjects(imagePaths, projectData);
 
   const items = projects.map((n, i) => (
-    <Link to={n.path} key={n + "-" + i}>
+    <Link to={n.path + "/"} key={n + "-" + i}>
       <GalleryFigure>
         <GalleryImage
           alt={n.project}

@@ -98,18 +98,18 @@ class Lightbox extends React.Component {
     });
 
     return (
-      <div class="lightbox">
+      <div className="lightbox">
         <div className="lightbox-header">
           <Link to="/">x</Link>
         </div>
-        <div class="lightbox-image">{images[this.state.current]}</div>
-        <div class="lightbox-footer">
+        <div className="lightbox-image">{images[this.state.current]}</div>
+        <div className="lightbox-footer">
           <p>{this.projectTitle}</p>
           <p>
             {this.state.current + 1} / {this.total}
           </p>
         </div>
-        <div class="lightbox-navigation">
+        <div className="lightbox-navigation">
           <button onClick={this.prev}>&larr;</button>
           <button onClick={this.next}>&rarr;</button>
         </div>

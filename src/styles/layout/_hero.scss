@@ -1,4 +1,5 @@
 .hero {
+  // background-color: hsl(0, 0, 0);
   max-height: 100vh;
   overflow: hidden;
   position: relative;
@@ -13,6 +14,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 3;
   }
 
   .image {
@@ -48,19 +50,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left: 20vw;
+    left: 0;
+    margin: 0 auto;
+    max-width: var(--section-max-width);
     padding: 0 0 15vh;
     position: absolute;
     right: 0;
+    width: 100%;
     z-index: 1;
 
     > * {
       color: hsl(72, 10%, 90%);
-      // @include font-bold;
-      letter-spacing: -0.0225em;
+      @include font-bold;
+      // letter-spacing: -0.0225em;
       line-height: 1.2;
       margin: 0;
       // text-shadow: 0 0 10px hsla(0, 0, 0, 0.2);
+      font-size: 3rem;
+    }
+
+    p {
+      max-width: 30ch;
     }
 
     // h1 {

@@ -1,26 +1,29 @@
 $gutter-size: 6rem;
 
+.gallery-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .gallery {
   display: flex;
-  margin-left: -$gutter-size; 
+  margin-left: -$gutter-size;
   width: auto;
 
   .gallery-col {
-    padding-left: $gutter-size; 
+    padding-left: $gutter-size;
     background-clip: padding-box;
-  
+
     a {
       color: hsl(0, 0, 50%);
       display: block;
-      font-size: .8275rem;
+      font-size: 0.8275rem;
       margin-bottom: 3rem;
       text-decoration: none;
-    
+
       &:hover {
         color: hsl(0, 0, 0%);
       }
     }
   }
 }
-
- 

@@ -23,8 +23,10 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <h1>{pageTitle}</h1>
-      <Gallery imagePaths={imagePaths} projectData={category.items}></Gallery>
+      <section className="gallery-wrapper">
+        {/* <h1>{pageTitle}</h1> */}
+        <Gallery imagePaths={imagePaths} projectData={category.items}></Gallery>
+      </section>
     </Layout>
   );
 };

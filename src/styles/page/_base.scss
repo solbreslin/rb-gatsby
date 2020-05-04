@@ -1,13 +1,14 @@
 :root {
   --box-width: 0.5rem;
   --box-colour: hsl(0, 0%, 0%);
+  --section-max-width: 1200px;
 }
 
 body {
   position: relative;
 
   &:after {
-    border: var(--box-width) solid var(--box-colour);
+    // border: var(--box-width) solid var(--box-colour);
     bottom: 0;
     content: "";
     display: block;
@@ -27,5 +28,5 @@ section:not(.hero) {
 }
 
 main {
-  padding: 0 var(--box-width) var(--box-width);
+  // padding: 0 var(--box-width) var(--box-width);
 }

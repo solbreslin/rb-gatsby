@@ -9,9 +9,10 @@
 .card {
   display: flex;
   height: 400px;
+  margin: 0 0 4rem;
 
   figure {
-    margin: 0 0 4rem;
+    margin: 0;
     position: relative;
     width: 100%;
 
@@ -32,6 +33,7 @@
   }
 
   img {
+    display: block;
     height: 100%;
     object-fit: cover;
     width: 100%;

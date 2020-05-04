@@ -1,7 +1,7 @@
 :root {
-  --nav-link-color: hsl(0, 0%, 60%);
-  --nav-link-color-active: hsl(164, 19%, 39%);
-  --nav-link-padding-x: 0.5rem;
+  --nav-link-color: hsl(0, 0%, 50%);
+  --nav-link-color-active: hsl(0, 0%, 10%);
+  --nav-link-padding-x: 0.75rem;
   --nav-link-padding-y: 1rem;
 }
 
@@ -19,8 +19,9 @@ nav {
   }
 
   a {
+    // @include font-bold;
     color: var(--nav-link-color);
-    font-size: 0.875rem;
+    font-size: 1rem;
     letter-spacing: var(--letter-spacing);
     line-height: 1;
     padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
@@ -36,8 +37,8 @@ nav {
     &:after {
       background-color: var(--nav-link-color-active);
       bottom: 0;
-      content: "";
-      height: 2px;
+      // content: "";
+      height: 4px;
       left: 0;
       opacity: 0;
       position: absolute;

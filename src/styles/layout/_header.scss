@@ -1,37 +1,17 @@
-// Sticky header
-:root {
-  --header-height: 0;
-}
-
 header {
-  // background: hsl(0, 0%, 100%);
   display: flex;
-  justify-content: space-between;
-  padding: var(--box-width) calc(var(--box-width) + 1rem) 0;
-  transition: transform 0.25s ease;
-  z-index: 10;
-
-  .brand {
-    color: var(--brand-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing);
-    line-height: 1;
-    padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
-  }
-}
-
-.headroom-wrapper {
+  padding: 3rem 1rem 1rem;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  position: fixed;
-  z-index: 10;
-}
+  z-index: 1000;
 
-.headroom {
-  z-index: 10 !important;
-
-  &--pinned {
-    background-color: white;
+  > a {
+    color: black;
+    letter-spacing: var(--letter-spacing);
+    margin-left: auto;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }

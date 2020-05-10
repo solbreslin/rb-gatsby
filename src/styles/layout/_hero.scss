@@ -1,23 +1,24 @@
 .hero {
-  // background-color: hsl(0, 0, 0);
-  max-height: 100vh;
+  max-height: var(--hero-height);
+  min-height: var(--hero-height);
   overflow: hidden;
   position: relative;
 
-  &:after {
-    background-color: hsl(0, 0%, 0%);
-    bottom: 0;
-    content: "";
-    left: 0;
-    opacity: calc(var(--scroll-y) * 0.001);
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 3;
-  }
+  // &:after {
+  //   background-color: hsl(0, 0%, 0%);
+  //   bottom: 0;
+  //   content: "";
+  //   left: 0;
+  //   opacity: calc(var(--scroll-y) * 0.001);
+  //   pointer-events: none;
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   z-index: 3;
+  // }
 
   .image {
+    min-height: inherit;
     position: relative;
     transform: translate3d(0, calc(var(--scroll-y) * 0.25px), 0);
 
@@ -40,7 +41,6 @@
     display: block;
     height: inherit;
     object-fit: cover;
-    max-height: calc(100vh - var(--header-height));
     position: relative;
     width: 100%;
   }
@@ -52,8 +52,7 @@
     justify-content: center;
     left: 0;
     margin: 0 auto;
-    max-width: var(--section-max-width);
-    padding: 0 0 15vh;
+    padding: 0 var(--page-padding-x) 3rem;
     position: absolute;
     right: 0;
     width: 100%;
@@ -61,24 +60,13 @@
 
     > * {
       color: hsl(72, 10%, 90%);
-      @include font-bold;
-      // letter-spacing: -0.0225em;
       line-height: 1.2;
       margin: 0;
-      // text-shadow: 0 0 10px hsla(0, 0, 0, 0.2);
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
     p {
-      max-width: 30ch;
+      max-width: 32ch;
     }
-
-    // h1 {
-    //   font-size: 7rem;
-    // }
-
-    // h3 {
-    //   font-size: 4rem;
-    // }
   }
 }

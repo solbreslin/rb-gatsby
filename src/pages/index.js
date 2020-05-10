@@ -38,6 +38,7 @@ class IndexPage extends React.Component {
 
     const heroTitle = data.allHomeJson.edges[0].node.hero.title;
     const heroSubtitle = data.allHomeJson.edges[0].node.hero.subtitle;
+    const heroBlurb = data.allDatoCmsHero.edges[0].node.heroBlurb;
 
     return (
       <Layout>
@@ -47,6 +48,7 @@ class IndexPage extends React.Component {
           heroImages={heroImages}
           title={heroTitle}
           subtitle={heroSubtitle}
+          blurb={heroBlurb}
         />
         <section className="cards">
           <h1>Selected Work</h1>
@@ -83,6 +85,13 @@ export const pageQuery = graphql`
             title
             subtitle
           }
+        }
+      }
+    }
+    allDatoCmsHero {
+      edges {
+        node {
+          heroBlurb
         }
       }
     }

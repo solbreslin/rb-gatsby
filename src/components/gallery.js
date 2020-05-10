@@ -4,11 +4,8 @@ import styled from "styled-components";
 import Masonry from "react-masonry-css";
 import { Link } from "gatsby";
 
-const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_300/";
-
 const breakpointColumnsObj = {
-  default: 3,
+  default: 4,
   1200: 3,
   700: 2,
   500: 1,
@@ -34,50 +31,12 @@ const GalleryImage = styled.img`
   width: 100%;
 `;
 
-const mapImagesToProjects = (imagePaths, projects) => {
-  let allowedPaths = projects.map(n => n.path);
-
-  const collections = [];
-  let current = "";
-
-  imagePaths.forEach(str => {
-    const project = str.split("/")[3];
-
-    if (allowedPaths.includes(project)) {
-      if (current !== project) {
-        const projectIndex = projects.findIndex(n => n.path === project);
-        const displayName = projects[projectIndex].display_name;
-        const details = projects[projectIndex].details;
-
-        collections.push({
-          path: project,
-          display_name: displayName,
-          details,
-          items: [str],
-        });
-
-        current = project;
-      } else {
-        const index = collections.findIndex(n => n.path === project);
-        collections[index].items.push(str);
-      }
-    }
-  });
-
-  return collections;
-};
-
-function Gallery({ imagePaths, projectData }) {
-  const projects = mapImagesToProjects(imagePaths, projectData);
-
-  const items = projects.map((n, i) => (
+function Gallery({ items, filters }) {
+  const galleryItems = items.map((n, i) => (
     <Link to={n.path + "/"} key={n + "-" + i}>
       <GalleryFigure>
-        <GalleryImage
-          alt={n.project}
-          src={BASE_URL + n.items[0]}
-        ></GalleryImage>
-        <GalleryFigcaption>{n.display_name}</GalleryFigcaption>
+        <GalleryImage alt={n.project} src={n.imageURLs[0]}></GalleryImage>
+        <GalleryFigcaption>{n.name}</GalleryFigcaption>
       </GalleryFigure>
     </Link>
   ));
@@ -88,17 +47,17 @@ function Gallery({ imagePaths, projectData }) {
       className="gallery"
       columnClassName="gallery-col"
     >
-      {items}
+      {galleryItems}
     </Masonry>
   );
 }
 
 Gallery.propTypes = {
-  imagePaths: PropTypes.array,
+  items: PropTypes.array,
 };
 
 Gallery.defaultProps = {
-  imagePaths: [],
+  items: [],
 };
 
 export default Gallery;

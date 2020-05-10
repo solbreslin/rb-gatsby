@@ -32,8 +32,7 @@ class Hero extends React.Component {
   };
 
   render = () => {
-    const title = this.props.title;
-    const subtitle = this.props.subtitle;
+    const { blurb } = this.props;
 
     return (
       <section className="hero">
@@ -41,9 +40,7 @@ class Hero extends React.Component {
           <img src={this.state.image_path} alt="Autoportrait" />
         </div>
         <div className="text">
-          {/* <h1>{title}</h1>
-          <h3>{subtitle}</h3> */}
-          <p>Rory Breslin is an artist and sculptor based in Mayo, Ireland</p>
+          <p>{blurb}</p>
         </div>
       </section>
     );

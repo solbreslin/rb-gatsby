@@ -28,5 +28,9 @@ section:not(.hero) {
 }
 
 main {
-  // padding: 0 var(--box-width) var(--box-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh; // Todo (100vh - headerHeight)
+  padding-left: 300px;
+  padding-top: 6rem;
 }

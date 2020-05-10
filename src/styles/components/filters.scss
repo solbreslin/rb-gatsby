@@ -1,0 +1,30 @@
+.filters {
+  margin: 1rem 0;
+
+  ul {
+    display: flex;
+
+    li {
+      display: flex;
+
+      &.selected {
+        color: hsl(0, 0, 50%);
+      }
+    }
+
+    button {
+      background-color: transparent;
+      color: inherit;
+      cursor: pointer;
+      border: none;
+      font: inherit;
+      font-size: 0.875rem;
+      padding: 0.25rem 0.5rem;
+      text-transform: capitalize;
+
+      &:hover {
+        // text-decoration: underline;
+      }
+    }
+  }
+}

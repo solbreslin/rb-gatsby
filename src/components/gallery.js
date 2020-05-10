@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
 import { Link } from "gatsby";
+import Filters from "./filters";
+import { shuffle } from "lodash";
 
 const breakpointColumnsObj = {
   default: 4,
@@ -32,23 +34,38 @@ const GalleryImage = styled.img`
 `;
 
 function Gallery({ items, filters }) {
-  const galleryItems = items.map((n, i) => (
-    <Link to={n.path + "/"} key={n + "-" + i}>
-      <GalleryFigure>
-        <GalleryImage alt={n.project} src={n.imageURLs[0]}></GalleryImage>
-        <GalleryFigcaption>{n.name}</GalleryFigcaption>
-      </GalleryFigure>
-    </Link>
-  ));
+  const galleryItems = shuffle(
+    items.map((n, i) => (
+      <Link data-filter={n.filter} to={n.path + "/"} key={n + "-" + i}>
+        <GalleryFigure>
+          <GalleryImage alt={n.project} src={n.imageURLs[0]}></GalleryImage>
+          <GalleryFigcaption>{n.name}</GalleryFigcaption>
+        </GalleryFigure>
+      </Link>
+    ))
+  );
+
+  const [activeItems, setActiveItems] = useState(galleryItems);
+
+  const filterItems = filter => {
+    const filteredItems = filter
+      ? galleryItems.filter(item => item.props["data-filter"] === filter)
+      : galleryItems;
+
+    setActiveItems(filteredItems);
+  };
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="gallery"
-      columnClassName="gallery-col"
-    >
-      {galleryItems}
-    </Masonry>
+    <section className="gallery-wrapper">
+      <Filters filters={filters} onFilterUpdate={filterItems} />
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="gallery"
+        columnClassName="gallery-col"
+      >
+        {activeItems}
+      </Masonry>
+    </section>
   );
 }
 

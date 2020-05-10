@@ -13,17 +13,25 @@ class WorkPage extends React.Component {
   constructor(props) {
     super(props);
 
+    this.filtersSet = false;
+    this.itemsSet = false;
     this.galleryItems = [];
     this.filters = [];
   }
 
   getFilters() {
+    if (this.filtersSet) return;
+
     workJSON.forEach(cat => {
       this.filters.push(cat.name);
     });
+
+    this.filtersSet = true;
   }
 
   createGalleryItems() {
+    if (this.itemsSet) return;
+
     workJSON.forEach(cat => {
       cat.items.forEach(project => {
         const filter = cat.name;
@@ -42,6 +50,8 @@ class WorkPage extends React.Component {
         });
       });
     });
+
+    this.itemsSet = true;
   }
 
   getProjectImages(path) {

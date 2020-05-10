@@ -4,33 +4,11 @@
   --section-max-width: 1200px;
 }
 
-body {
-  position: relative;
-
-  &:after {
-    // border: var(--box-width) solid var(--box-colour);
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 100vh;
-    left: 0;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-  }
-}
-
-section:not(.hero) {
-  // margin: 0 auto;
-  // max-width: var(--max-page-width);
-}
-
 main {
   display: flex;
   flex-direction: column;
   min-height: 80vh; // Todo (100vh - headerHeight)
   padding-left: 300px;
+  padding-right: 3rem;
   padding-top: 6rem;
 }

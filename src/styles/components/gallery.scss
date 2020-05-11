@@ -1,20 +1,36 @@
 .gallery {
   figure {
+    filter: brightness(90%);
     margin: 0;
     overflow: hidden;
     padding: 0;
+    transition: filter 0.25s;
+
+    &:hover {
+      filter: brightness(100%);
+
+      figcaption {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+    }
   }
 
   figcaption {
-    background-color: white;
+    // background-color: white;
     bottom: 0;
-    padding: 0.5rem 0 2rem;
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity 0.5s ease, transform 0s ease 0.5s;
     width: 100%;
   }
+
   img {
     display: block;
     height: 100%;
     object-fit: cover;
+    margin-bottom: 0.5rem;
     width: 100%;
   }
 }

@@ -31,6 +31,7 @@ class WorkPage extends React.Component {
 
   getCategories() {
     const categories = [];
+    categories.push("all");
 
     workJSON.forEach(cat => {
       categories.push(cat.name);

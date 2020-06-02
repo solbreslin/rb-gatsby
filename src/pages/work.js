@@ -2,95 +2,50 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
+import Gallery from "../components/gallery";
+import {
+  getWorkCategories,
+  mapCloudinaryURLToWorkCategory,
+} from "./../utils/data-mapping";
 import { shuffle } from "lodash";
-import GalleryUI from "./../components/gallery/ui";
 
-const workJSON = require("./../../content/work.json");
-
-const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_300/";
+const workJSON = require("../../content/work.json");
 
 class WorkPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      displayCategory: "all",
-      galleryItems: [],
-      categories: [],
-    };
-
-    this.setCategory = this.setCategory.bind(this);
+    this.handleGalleryImages();
   }
 
-  componentDidMount() {
-    this.getCategories();
-    this.mapURLtoCategory();
-    this.generateGalleryItems();
-  }
+  handleGalleryImages() {
+    this.categories = getWorkCategories(workJSON);
+    this.mappings = mapCloudinaryURLToWorkCategory(
+      this.props.data.allCloudinaryMedia.edges,
+      this.categories
+    );
 
-  getCategories() {
-    const categories = [];
-    categories.push("all");
-
-    workJSON.forEach(cat => {
-      categories.push(cat.name);
-    });
-
-    this.quickCategories = categories;
-
-    this.setState({
-      categories: categories,
-    });
-  }
-
-  mapURLtoCategory() {
-    const { data } = this.props;
-    const edges = data.allCloudinaryMedia.edges;
-
-    this.mappings = {};
-
-    edges.forEach(obj => {
-      const url = obj.node.public_id;
-
-      let category = url.split("/")[2].toLowerCase();
-
-      if (this.quickCategories.includes(category)) {
-        if (!this.mappings[category]) {
-          this.mappings[category] = [];
-        }
-        this.mappings[category].push(url);
-      }
-    });
+    this.galleryItems = this.generateGalleryItems();
   }
 
   generateGalleryItems() {
     let items = [];
 
-    workJSON.forEach(cat => {
-      cat.items.forEach(project => {
-        const category = cat.name;
-        const name = project.display_name;
-        const path = project.path;
-        const details = project.details;
-
-        const imageURLs = this.getProjectImages(category, path);
+    workJSON.forEach(entry => {
+      entry.items.forEach(project => {
+        const imageURLs = this.getProjectImages(entry.name, project.path);
 
         items.push({
-          category,
-          name,
-          path,
-          details,
+          filter: entry.name,
+          name: project.display_name,
+          path: project.path,
+          details: project.details,
           imageURLs,
         });
       });
     });
 
-    items = shuffle(items);
-
-    this.setState({
-      galleryItems: items,
-    });
+    return shuffle(items);
   }
 
   getProjectImages(category, path) {
@@ -100,28 +55,35 @@ class WorkPage extends React.Component {
       const projectString = url.split("/")[3];
 
       if (path === projectString) {
-        urls.push(BASE_URL + url);
+        urls.push(url);
+      }
+
+      if (category === "masks") {
+        if (path === "brian-boru-mask" && projectString === "brian-boru") {
+          urls.push(url);
+        }
+      }
+
+      if (category === "public") {
+        if (path === "brian-boru-public" && projectString === "brian-boru") {
+          urls.push(url);
+        }
       }
     });
 
     return urls;
   }
 
-  setCategory(category) {
-    this.setState({
-      displayCategory: category,
-    });
-  }
-
   render = () => {
     return (
       <Layout>
         <SEO title="Work" />
-        <h1>Selected Work</h1>
-        <GalleryUI
-          setCategory={this.setCategory}
-          state={this.state}
-        ></GalleryUI>
+        <div>
+          <Gallery
+            items={this.galleryItems}
+            categories={this.categories}
+          ></Gallery>
+        </div>
       </Layout>
     );
   };

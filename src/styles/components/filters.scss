@@ -1,4 +1,4 @@
-.filters {
+.gallery-filters {
   margin: 1rem 0;
 
   ul {
@@ -6,21 +6,34 @@
 
     li {
       display: flex;
+      transition: color .25s ease;
 
       &.active {
-        color: hsl(0, 0, 50%);
+        color: hsl(0, 0, 100%);
+
+        button {
+          background-color: hsl(0, 0, 0%);
+          border-color: hsl(0, 0, 0%);
+        }
+      }
+
+      + li {
+        margin-left: 0.5rem;
       }
     }
 
     button {
-      background-color: transparent;
+      background-color: hsl(0, 0, 100%);
       color: inherit;
       cursor: pointer;
-      border: none;
+      border: 1px solid hsl(0, 0, 80%);
+      border-radius: 0.25em;
       font: inherit;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
+      line-height: 1;
       padding: 0.25rem 0.5rem;
       text-transform: capitalize;
+      transition: background .25s ease, border .25s ease;
 
       &:focus {
         outline: none;

@@ -30,7 +30,8 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <Lightbox title={pageTitle} images={projectImages}></Lightbox>
+      <p>test</p>
+      {/* <Lightbox title={pageTitle} images={projectImages}></Lightbox> */}
     </Layout>
   );
 };

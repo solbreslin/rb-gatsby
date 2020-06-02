@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
@@ -13,6 +13,8 @@ class IndexPage extends React.Component {
     const cardImages = data.allCloudinaryMedia.edges.map(item => {
       if (item.node.public_id.includes("Boxes")) {
         return item.node.public_id;
+      } else {
+        return null;
       }
     });
 

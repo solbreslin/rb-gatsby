@@ -28,7 +28,10 @@ class Lightbox extends React.Component {
   }
 
   setHeight() {
-    this.height = window.innerHeight;
+    if (window) {
+      this.height = window.innerHeight;
+    }
+
   }
 
   isPortrait(image) {
@@ -61,8 +64,8 @@ class Lightbox extends React.Component {
   }
 
   componentDidMount() {
-    this.setHeight();
-    this.generateImages();
+    // this.setHeight();
+    // this.generateImages();
   }
 
   prev = () => {

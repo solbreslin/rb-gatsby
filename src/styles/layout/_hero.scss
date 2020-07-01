@@ -1,26 +1,13 @@
 .hero {
-  max-height: var(--hero-height);
-  min-height: var(--hero-height);
+  height: var(--hero-height);
+  margin-right: calc(var(--page-padding-x) * -1);
   overflow: hidden;
   position: relative;
 
-  // &:after {
-  //   background-color: hsl(0, 0%, 0%);
-  //   bottom: 0;
-  //   content: "";
-  //   left: 0;
-  //   opacity: calc(var(--scroll-y) * 0.001);
-  //   pointer-events: none;
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0;
-  //   z-index: 3;
-  // }
-
   .image {
-    min-height: inherit;
+    height: inherit;
     position: relative;
-    transform: translate3d(0, calc(var(--scroll-y) * 0.25px), 0);
+    transform: translate3d(0, calc(var(--scroll-y) * 0.15px), 0);
 
     &:after {
       background-image: linear-gradient(
@@ -39,7 +26,7 @@
 
   img {
     display: block;
-    height: inherit;
+    height: 100%;
     object-fit: cover;
     position: relative;
     width: 100%;
@@ -50,13 +37,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left: 0;
-    margin: 0 auto;
     padding: 0 var(--page-padding-x) 3rem;
     position: absolute;
-    right: 0;
     width: 100%;
-    z-index: 1;
 
     > * {
       color: hsl(72, 10%, 90%);

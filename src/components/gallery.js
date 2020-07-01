@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "gatsby";
+import Masonry from "react-masonry-css";
 
 const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_300,h_300,c_thumb,g_face/";
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_400,c_thumb,g_face/";
+
+const ANIMATION_TIME_IN_MS = 250;
+
+const breakpointColumnsObj = {
+  default: 3,
+  1200: 3,
+  700: 2,
+  500: 1,
+};
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -11,50 +21,93 @@ class Gallery extends React.Component {
     this.state = {
       animatingOut: false,
       filter: "all",
+      layout: "grid",
     };
+
+    console.log("constructor");
   }
 
   filterImages(newFilter) {
     this.setState({
       animatingOut: true,
-      filter: newFilter
+      filter: newFilter,
     });
 
     setTimeout(() => {
       this.setState({
-        animatingOut: false
-      }, );
-    }, 250)
+        animatingOut: false,
+      });
+    }, ANIMATION_TIME_IN_MS);
+  }
+
+  toggleLayout(newLayout) {
+    this.setState({
+      animatingOut: true,
+      layout: newLayout,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        animatingOut: false,
+      });
+    }, ANIMATION_TIME_IN_MS);
   }
 
   render() {
     const { categories, items } = this.props;
-    const { filter, animatingOut } = this.state;
+    const { filter, layout, animatingOut } = this.state;
 
     return (
-      <div className="gallery">
-        <div className="gallery-filters">
-          <ul className="filters">
-            <li className={filter === 'all' ? "active" : ""}>
-              <button onClick={() => this.filterImages('all')}>all</button>
+      <section className="gallery">
+        <header>
+          <ul className="gallery-filters">
+            <li>
+              <button
+                className={filter === "all" ? "active" : ""}
+                onClick={() => this.filterImages("all")}
+              >
+                all
+              </button>
             </li>
             {categories.map(category => (
-              <li className={filter === category ? "active" : ""} key={category}>
-                <button onClick={() => this.filterImages(category)}>
+              <li key={category}>
+                <button
+                  className={filter === category ? "active" : ""}
+                  onClick={() => this.filterImages(category)}
+                >
                   {category}
                 </button>
               </li>
             ))}
           </ul>
-        </div>
 
-        <ul className={`gallery-items ${animatingOut ? 'animate-out' : ''}`}>
-          {items.map(item => (
-            <li
-              key={`GalleryItem-${item.path}`}
-              className={filter === item.filter || filter === 'all' ? "active" : ""}
+          <div className="gallery-layout-options">
+            <button
+              className={layout === "grid" ? "active" : ""}
+              onClick={() => this.toggleLayout("grid")}
             >
-              <Link to={item.path}>
+              Grid
+            </button>
+            <button
+              className={layout === "list" ? "active" : ""}
+              onClick={() => this.toggleLayout("list")}
+            >
+              List
+            </button>
+          </div>
+        </header>
+
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className={`gallery-grid ${animatingOut ? "animate-out" : ""} ${
+            layout === "grid" ? "active" : ""
+          }`}
+          columnClassName="gallery-grid-col"
+        >
+          {items
+            .filter(item => item.filter === filter || filter === "all")
+            .map(item => (
+              <Link key={`GalleryGridItem-${item.path}`} to={item.path}>
                 <figure>
                   <img
                     alt={item.project}
@@ -63,10 +116,28 @@ class Gallery extends React.Component {
                   <figcaption>{item.name}</figcaption>
                 </figure>
               </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+            ))}
+        </Masonry>
+
+        <article
+          className={`gallery-list ${layout === "list" ? "active" : ""}`}
+        >
+          {items
+            .filter(item => item.filter === filter || filter === "all")
+            .map(item => (
+              <div key={`GalleryListItem-${item.path}`}>
+                <h3>{item.name}</h3>
+                <div className="images">
+                {item.imageURLs.map(url => (
+                  <Link to={item.path}>
+                    <img alt={item.project} src={BASE_URL + url}></img>
+                  </Link>
+                ))}
+                </div>
+              </div>
+            ))}
+        </article>
+      </section>
     );
   }
 }

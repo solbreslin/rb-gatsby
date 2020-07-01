@@ -23,7 +23,7 @@ class Hero extends React.Component {
 
   generateURL = () => {
     const { width } = this.state;
-
+  
     const url = `${BASE_URL},w_${width}/${this.props.heroImages[0].node.public_id}`;
 
     this.setState({

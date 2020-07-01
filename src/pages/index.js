@@ -6,6 +6,18 @@ import Card from "../components/card";
 import SEO from "../components/seo";
 
 class IndexPage extends React.Component {
+  componentDidMount() {
+    if (window) {
+      window.addEventListener('scroll', (e) => {
+        const top = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (top <= window.innerHeight) {
+          document.documentElement.style.setProperty('--scroll-y', top);
+        }
+      })
+    }
+  }
+
   render = () => {
     const { data } = this.props;
     const heroImages = data.allCloudinaryMedia.edges;

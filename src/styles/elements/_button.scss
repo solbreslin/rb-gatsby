@@ -1,0 +1,30 @@
+button {
+  --button-transition-time: .15s;
+
+  background-color: hsl(0, 0, 100%);
+  color: inherit;
+  cursor: pointer;
+  border: 1px solid hsl(0, 0, 80%);
+  border-radius: 0.25em;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  transition: border var(--transition-speed) var(--transition-timing-function);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border-color: hsl(0, 0, 0%);
+  }
+
+  &.active, 
+  .active & {
+    background-color: hsl(0, 0, 0%);
+    border-color: hsl(0, 0, 0%);
+    color: hsl(0, 0, 100%);
+  }
+}

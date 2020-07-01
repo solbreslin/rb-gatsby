@@ -10,7 +10,6 @@
 @import "page/base";
 
 @import "layout/layout";
-@import "layout/gallery";
 @import "layout/footer";
 @import "layout/header";
 @import "layout/nav";
@@ -18,4 +17,6 @@
 @import "layout/hero";
 @import "layout/home-cards";
 
-@import "components/filters";
+@import "components/gallery";
+
+@import "elements/button"

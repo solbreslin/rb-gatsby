@@ -18,13 +18,13 @@ class Gallery extends React.Component {
   constructor(props) {
     super(props);
 
+    const { prefilter } = this.props;
+
     this.state = {
       animatingOut: false,
-      filter: "all",
+      filter: prefilter ? prefilter : "all",
       layout: "grid",
     };
-
-    console.log("constructor");
   }
 
   filterImages(newFilter) {
@@ -61,7 +61,7 @@ class Gallery extends React.Component {
       <section className="gallery">
         <header>
           <ul className="gallery-filters">
-            <li>
+            <li key={"filter-" + filter}>
               <button
                 className={filter === "all" ? "active" : ""}
                 onClick={() => this.filterImages("all")}
@@ -128,11 +128,11 @@ class Gallery extends React.Component {
               <div key={`GalleryListItem-${item.path}`}>
                 <h3>{item.name}</h3>
                 <div className="images">
-                {item.imageURLs.map(url => (
-                  <Link to={item.path}>
-                    <img alt={item.project} src={BASE_URL + url}></img>
-                  </Link>
-                ))}
+                  {item.imageURLs.map((url, i) => (
+                    <Link to={item.path} key={item.path + "-" + i}>
+                      <img alt={item.project} src={BASE_URL + url}></img>
+                    </Link>
+                  ))}
                 </div>
               </div>
             ))}

@@ -11,14 +11,11 @@ class Card extends React.Component {
     this.name = this.props.name;
     this.link = this.props.link;
     this.image = this.props.image;
-
-    console.log(this.name);
-    console.log(this.link);
   }
 
   render = () => {
     return (
-      <Link to={'work?cat=' + this.name} className="card">
+      <Link to={"work"} state={{ category: this.name }} className="card">
         <figure>
           <img src={BASE_URL + this.image} alt="" />
           <figcaption>{this.name}</figcaption>

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { shuffle } from "lodash";
 // import GalleryUI from "./../components/gallery/ui";
 import Gallery from "../components/gallery";

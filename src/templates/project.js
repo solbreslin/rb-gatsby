@@ -1,7 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
-import { graphql } from "gatsby";
-import Lightbox from "../components/lightbox";
+import { graphql, Link } from "gatsby";
+
+// import Lightbox from "../components/lightbox";
+
+const BASE_URL =
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
 
 const mapImagesToProject = (imageData, pagePath) => {
   const projectImages = [];
@@ -10,11 +14,7 @@ const mapImagesToProject = (imageData, pagePath) => {
     const project = obj.node.public_id.split("/")[3];
 
     if (project === pagePath) {
-      projectImages.push({
-        height: obj.node.height,
-        url: obj.node.public_id,
-        width: obj.node.width 
-      });
+      projectImages.push(BASE_URL + obj.node.public_id);
     }
   });
 
@@ -25,13 +25,29 @@ export default ({ data }) => {
   const imageData = data.allCloudinaryMedia.edges;
   const path = data.allSitePage.edges[0].node.context.pagePath;
 
-  const projectImages = mapImagesToProject(imageData, path);
-  const pageTitle = data.allSitePage.edges[0].node.context.name;
+  const images = mapImagesToProject(imageData, path);
+  const title = data.allSitePage.edges[0].node.context.name;
+  const details = data.allSitePage.edges[0].node.context.details;
+  console.log(images);
+
+  // Annoying issue with createPages not updating context data
+  // Temporary workaround to grab the project category and pass to back button
+  const strArray = images[0].split("/");
+  const workIndex = strArray.indexOf("WORK");
+  const category = strArray[workIndex + 1].toLowerCase();
 
   return (
     <Layout>
-      <p>test</p>
-      {/* <Lightbox title={pageTitle} images={projectImages}></Lightbox> */}
+      <Link to={"work"} state={{ category }}>
+        &larr; Back to {category}
+      </Link>
+      <h1>{title}</h1>
+      <h3>{details.material}</h3>
+      {images.map(url => (
+        <figure key={url}>
+          <img src={url} alt="" />
+        </figure>
+      ))}
     </Layout>
   );
 };

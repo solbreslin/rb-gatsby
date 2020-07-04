@@ -28,7 +28,6 @@ export default ({ data }) => {
   const images = mapImagesToProject(imageData, path);
   const title = data.allSitePage.edges[0].node.context.name;
   const details = data.allSitePage.edges[0].node.context.details;
-  console.log(images);
 
   // Annoying issue with createPages not updating context data
   // Temporary workaround to grab the project category and pass to back button

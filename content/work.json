@@ -4,7 +4,7 @@
     "name": "public",
     "items": [
       {
-        "path": "brian-boru-public",
+        "path": "brian-boru",
         "display_name": "Brian Boru",
         "details": {
           "material": "Bronze, Limestone"
@@ -239,7 +239,7 @@
     "name": "masks",
     "items": [
       {
-        "path": "brian-boru-mask",
+        "path": "mask-of-brian-boru",
         "display_name": "Brian Boru",
         "details": {
           "material": "Bronze, Limestone"

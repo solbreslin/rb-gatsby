@@ -58,18 +58,6 @@ class WorkPage extends React.Component {
       if (path === projectString) {
         urls.push(url);
       }
-
-      if (category === "masks") {
-        if (path === "brian-boru-mask" && projectString === "brian-boru") {
-          urls.push(url);
-        }
-      }
-
-      if (category === "public") {
-        if (path === "brian-boru-public" && projectString === "brian-boru") {
-          urls.push(url);
-        }
-      }
     });
 
     return urls;

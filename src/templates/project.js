@@ -37,7 +37,7 @@ export default ({ data }) => {
   const category = strArray[workIndex + 1].toLowerCase();
 
   return (
-    <Layout>
+    <Layout className="project">
       <Link to={"work"} state={{ category }}>
         &larr; Back to {category}
       </Link>

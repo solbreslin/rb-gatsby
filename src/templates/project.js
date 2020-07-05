@@ -37,7 +37,7 @@ export default ({ data }) => {
 
   return (
     <Layout className="project">
-      <Link to={"work"} state={{ category }}>
+      <Link to={"/work"} state={{ category }}>
         &larr; Back to {category}
       </Link>
       <h1>{title}</h1>

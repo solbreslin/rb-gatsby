@@ -12,17 +12,17 @@ class Nav extends React.Component {
             </Link>
           </li>
           <li>
-            <Link to={"work"} activeClassName="active">
+            <Link to={"/work"} activeClassName="active">
               Work
             </Link>
           </li>
           <li>
-            <Link to={"process"} activeClassName="active">
+            <Link to={"/process"} activeClassName="active">
               Process
             </Link>
           </li>
           <li>
-            <Link to={"contact"} activeClassName="active">
+            <Link to={"/contact"} activeClassName="active">
               Contact
             </Link>
           </li>

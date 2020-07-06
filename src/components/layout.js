@@ -9,7 +9,7 @@ import "./../styles/global.scss";
 
 class Layout extends React.Component {
   render = () => {
-    const { children } = this.props;
+    const { children, className } = this.props;
 
     return (
       <>
@@ -27,7 +27,7 @@ class Layout extends React.Component {
           render={data => <Header siteTitle={data.site.siteMetadata.title} />}
         />
         <Nav />
-        <main>{children}</main>
+        <main className={className}>{children}</main>
         <Footer />
       </>
     );

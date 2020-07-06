@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import { graphql, Link } from "gatsby";
 
@@ -22,6 +22,8 @@ const mapImagesToProject = (imageData, pagePath) => {
 };
 
 export default ({ data }) => {
+  const [active, setActive] = useState(false);  
+
   const imageData = data.allCloudinaryMedia.edges;
   const path = data.allSitePage.edges[0].node.context.pagePath;
 
@@ -35,6 +37,32 @@ export default ({ data }) => {
   const workIndex = strArray.indexOf("WORK");
   const category = strArray[workIndex + 1].toLowerCase();
 
+  const goFullscreen = (e, url) => {
+    e.target.parentNode.classList.add('is-fullscreen');
+
+    document.body.classList.add("has-fullscreen-image");
+    setActive(true);
+  };
+
+  const leaveFullscreen = () => {
+    const image = document.querySelector('.is-fullscreen')
+    image.classList.remove('is-fullscreen');
+    document.body.classList.remove("has-fullscreen-image");
+    setActive(false);
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (active) {
+        leaveFullscreen();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [active]);
+
   return (
     <Layout className="project">
       <Link to={"/work"} state={{ category }}>
@@ -43,7 +71,12 @@ export default ({ data }) => {
       <h1>{title}</h1>
       <h3>{details.material}</h3>
       {images.map(url => (
-        <figure key={url}>
+        <figure
+          key={url}
+          onClick={(e) => {
+            goFullscreen(e, url);
+          }}
+        >
           <img src={url} alt="" />
         </figure>
       ))}

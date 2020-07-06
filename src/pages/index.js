@@ -8,13 +8,21 @@ import SEO from "../components/seo";
 class IndexPage extends React.Component {
   componentDidMount() {
     if (window) {
-      window.addEventListener('scroll', (e) => {
-        const top = window.pageYOffset || document.documentElement.scrollTop;
+      window.addEventListener('scroll', this.onScroll)
+    }
+  }
 
-        if (top <= window.innerHeight) {
-          document.documentElement.style.setProperty('--scroll-y', top);
-        }
-      })
+  componentWillUnmount() {
+    if (window) {
+      window.removeEventListener('scroll', this.onScroll);
+    }
+  }
+
+  onScroll(e) {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (top <= window.innerHeight) {
+      document.documentElement.style.setProperty('--scroll-y', top);
     }
   }
 

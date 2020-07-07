@@ -19,6 +19,7 @@ $base-font-size: 21;
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};
   --base-font-size: #{$base-font-size};
+  --body-background-colour: hsl(0, 0%, 98%);
   --line-height: #{$line-height};
   --ratio: 1.414;
   --max-page-width: 1270px;
@@ -28,6 +29,6 @@ $base-font-size: 21;
   --hero-height: calc(100vh - 6rem);
   --page-padding-x: 3rem;
   --transition-speed: 0.25s;
-  --transition-timing-function: ease;
+  --transition-timing-function: ease-out;
   --scroll-y: 0;
 }

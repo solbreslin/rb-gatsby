@@ -1,0 +1,46 @@
+.is-fullscreen {
+  --translate-x: 0;
+  --translate-y: 0;
+
+  img {
+    transform: translate3d(var(--translate-x), var(--translate-y), 0);
+    will-change: transform;
+    z-index: 200;
+  }
+}
+
+
+.project {
+  align-items: baseline;
+
+  &:after {
+    background-color: hsl(0, 0%, 5%);
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity var(--transition-speed) var(--transition-timing-function);
+
+    .has-fullscreen-image & {
+      opacity: 1;
+    }
+  }
+
+  figure {
+    height: 100vh;
+    padding: 3rem 0;
+    position: relative;
+
+    img {
+      cursor: pointer;
+      height: 100%;
+      object-fit: contain;
+      transition: transform var(--transition-speed) var(--transition-timing-function);
+      width: 100%;
+    }
+  }
+}

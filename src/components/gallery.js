@@ -159,21 +159,21 @@ class Gallery extends React.Component {
         >
           {items
             .filter(item => item.filter === filter || filter === "all")
-            .map(item => (
+            .map(item => {
+              const link = `/${item.path}`;
+
+              return (
               <div key={`GalleryListItem-${item.path}`}>
-                <h3>{item.name}</h3>
+                <h3><Link to={link}>{item.name}</Link></h3>
                 <div className="images">
-                  {item.imageURLs.map((url, i) => {
-                    const link = `/${item.path}`;
-                    
-                    return (
+                  {item.imageURLs.map((url, i) => (
                     <Link to={link} key={item.path + "-" + i}>
                       <img alt={item.project} src={BASE_URL + url}></img>
                     </Link>
-                  )})}
+                  ))}
                 </div>
               </div>
-            ))}
+            )})}
         </article>
       </section>
     );

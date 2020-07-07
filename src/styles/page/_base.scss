@@ -1,7 +1,5 @@
-:root {
-  --box-width: 0.5rem;
-  --box-colour: hsl(0, 0%, 0%);
-  --section-max-width: 1200px;
+body {
+  background-color: var(--body-background-colour);
 }
 
 main {

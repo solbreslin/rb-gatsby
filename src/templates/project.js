@@ -22,7 +22,7 @@ const mapImagesToProject = (imageData, pagePath) => {
 };
 
 export default ({ data }) => {
-  const [active, setActive] = useState(false);  
+  const [isFullscreen, setIsFullscreen] = useState(false);  
 
   const imageData = data.allCloudinaryMedia.edges;
   const path = data.allSitePage.edges[0].node.context.pagePath;
@@ -37,23 +37,75 @@ export default ({ data }) => {
   const workIndex = strArray.indexOf("WORK");
   const category = strArray[workIndex + 1].toLowerCase();
 
-  const goFullscreen = (e, url) => {
-    e.target.parentNode.classList.add('is-fullscreen');
+  const translateImage = (el, reset = false) => {
+    if (reset) {
+      el.style.setProperty('--translate-x', '0px');
+      el.style.setProperty('--translate-y', '0px');
 
-    document.body.classList.add("has-fullscreen-image");
-    setActive(true);
+      return;
+    }
+
+    const x = 100;
+    const y = 100;
+
+    const targetTop = 63; // padding
+    const currentTop = el.getBoundingClientRect().top;
+
+    let diffY = 0;
+
+    if (currentTop >= targetTop) {
+      diffY = (currentTop - targetTop) * -1;
+    } else {
+      diffY = targetTop - currentTop;
+    }
+
+    console.log(diffY);
+
+    console.log(el.getBoundingClientRect());
+    // el.style.setProperty('--translate-x', `${x}px`);
+    el.style.setProperty('--translate-y', `${diffY}px`);
+   
+  }
+
+  const toggleFullscreen = (e, url) => {
+    if (isFullscreen) {
+      leaveFullscreen();
+    } else {
+      goFullscreen(e);
+    }
+  }
+
+  const goFullscreen = (e, url) => {
+    const target = e.target.tagName.toLowerCase();
+
+    if (target === 'img') {
+      setIsFullscreen(true);
+
+      const figure = e.target.parentNode;
+      figure.classList.add('is-fullscreen');
+
+      translateImage(e.target);
+
+      document.body.classList.add('has-fullscreen-image');
+    }
   };
 
   const leaveFullscreen = () => {
-    const image = document.querySelector('.is-fullscreen')
-    image.classList.remove('is-fullscreen');
-    document.body.classList.remove("has-fullscreen-image");
-    setActive(false);
+    setIsFullscreen(false);
+
+    const el = document.querySelector('.is-fullscreen');
+    el.classList.remove('is-fullscreen');
+
+    const image = el.querySelector('img');
+
+    translateImage(image, true);
+
+    document.body.classList.remove('has-fullscreen-image');
   }
 
   useEffect(() => {
     const handleScroll = () => {
-      if (active) {
+      if (isFullscreen) {
         leaveFullscreen();
       }
     };
@@ -61,7 +113,7 @@ export default ({ data }) => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [active]);
+  }, [isFullscreen]);
 
   return (
     <Layout className="project">
@@ -74,7 +126,7 @@ export default ({ data }) => {
         <figure
           key={url}
           onClick={(e) => {
-            goFullscreen(e, url);
+            toggleFullscreen(e, url);
           }}
         >
           <img src={url} alt="" />

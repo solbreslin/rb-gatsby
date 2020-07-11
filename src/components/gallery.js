@@ -10,8 +10,7 @@ const ANIMATION_TIME_IN_MS = 250;
 const breakpointColumnsObj = {
   default: 3,
   1200: 3,
-  768: 2,
-  320: 1,
+  768: 1,
 };
 
 class Gallery extends React.Component {

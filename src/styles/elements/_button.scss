@@ -1,5 +1,5 @@
 button {
-  --button-transition-time: .15s;
+  --button-transition-time: 0.15s;
 
   background-color: hsl(0, 0, 100%);
   color: inherit;
@@ -21,7 +21,7 @@ button {
     border-color: hsl(0, 0, 0%);
   }
 
-  &.active, 
+  &.active,
   .active & {
     background-color: hsl(0, 0, 0%);
     border-color: hsl(0, 0, 0%);

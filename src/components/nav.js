@@ -3,8 +3,10 @@ import React from "react";
 
 class Nav extends React.Component {
   render = () => {
+    const { menuOpen } = this.props;
+
     return (
-      <nav className="rb-nav">
+      <nav className={`${menuOpen ? "open" : ""} "rb-nav"`}>
         <ul>
           <li>
             <Link to={"/"} activeClassName="active">
@@ -16,11 +18,11 @@ class Nav extends React.Component {
               Work
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to={"/process"} activeClassName="active">
               Process
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to={"/contact"} activeClassName="active">
               Contact

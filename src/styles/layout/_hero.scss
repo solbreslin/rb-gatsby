@@ -1,8 +1,11 @@
 .hero {
   height: var(--hero-height);
-  margin-right: -2rem;
   overflow: hidden;
   position: relative;
+
+  @include respond-to("desktop") {
+    margin-right: -2rem;
+  }
 
   .image {
     height: inherit;

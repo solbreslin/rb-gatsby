@@ -26,7 +26,6 @@ class Layout extends React.Component {
           `}
           render={data => <Header siteTitle={data.site.siteMetadata.title} />}
         />
-        <Nav />
         <main className={className}>{children}</main>
         <Footer />
       </>

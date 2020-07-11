@@ -5,7 +5,10 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  padding-left: 300px;
-  padding-right: 3rem;
-  padding-top: 6rem;
+
+  @include respond-to('desktop') {
+    padding-left: 300px;
+    padding-right: 3rem;
+    padding-top: 6rem;
+  }
 }

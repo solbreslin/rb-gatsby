@@ -3,7 +3,6 @@
 
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
   position: relative;
   z-index: 3;
 
@@ -15,16 +14,16 @@
     z-index: 1000;
   }
 
-  > a,
-  > button {
+  .brand {
+    @include font-bold;
     color: black;
     letter-spacing: var(--letter-spacing);
+    padding: 1.2rem var(--page-padding-x-mobile) 1rem; 
     text-decoration: none;
     text-transform: uppercase;
   }
 
-  > button {
-    background: none;
-    border: none;
+  button {
+    padding: 1.2rem var(--page-padding-x-mobile) 1rem; 
   }
 }

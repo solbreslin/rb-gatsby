@@ -6,7 +6,7 @@ class Nav extends React.Component {
     const { menuOpen } = this.props;
 
     return (
-      <nav className={`${menuOpen ? "open" : ""} "rb-nav"`}>
+      <nav className={`${menuOpen ? "open" : ""} rb-nav`}>
         <ul>
           <li>
             <Link to={"/"} activeClassName="active">

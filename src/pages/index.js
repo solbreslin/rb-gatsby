@@ -72,7 +72,7 @@ class IndexPage extends React.Component {
           subtitle={heroSubtitle}
           blurb={heroBlurb}
         />
-        <section className="cards">
+        <section className="cards" id="cards">
           <h1>Selected Work</h1>
           {cards}
         </section>

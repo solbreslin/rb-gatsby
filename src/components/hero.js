@@ -41,6 +41,7 @@ class Hero extends React.Component {
         </div>
         <div className="text">
           <p>{blurb}</p>
+          <a href="#cards">Selected Work</a>
         </div>
       </section>
     );

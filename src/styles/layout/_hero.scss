@@ -1,6 +1,7 @@
 .hero {
-  height: var(--hero-height);
+  height: calc(100vh - var(--header-height));
   overflow: hidden;
+  padding: 0;
   position: relative;
 
   @include respond-to("desktop") {
@@ -39,20 +40,31 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
+    font-size: 1.25rem;
     justify-content: center;
-    padding: 0 var(--page-padding-x) 3rem;
+    padding: 0 var(--page-padding-x-mobile) 3rem;
     position: absolute;
     width: 100%;
 
     > * {
       color: hsl(72, 10%, 90%);
-      line-height: 1.2;
       margin: 0;
-      font-size: 2rem;
     }
 
     p {
-      max-width: 32ch;
+      max-width: 20ch;
+    }
+
+    a {
+      margin-top: 1rem;
+      text-decoration: none;
+
+      &:after {
+        content: '↓';
+        font-size: .875em;
+        margin-left: 1ch;
+        vertical-align: top;
+      }
     }
   }
 }

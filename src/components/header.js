@@ -14,11 +14,11 @@ class Header extends React.Component {
 
   componentDidMount() {
     const headerHeight = this.headerEl.getBoundingClientRect().height;
-    this.headerEl.style.setProperty("--header-height", `${headerHeight}px`);
+    document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
   }
 
   componentWillUnmount() {
-    document.body.classList.remove("overflow-hidden");
+    document.body.classList.remove("mobile-menu-open");
   }
 
   toggleMenu = () => {
@@ -26,7 +26,7 @@ class Header extends React.Component {
       menuOpen: !prevState.menuOpen,
     }));
 
-    document.body.classList.toggle("overflow-hidden");
+    document.body.classList.toggle("mobile-menu-open");
   };
 
   render = () => {
@@ -40,7 +40,7 @@ class Header extends React.Component {
         }}
         className="rb-header"
       >
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/" className="brand">{siteTitle}</Link>
         <button onClick={this.toggleMenu}>{menuOpen ? "Close" : "Menu"}</button>
         <Nav menuOpen={menuOpen} />
       </header>

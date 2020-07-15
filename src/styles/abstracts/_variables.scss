@@ -12,23 +12,26 @@ $breakpoints: (
   "full-hd": 1344px,
 );
 
-$line-height: 1.414;
-$base-font-size-mobile: 17;
+$ratio: 1.6;
+$line-height: 1.6;
+$base-font-size-mobile: 18;
 $base-font-size: 21;
 
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};
   --base-font-size: #{$base-font-size};
   --body-background-colour: hsl(0, 0%, 98%);
-  --line-height: #{$line-height};
-  --ratio: 1.414;
+  --line-height: #{$ratio};
+  --ratio: #{$ratio};
   --max-page-width: 1270px;
   --body-bg-colour: hsl(0, 0, 0);
   --letter-spacing: 0.0333em;
   --brand-color: hsl(215, 38%, 47%);
   --hero-height: calc(100vh - 6rem);
   --page-padding-x: 3rem;
+  --page-padding-x-mobile: 1.5rem;
   --transition-speed: 0.25s;
   --transition-timing-function: ease-out;
   --scroll-y: 0;
+  --mobile-menu-bg-color: hsl(152, 13%, 47%);
 }

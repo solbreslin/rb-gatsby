@@ -1,8 +1,13 @@
 main {
   // margin: 0 auto;
   // max-width: 1200px;
+}
 
-  h1 {
-    font-size: 3rem;
+section {
+  padding-left: var(--page-padding-x-mobile);
+  padding-right: var(--page-padding-x-mobile);
+
+  + section {
+    padding-top: 3rem;
   }
 }

@@ -1,7 +1,5 @@
 .cards {
-  margin: 0 auto;
   max-width: 800px;
-  padding-top: 6rem;
 
   @include respond-to("desktop") {
     columns: 2;

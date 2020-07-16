@@ -97,6 +97,7 @@ class Gallery extends React.Component {
 
     return (
       <section className="gallery">
+        <h1>Selected Work</h1>
         <header>
           <ul className="gallery-filters">
             {/* <li key={"filter-" + filter}>
@@ -150,7 +151,11 @@ class Gallery extends React.Component {
               const link = `/${item.path}`;
 
               return (
-                <Link key={`GalleryGridItem-${item.path}`} to={link}>
+                <Link
+                  className="card"
+                  key={`GalleryGridItem-${item.path}`}
+                  to={link}
+                >
                   <figure>
                     <img
                       alt={item.project}

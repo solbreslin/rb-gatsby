@@ -38,3 +38,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@mixin fancy-border {
+  background-image: repeating-linear-gradient(hsla(0, 0, 0%, .2) 1px, hsla(0, 0, 0%, 0) 2px, hsla(0, 0, 0%, 0) 3px, hsla(0, 0, 0%, .2) 4px);
+  content: '';
+  height: 8px;
+}

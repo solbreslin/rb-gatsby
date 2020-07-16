@@ -4,10 +4,26 @@ main {
 }
 
 section {
-  padding-left: var(--page-padding-x-mobile);
-  padding-right: var(--page-padding-x-mobile);
+  padding-left: $page-padding-x-mobile;
+  padding-right: $page-padding-x-mobile;
 
   + section {
     padding-top: 3rem;
+  }
+
+  h1 {
+    color: $body-text-color;
+    font-size: $font-size-2;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    position: relative;
+
+    &:after {
+      @include fancy-border;
+      left: -#{$page-padding-x-mobile};
+      right: -#{$page-padding-x-mobile};
+      position: absolute;
+      top: 100%;
+    }
   }
 }

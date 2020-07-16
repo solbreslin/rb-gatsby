@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
@@ -75,6 +75,7 @@ class IndexPage extends React.Component {
         <section className="cards" id="cards">
           <h1>Selected Work</h1>
           {cards}
+          <Link to={"/work"}>View All</Link>
         </section>
       </Layout>
     );

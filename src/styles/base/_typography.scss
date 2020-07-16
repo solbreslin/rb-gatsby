@@ -11,6 +11,14 @@
     url("./../fonts/NeuzeitGro-Bol/font.woff") format("woff");
 }
 
+$font-size-s2: 0.64rem;
+$font-size-s1: 0.8rem;
+$font-size-1: 1rem;
+$font-size-2: 1.25rem;
+$font-size-3: 1.563rem;
+$font-size-4: 1.953rem;
+$font-size-5: 2.441rem;
+
 html {
   font-size: calc(var(--base-font-size-mobile) / 16 * 100%);
 
@@ -35,8 +43,5 @@ h5,
 h6 {
   font-size: 1rem;
   font-weight: inherit;
-}
-
-h1 {
-  font-size: 2rem;
+  margin: 0;
 }

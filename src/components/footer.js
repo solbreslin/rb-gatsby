@@ -4,6 +4,9 @@ class Footer extends React.Component {
   render = () => {
     return (
       <footer className="rb-footer">
+        <p>© Rory Breslin 2020</p>
+        <p>Co. Mayo, Ireland</p>
+        <p><a href="mailto@hello@rorybreslin.com">hello@rorybreslin.com</a></p>
         <a href="#top">
           Top
           <span>

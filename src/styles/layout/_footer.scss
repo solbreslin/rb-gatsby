@@ -1,9 +1,14 @@
 .rb-footer {
-  display: flex;
-  margin-top: auto;
-  padding: 1rem;
+  padding: $page-padding-x-mobile;
+  position: relative;
 
-  a {
+  p {
+    font-size: $font-size-s1;
+    margin: 0;
+  }
+
+  [href="#top"] {
+    display: none;
     border-color: transparent;
     border-style: solid;
     border-width: 0 0 1px 0;
@@ -12,7 +17,10 @@
     line-height: 1;
     margin-left: auto;
     padding-bottom: 2px;
+    position: absolute;
+    right: 0;
     text-decoration: none;
+    top: 0;
 
     &:hover {
       border-color: black;

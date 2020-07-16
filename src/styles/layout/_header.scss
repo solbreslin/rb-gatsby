@@ -1,6 +1,4 @@
 .rb-header {
-  --header-height: 25px; // override with js
-
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -18,12 +16,12 @@
     @include font-bold;
     color: black;
     letter-spacing: var(--letter-spacing);
-    padding: 1.2rem var(--page-padding-x-mobile) 1rem; 
+    padding: 1.2rem $page-padding-x-mobile 1rem;
     text-decoration: none;
     text-transform: uppercase;
   }
 
   button {
-    padding: 1.2rem var(--page-padding-x-mobile) 1rem; 
+    padding: 1.2rem $page-padding-x-mobile 1rem;
   }
 }

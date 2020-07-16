@@ -2,6 +2,8 @@ $black: hsl(0, 0, 0%);
 $white: hsl(0, 0, 100%);
 $grey: hsl(0, 0, 50%);
 
+$body-text-color: hsl(40, 3%, 19%);
+
 $blue: #8cbecf;
 
 $breakpoints: (
@@ -14,13 +16,15 @@ $breakpoints: (
 
 $ratio: 1.6;
 $line-height: 1.6;
-$base-font-size-mobile: 18;
+$base-font-size-mobile: 20;
 $base-font-size: 21;
+
+$page-padding-x-mobile: 1rem;
 
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};
   --base-font-size: #{$base-font-size};
-  --body-background-colour: hsl(0, 0%, 98%);
+  --body-background-colour: hsl(0, 0%, 95%, 1);
   --line-height: #{$ratio};
   --ratio: #{$ratio};
   --max-page-width: 1270px;

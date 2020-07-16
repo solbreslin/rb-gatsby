@@ -69,13 +69,13 @@ class WorkPage extends React.Component {
     return (
       <Layout>
         <SEO title="Work" />
-        <div>
-          <Gallery
-            items={this.galleryItems}
-            categories={this.categories}
-            prefilter={prefilter}
-          ></Gallery>
-        </div>
+        {/* <div> */}
+        <Gallery
+          items={this.galleryItems}
+          categories={this.categories}
+          prefilter={prefilter}
+        ></Gallery>
+        {/* </div> */}
       </Layout>
     );
   };

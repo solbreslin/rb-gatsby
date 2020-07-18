@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import Masonry from "react-masonry-css";
 
 const BASE_URL =
@@ -17,27 +17,14 @@ class Gallery extends React.Component {
   constructor(props) {
     super(props);
 
-    const { prefilter } = this.props;
-
     this.state = {
       animatingOut: false,
-      filter: prefilter ? prefilter : "all",
       layout: "grid",
     };
   }
 
   componentDidMount() {
-    this.removePrefilter();
     this.getLayoutSetting();
-  }
-
-  removePrefilter() {
-    // Remove prefilter from location state
-    navigate("/work", {
-      state: {
-        category: null,
-      },
-    });
   }
 
   getLayoutSetting() {
@@ -51,29 +38,6 @@ class Gallery extends React.Component {
         layout: savedLayout,
       });
     }
-  }
-
-  filterImages(newFilter) {
-    if (this.state.filter === newFilter) {
-      newFilter = "all";
-    }
-
-    this.setState({
-      animatingOut: true,
-      filter: newFilter,
-      hasFiltered: true,
-    });
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
-    setTimeout(() => {
-      this.setState({
-        animatingOut: false,
-      });
-    }, ANIMATION_TIME_IN_MS);
   }
 
   toggleLayout(newLayout) {
@@ -92,34 +56,12 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const { categories, items } = this.props;
-    const { filter, layout, animatingOut } = this.state;
-
+    const { items } = this.props;
+    const { layout, animatingOut } = this.state;
+    console.log(items);
     return (
-      <section className="gallery">
-        <h1>Selected Work</h1>
+      <div className="gallery">
         <header>
-          <ul className="gallery-filters">
-            {/* <li key={"filter-" + filter}>
-              <button
-                className={filter === "all" ? "active" : ""}
-                onClick={() => this.filterImages("all")}
-              >
-                all
-              </button>
-            </li> */}
-            {categories.map(category => (
-              <li key={category}>
-                <button
-                  className={filter === category ? "active" : ""}
-                  onClick={() => this.filterImages(category)}
-                >
-                  {category}
-                </button>
-              </li>
-            ))}
-          </ul>
-
           <div className="gallery-layout-options">
             <button
               className={layout === "grid" ? "active" : ""}
@@ -143,56 +85,47 @@ class Gallery extends React.Component {
           }`}
           columnClassName="gallery-grid-col"
         >
-          {items
-            .filter(item => item.filter === filter || filter === "all")
-            .map(item => {
-              // Need to construct link string with "/"
-              // https://github.com/gatsbyjs/gatsby/issues/11243
-              const link = `/${item.path}`;
+          {items.map(item => {
+            const { path, project, imageURLs } = item;
 
-              return (
-                <Link
-                  className="card"
-                  key={`GalleryGridItem-${item.path}`}
-                  to={link}
-                >
-                  <figure>
-                    <img
-                      alt={item.project}
-                      src={BASE_URL + item.imageURLs[0]}
-                    ></img>
-                    <figcaption>{item.name}</figcaption>
-                  </figure>
-                </Link>
-              );
-            })}
+            // Need to construct link string with "/"
+            // https://github.com/gatsbyjs/gatsby/issues/11243
+            const link = `/${path}`;
+
+            return (
+              <Link className="card" key={`GalleryGridItem-${path}`} to={link}>
+                <figure>
+                  <img alt={project} src={BASE_URL + imageURLs[0]}></img>
+                  <figcaption>{item.title}</figcaption>
+                </figure>
+              </Link>
+            );
+          })}
         </Masonry>
 
         <article
           className={`gallery-list ${layout === "list" ? "active" : ""}`}
         >
-          {items
-            .filter(item => item.filter === filter || filter === "all")
-            .map(item => {
-              const link = `/${item.path}`;
+          {items.map(item => {
+            const link = `/${item.path}`;
 
-              return (
-                <div key={`GalleryListItem-${item.path}`}>
-                  <h3>
-                    <Link to={link}>{item.name}</Link>
-                  </h3>
-                  <div className="images">
-                    {item.imageURLs.map((url, i) => (
-                      <Link to={link} key={item.path + "-" + i}>
-                        <img alt={item.project} src={BASE_URL + url}></img>
-                      </Link>
-                    ))}
-                  </div>
+            return (
+              <div key={`GalleryListItem-${item.path}`}>
+                <h3>
+                  <Link to={link}>{item.title}</Link>
+                </h3>
+                <div className="images">
+                  {item.imageURLs.map((url, i) => (
+                    <Link to={link} key={item.path + "-" + i}>
+                      <img alt={item.project} src={BASE_URL + url}></img>
+                    </Link>
+                  ))}
                 </div>
-              );
-            })}
+              </div>
+            );
+          })}
         </article>
-      </section>
+      </div>
     );
   }
 }

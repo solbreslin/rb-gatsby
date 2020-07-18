@@ -6,15 +6,23 @@ import Card from "../components/card";
 import SEO from "../components/seo";
 
 class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.cards = this.buildCards();
+    this.heroContent = this.getHeroContent();
+  }
+
   componentDidMount() {
     if (window) {
-      window.addEventListener('scroll', this.onScroll)
+      window.addEventListener("scroll", this.onScroll);
     }
   }
 
   componentWillUnmount() {
     if (window) {
-      window.removeEventListener('scroll', this.onScroll);
+      window.removeEventListener("scroll", this.onScroll);
+      document.documentElement.style.setProperty("--scroll-y", 0);
     }
   }
 
@@ -22,45 +30,60 @@ class IndexPage extends React.Component {
     const top = window.pageYOffset || document.documentElement.scrollTop;
 
     if (top <= window.innerHeight) {
-      document.documentElement.style.setProperty('--scroll-y', top);
+      document.documentElement.style.setProperty("--scroll-y", top);
     }
   }
 
-  render = () => {
+  buildCards() {
     const { data } = this.props;
-    const heroImages = data.allCloudinaryMedia.edges;
+    const cardImages = this.getCardImages();
 
-    const cardImages = data.allCloudinaryMedia.edges.map(item => {
-      if (item.node.public_id.includes("Boxes")) {
-        return item.node.public_id;
-      } else {
-        return null;
-      }
-    });
-
-    const cards = data.site.siteMetadata.menuLinks.map((link, index) => {
-      let imageURL = "";
+    return data.site.siteMetadata.menuLinks.map((menuLink, index) => {
+      const { link, name } = menuLink;
+      let imagePath = "";
 
       cardImages.forEach(path => {
-        if (path) {
-          if (path.includes(link.name)) {
-            imageURL = path;
-          }
+        if (path.includes(name)) {
+          imagePath = path;
         }
       });
+
       return (
         <Card
-          key={link.name + "-" + index}
-          link={link.link}
-          name={link.name}
-          image={imageURL}
+          key={name + "-" + index}
+          link={link}
+          name={name}
+          image={imagePath}
         ></Card>
       );
     });
+  }
 
-    const heroTitle = data.allHomeJson.edges[0].node.hero.title;
-    const heroSubtitle = data.allHomeJson.edges[0].node.hero.subtitle;
-    const heroBlurb = data.allDatoCmsHero.edges[0].node.heroBlurb;
+  getCardImages() {
+    const { data } = this.props;
+
+    return data.allCloudinaryMedia.edges
+      .filter(item => item.node.public_id.includes("Boxes"))
+      .map(item => item.node.public_id);
+  }
+
+  getHeroContent() {
+    const { data } = this.props;
+    return {
+      images: data.allCloudinaryMedia.edges,
+      title: data.allHomeJson.edges[0].node.hero.title,
+      subtitle: data.allHomeJson.edges[0].node.hero.subtitle,
+      blurb: data.allDatoCmsHero.edges[0].node.heroBlurb,
+    };
+  }
+
+  render = () => {
+    const {
+      images: heroImages,
+      title: heroTitle,
+      subtitle: heroSubtitle,
+      blurb: heroBlurb,
+    } = this.heroContent;
 
     return (
       <Layout>
@@ -72,9 +95,10 @@ class IndexPage extends React.Component {
           subtitle={heroSubtitle}
           blurb={heroBlurb}
         />
+
         <section className="cards" id="cards">
           <h1>Selected Work</h1>
-          {cards}
+          {this.cards}
           <Link to={"/work"}>View All</Link>
         </section>
       </Layout>

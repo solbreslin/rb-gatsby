@@ -1,3 +1,7 @@
+import { shuffle } from "lodash";
+
+const workJSON = require("../../content/work.json");
+
 export const getWorkCategories = data => {
   if (!data) {
     console.error("Data not found");
@@ -41,4 +45,49 @@ export const mapCloudinaryURLToWorkCategory = (cloudinaryData, categories) => {
   });
 
   return mappings;
+};
+
+export const mapCloudinaryURLToCategory = (cloudinaryData, category) => {
+  return cloudinaryData
+    .filter(entry => {
+      const urlPart = entry.node.public_id.split("/")[2].toLowerCase();
+      return urlPart === category;
+    })
+    .map(entry => entry.node.public_id);
+};
+
+export const mapImagesToProject = imagePaths => {
+  const projectImages = {};
+
+  imagePaths.forEach(path => {
+    const project = path.split("/")[3];
+
+    if (projectImages[project]) {
+      projectImages[project].push(path);
+    } else {
+      projectImages[project] = [path];
+    }
+  });
+
+  return projectImages;
+};
+
+export const generateGalleryItems = (projectImages, category) => {
+  let items = [];
+
+  const [categoryData] = workJSON.filter(entry => entry.path === category);
+
+  categoryData.items.forEach(project => {
+    const { path, details, display_name } = project;
+    const imageURLs = projectImages[path];
+
+    items.push({
+      title: display_name,
+      path,
+      details,
+      imageURLs,
+    });
+  });
+
+  return shuffle(items);
 };

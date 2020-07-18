@@ -2,13 +2,12 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
-import Gallery from "../components/gallery";
+import Gallery from "../components/gallery-OLD";
 import {
   getWorkCategories,
   mapCloudinaryURLToWorkCategory,
 } from "./../utils/data-mapping";
 import { shuffle } from "lodash";
-import { get } from "lodash";
 
 const workJSON = require("../../content/work.json");
 
@@ -64,8 +63,6 @@ class WorkPage extends React.Component {
   }
 
   render = () => {
-    const prefilter = get(this.props, "location.state.category", null);
-
     return (
       <Layout>
         <SEO title="Work" />
@@ -73,7 +70,6 @@ class WorkPage extends React.Component {
         <Gallery
           items={this.galleryItems}
           categories={this.categories}
-          prefilter={prefilter}
         ></Gallery>
         {/* </div> */}
       </Layout>

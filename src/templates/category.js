@@ -1,14 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Layout from "../components/layout";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+import {
+  mapCloudinaryURLToCategory,
+  mapImagesToProject,
+  generateGalleryItems,
+} from "../utils/data-mapping";
+import SEO from "../components/seo";
+import Gallery from "../components/gallery";
 
-const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
+// const BASE_URL =
+//   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
 
 export default ({ data }) => {
-  console.log(data);
+  const category = data.allSitePage.edges[0].node.context.name;
+  const cloudinaryData = data.allCloudinaryMedia.edges;
 
-  return <Layout className="category">Hi there</Layout>;
+  const imageURLs = mapCloudinaryURLToCategory(cloudinaryData, category);
+  const projectImages = mapImagesToProject(imageURLs);
+
+  const galleryItems = generateGalleryItems(projectImages, category);
+
+  return (
+    <Layout className="category">
+      <SEO title={category} />
+      <section>
+        <h1>{category}</h1>
+        <Gallery items={galleryItems}></Gallery>
+      </section>
+    </Layout>
+  );
 };
 
 export const query = graphql`

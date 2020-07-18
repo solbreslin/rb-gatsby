@@ -1,8 +1,10 @@
-$card-height-mobile: 300px;
+$card-height-mobile: 200px;
 
 .cards {
+  background-color: $body-bg-color;
   max-width: 800px;
   padding-bottom: 6rem;
+  position: relative;
 
   @include respond-to("desktop") {
     columns: 2;
@@ -24,7 +26,7 @@ $card-height-mobile: 300px;
 
 .card {
   display: block;
-  margin: 0 0 4rem;
+  margin: 0 0 2rem;
   text-decoration: none;
 
   img {
@@ -35,14 +37,14 @@ $card-height-mobile: 300px;
   }
 
   figcaption {
-    border-bottom: 2px solid;
+    // border-bottom: 2px solid;
     color: $body-text-color;
     font-size: $font-size-2;
     line-height: 2;
     text-transform: capitalize;
 
     &:after {
-      content: '→';
+      // content: "→";
       float: right;
     }
   }

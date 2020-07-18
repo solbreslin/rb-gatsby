@@ -6,8 +6,10 @@ class Footer extends React.Component {
       <footer className="rb-footer">
         <p>© Rory Breslin 2020</p>
         <p>Co. Mayo, Ireland</p>
-        <p><a href="mailto@hello@rorybreslin.com">hello@rorybreslin.com</a></p>
-        <a href="#top">
+        <p>
+          <a href="mailto@hello@rorybreslin.com">hello@rorybreslin.com</a>
+        </p>
+        <a href="#top" style={{ display: "none" }}>
           Top
           <span>
             <svg

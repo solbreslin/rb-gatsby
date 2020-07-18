@@ -17,6 +17,7 @@ class IndexPage extends React.Component {
     if (window) {
       window.addEventListener("scroll", this.onScroll);
     }
+    document.body.classList.add("index");
   }
 
   componentWillUnmount() {
@@ -24,6 +25,7 @@ class IndexPage extends React.Component {
       window.removeEventListener("scroll", this.onScroll);
       document.documentElement.style.setProperty("--scroll-y", 0);
     }
+    document.body.classList.remove("index");
   }
 
   onScroll(e) {
@@ -86,7 +88,7 @@ class IndexPage extends React.Component {
     } = this.heroContent;
 
     return (
-      <Layout>
+      <Layout className="index">
         <SEO title="Home" />
 
         <Hero
@@ -99,7 +101,6 @@ class IndexPage extends React.Component {
         <section className="cards" id="cards">
           <h1>Selected Work</h1>
           {this.cards}
-          <Link to={"/work"}>View All</Link>
         </section>
       </Layout>
     );

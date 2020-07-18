@@ -1,8 +1,9 @@
 .hero {
-  height: calc(100vh - var(--header-height));
+  height: 400px;
   overflow: hidden;
   padding: 0;
   position: relative;
+  transform: translate3d(0, calc(var(--scroll-y) * 0.4px), 0);
 
   @include respond-to("desktop") {
     margin-right: -2rem;
@@ -11,7 +12,6 @@
   .image {
     height: inherit;
     position: relative;
-    transform: translate3d(0, calc(var(--scroll-y) * 0.15px), 0);
 
     &:after {
       background-image: linear-gradient(
@@ -42,7 +42,7 @@
     flex-direction: column;
     font-size: 1.25rem;
     justify-content: center;
-    padding: 0 $page-padding-x-mobile 3rem;
+    padding: $page-padding-x-mobile;
     position: absolute;
     width: 100%;
 
@@ -60,11 +60,22 @@
       text-decoration: none;
 
       &:after {
-        content: '↓';
-        font-size: .875em;
+        content: "↓";
+        font-size: 0.875em;
         margin-left: 1ch;
         vertical-align: top;
       }
     }
   }
+}
+
+.hero-overlay {
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  opacity: calc(var(--scroll-y) / 900);
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }

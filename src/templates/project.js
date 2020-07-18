@@ -22,7 +22,7 @@ const mapImagesToProject = (imageData, pagePath) => {
 };
 
 export default ({ data }) => {
-  const [isFullscreen, setIsFullscreen] = useState(false);  
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const imageData = data.allCloudinaryMedia.edges;
   const path = data.allSitePage.edges[0].node.context.pagePath;
@@ -39,8 +39,8 @@ export default ({ data }) => {
 
   const translateImage = (el, reset = false) => {
     if (reset) {
-      el.style.setProperty('--translate-x', '0px');
-      el.style.setProperty('--translate-y', '0px');
+      el.style.setProperty("--translate-x", "0px");
+      el.style.setProperty("--translate-y", "0px");
 
       return;
     }
@@ -63,9 +63,8 @@ export default ({ data }) => {
 
     console.log(el.getBoundingClientRect());
     // el.style.setProperty('--translate-x', `${x}px`);
-    el.style.setProperty('--translate-y', `${diffY}px`);
-   
-  }
+    el.style.setProperty("--translate-y", `${diffY}px`);
+  };
 
   const toggleFullscreen = (e, url) => {
     if (isFullscreen) {
@@ -73,35 +72,35 @@ export default ({ data }) => {
     } else {
       goFullscreen(e);
     }
-  }
+  };
 
   const goFullscreen = (e, url) => {
     const target = e.target.tagName.toLowerCase();
 
-    if (target === 'img') {
+    if (target === "img") {
       setIsFullscreen(true);
 
       const figure = e.target.parentNode;
-      figure.classList.add('is-fullscreen');
+      figure.classList.add("is-fullscreen");
 
       translateImage(e.target);
 
-      document.body.classList.add('has-fullscreen-image');
+      document.body.classList.add("has-fullscreen-image");
     }
   };
 
   const leaveFullscreen = () => {
     setIsFullscreen(false);
 
-    const el = document.querySelector('.is-fullscreen');
-    el.classList.remove('is-fullscreen');
+    const el = document.querySelector(".is-fullscreen");
+    el.classList.remove("is-fullscreen");
 
-    const image = el.querySelector('img');
+    const image = el.querySelector("img");
 
     translateImage(image, true);
 
-    document.body.classList.remove('has-fullscreen-image');
-  }
+    document.body.classList.remove("has-fullscreen-image");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,21 +116,24 @@ export default ({ data }) => {
 
   return (
     <Layout className="project">
-      <Link to={"/work"} state={{ category }}>
+      {/* <Link to={"/work"} state={{ category }}>
         &larr; Back to {category}
-      </Link>
-      <h1>{title}</h1>
-      <h3>{details.material}</h3>
-      {images.map(url => (
-        <figure
-          key={url}
-          onClick={(e) => {
-            toggleFullscreen(e, url);
-          }}
-        >
-          <img src={url} alt="" />
-        </figure>
-      ))}
+      </Link> */}
+      <section>
+        <h1>{title}</h1>
+        <h3>{details.material}</h3>
+        {images.map(url => (
+          <figure
+            key={url}
+            onClick={e => {
+              toggleFullscreen(e, url);
+            }}
+          >
+            <img src={url} alt="" />
+          </figure>
+        ))}
+        <footer>Next:</footer>
+      </section>
     </Layout>
   );
 };

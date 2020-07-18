@@ -1,6 +1,10 @@
 main {
   // margin: 0 auto;
   // max-width: 1200px;
+
+  &.index {
+    margin-top: calc(var(--header-height) * -1);
+  }
 }
 
 section {
@@ -12,14 +16,16 @@ section {
   }
 
   h1 {
-    color: $body-text-color;
-    font-size: $font-size-2;
-    margin-bottom: 1em;
+    border-bottom: 0.25px solid black;
+    font-size: $font-size-s1;
+    letter-spacing: $letter-spacing;
+    margin-bottom: 1rem;
     padding-bottom: 0.5em;
     position: relative;
+    text-transform: uppercase;
 
     &:after {
-      @include fancy-border;
+      // @include fancy-border;
       left: -#{$page-padding-x-mobile};
       right: -#{$page-padding-x-mobile};
       position: absolute;

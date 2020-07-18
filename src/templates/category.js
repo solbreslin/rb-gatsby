@@ -25,7 +25,7 @@ export default ({ data }) => {
     <Layout className="category">
       <SEO title={category} />
       <section>
-        <h1>{category}</h1>
+        <h1>{category} Work</h1>
         <Gallery items={galleryItems}></Gallery>
       </section>
     </Layout>

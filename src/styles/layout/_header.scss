@@ -1,5 +1,7 @@
 .rb-header {
+  align-items: center;
   display: flex;
+  line-height: 1;
   justify-content: space-between;
   position: relative;
   z-index: 3;
@@ -16,12 +18,27 @@
     @include font-bold;
     color: black;
     letter-spacing: var(--letter-spacing);
-    padding: 1.2rem $page-padding-x-mobile 1rem;
+    padding: 1rem $page-padding-x-mobile;
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
-  }
+    z-index: 3;
 
-  button {
-    padding: 1.2rem $page-padding-x-mobile 1rem;
+    .mobile-menu-open & {
+      color: black;
+    }
+  }
+}
+
+body.index:not(.mobile-menu-open) {
+  .rb-header {
+    .brand {
+      color: white;
+    }
+
+    .hamburger:before,
+    .hamburger:after {
+      background-color: white;
+    }
   }
 }

@@ -23,7 +23,7 @@ class Hero extends React.Component {
 
   generateURL = () => {
     const { width } = this.state;
-  
+
     const url = `${BASE_URL},w_${width}/${this.props.heroImages[0].node.public_id}`;
 
     this.setState({
@@ -41,8 +41,8 @@ class Hero extends React.Component {
         </div>
         <div className="text">
           <p>{blurb}</p>
-          <a href="#cards">Selected Work</a>
         </div>
+        <div className="hero-overlay"></div>
       </section>
     );
   };

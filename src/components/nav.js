@@ -1,41 +1,44 @@
-import { Link } from "gatsby";
 import React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
-class Nav extends React.Component {
-  render = () => {
-    const { menuOpen } = this.props;
+const Nav = ({ menuOpen }) => {
+  const data = useStaticQuery(graphql`
+    query MenuItems {
+      site {
+        siteMetadata {
+          menuLinks {
+            link
+            name
+          }
+        }
+      }
+    }
+  `);
 
-    return (
-      <nav className={`${menuOpen ? "open" : ""} rb-nav`}>
-        <ul>
-          <li>
-            <Link to={"/"} activeClassName="active">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to={"/work"} activeClassName="active">
-              Work
-            </Link>
-          </li>
-          {/* <li>
-            <Link to={"/process"} activeClassName="active">
-              Process
-            </Link>
-          </li> */}
-          <li>
-            <Link to={"/contact"} activeClassName="active">
-              Contact
-            </Link>
-          </li>
-        </ul>
-        <footer>
-          <p>Mayo, Ireland</p>
-          <a href="mailto:info@rorybreslin.com">info@rorybreslin.com</a>
-        </footer>
-      </nav>
-    );
-  };
-}
+  return (
+    <nav className={`${menuOpen ? "open" : ""} rb-nav`}>
+      <ul>
+        <li>
+          <Link to={"/"} activeClassName="active">
+            Home
+          </Link>
+        </li>
+        {data.site.siteMetadata.menuLinks.map(item => {
+          return (
+            <li>
+              <Link to={item.link} activeClassName="active">
+                {item.name}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <footer>
+        <p>Mayo, Ireland</p>
+        <a href="mailto:info@rorybreslin.com">info@rorybreslin.com</a>
+      </footer>
+    </nav>
+  );
+};
 
 export default Nav;

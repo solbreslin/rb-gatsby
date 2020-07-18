@@ -14,7 +14,10 @@ class Header extends React.Component {
 
   componentDidMount() {
     const headerHeight = this.headerEl.getBoundingClientRect().height;
-    document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
+    document.documentElement.style.setProperty(
+      "--header-height",
+      `${headerHeight}px`
+    );
   }
 
   componentWillUnmount() {
@@ -40,8 +43,13 @@ class Header extends React.Component {
         }}
         className="rb-header"
       >
-        <Link to="/" className="brand">{siteTitle}</Link>
-        <button onClick={this.toggleMenu}>{menuOpen ? "Close" : "Menu"}</button>
+        <Link to="/" className="brand">
+          {siteTitle}
+        </Link>
+        <button onClick={this.toggleMenu} className="hamburger-button">
+          <span className="visually-hidden">{menuOpen ? "Close" : "Menu"}</span>
+          <span className="hamburger"></span>
+        </button>
         <Nav menuOpen={menuOpen} />
       </header>
     );

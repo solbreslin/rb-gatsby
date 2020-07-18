@@ -1,12 +1,12 @@
 body {
-  background-color: var(--body-background-colour);
+  background-color: $body-bg-color;
 }
 
 main {
   display: flex;
   flex-direction: column;
 
-  @include respond-to('desktop') {
+  @include respond-to("desktop") {
     padding-left: 300px;
     padding-right: 3rem;
     padding-top: 6rem;

@@ -1,15 +1,16 @@
 nav {
-  background: var(--body-background-colour);
+  background: $mobile-menu-bg-color;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - var(--header-height));
+  height: 100vh;
   left: 0;
   opacity: 0;
-  padding: 2.75rem $page-padding-x-mobile 1rem;
+  padding: calc(var(--header-height) + 3rem) $page-padding-x-mobile 1rem;
   pointer-events: none;
   position: absolute;
   right: 0;
-  top: 100%;
+  transition: opacity $transition-speed $transition-timing-function;
+  top: 0;
   z-index: 2;
 
   &.open {
@@ -37,23 +38,29 @@ nav {
   }
 
   li {
-    border-bottom: 1px solid hsla(0, 0, 0, .25);
+    border-bottom: 1px solid hsla(0, 0, 0, 0.25);
     display: flex;
-    font-size: 2.5rem;
+    letter-spacing: $letter-spacing;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 
     &:first-of-type {
-      display: none;
+      // display: none;
 
       @include respond-to("desktop") {
         display: flex;
       }
     }
 
+    &:last-of-type {
+      border-bottom-color: transparent;
+    }
+
     a {
       color: black;
       // letter-spacing: var(--letter-spacing);
       line-height: 1;
-      padding: 0.5em 0;
+      padding: 0.35em 0;
       text-decoration: none;
       // text-transform: uppercase;
 
@@ -89,9 +96,4 @@ nav {
 
 body.mobile-menu-open {
   overflow: hidden;
-
-  .rb-header, .rb-nav {
-    background-color: var(--mobile-menu-bg-color);
-    transition: background-color var(--transition-speed) var(--transition-timing-function);
-  }
 }

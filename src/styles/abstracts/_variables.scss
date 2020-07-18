@@ -3,8 +3,15 @@ $white: hsl(0, 0, 100%);
 $grey: hsl(0, 0, 50%);
 
 $body-text-color: hsl(40, 3%, 19%);
+$body-bg-color: hsl(0, 0%, 92%);
+$mobile-menu-bg-color: hsla(152, 13%, 47%, 1);
 
-$blue: #8cbecf;
+$transition-speed: 0.15s;
+$transition-timing-function: ease-out;
+
+$letter-spacing: 0.05em;
+
+$blue: #8cbecf; // ????
 
 $breakpoints: (
   "mobile-l": 480px,

@@ -89,5 +89,9 @@ export const generateGalleryItems = (projectImages, category) => {
     });
   });
 
+  items.forEach((item, index) => {
+    item.next = items[index + 1] || null;
+  });
+
   return shuffle(items);
 };

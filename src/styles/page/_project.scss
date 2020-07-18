@@ -9,21 +9,22 @@
   }
 }
 
-
-.project {
+main.project {
   align-items: baseline;
+  padding-top: 3rem;
 
   &:after {
     background-color: hsl(0, 0%, 5%);
     bottom: 0;
-    content: '';
+    content: "";
     left: 0;
     opacity: 0;
     pointer-events: none;
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity var(--transition-speed) var(--transition-timing-function);
+    transition: opacity var(--transition-speed)
+      var(--transition-timing-function);
 
     .has-fullscreen-image & {
       opacity: 1;
@@ -39,7 +40,8 @@
       cursor: pointer;
       height: 100%;
       object-fit: contain;
-      transition: transform var(--transition-speed) var(--transition-timing-function);
+      transition: transform var(--transition-speed)
+        var(--transition-timing-function);
       width: 100%;
     }
   }

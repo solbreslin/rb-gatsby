@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
@@ -37,42 +37,20 @@ class IndexPage extends React.Component {
   }
 
   buildCards() {
-    const { data } = this.props;
-    const cardImages = this.getCardImages();
-
-    return data.site.siteMetadata.menuLinks.map((menuLink, index) => {
-      const { link, name } = menuLink;
-      let imagePath = "";
-
-      cardImages.forEach(path => {
-        if (path.includes(name)) {
-          imagePath = path;
-        }
-      });
+    return this.props.data.site.siteMetadata.menuLinks.map((menuLink, i) => {
+      const { link, name, image } = menuLink;
 
       return (
-        <Card
-          key={name + "-" + index}
-          link={link}
-          name={name}
-          image={imagePath}
-        ></Card>
+        <Card key={`${name}-${i}`} link={link} name={name} image={image}></Card>
       );
     });
   }
 
-  getCardImages() {
-    const { data } = this.props;
-
-    return data.allCloudinaryMedia.edges
-      .filter(item => item.node.public_id.includes("Boxes"))
-      .map(item => item.node.public_id);
-  }
-
   getHeroContent() {
     const { data } = this.props;
+
     return {
-      images: data.allCloudinaryMedia.edges,
+      image: data.allHomeJson.edges[0].node.hero.image,
       title: data.allHomeJson.edges[0].node.hero.title,
       subtitle: data.allHomeJson.edges[0].node.hero.subtitle,
       blurb: data.allDatoCmsHero.edges[0].node.heroBlurb,
@@ -81,7 +59,7 @@ class IndexPage extends React.Component {
 
   render = () => {
     const {
-      images: heroImages,
+      image: heroImage,
       title: heroTitle,
       subtitle: heroSubtitle,
       blurb: heroBlurb,
@@ -92,7 +70,7 @@ class IndexPage extends React.Component {
         <SEO title="Home" />
 
         <Hero
-          heroImages={heroImages}
+          heroImage={heroImage}
           title={heroTitle}
           subtitle={heroSubtitle}
           blurb={heroBlurb}
@@ -109,19 +87,13 @@ class IndexPage extends React.Component {
 
 export const pageQuery = graphql`
   query {
-    allCloudinaryMedia(filter: { public_id: { regex: "/HOMEPAGE/" } }) {
-      edges {
-        node {
-          public_id
-        }
-      }
-    }
     site {
       siteMetadata {
         title
         menuLinks {
           name
           link
+          image
         }
       }
     }
@@ -131,6 +103,7 @@ export const pageQuery = graphql`
           hero {
             title
             subtitle
+            image
           }
         }
       }

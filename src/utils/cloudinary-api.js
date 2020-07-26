@@ -1,0 +1,1 @@
+const BASE_URL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto`;

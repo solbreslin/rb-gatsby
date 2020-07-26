@@ -7,21 +7,25 @@ module.exports = {
     author: `Sol Breslin`,
     menuLinks: [
       {
-        name: "public",
-        link: "/public",
-      },
-      {
-        name: "portrait",
-        link: "/portrait",
-      },
-      {
         name: "exhibition",
         link: "/exhibition",
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/exhibition_tnz3lz"
       },
       {
         name: "masks",
         link: "/masks",
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/masks_xo0ojk"
       },
+      {
+        name: "portrait",
+        link: "/portrait",
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/portrait_zlgiad"
+      },
+      {
+        name: "public",
+        link: "/public",
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/public_k6unkl"
+      }
     ],
   },
   plugins: [

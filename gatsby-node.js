@@ -23,6 +23,7 @@ exports.createPages = ({ actions }) => {
       const path = project.path;
       const name = project.display_name;
       const details = project.details;
+      const images = project.images;
 
       createPage({
         path,
@@ -32,6 +33,7 @@ exports.createPages = ({ actions }) => {
           name,
           details,
           categoryName,
+          images
         },
       });
     });

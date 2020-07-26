@@ -1,41 +1,56 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import { graphql, Link } from "gatsby";
-
-// import Lightbox from "../components/lightbox";
-
+const workJSON = require("../../content/work.json");
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
-
-const mapImagesToProject = (imageData, pagePath) => {
-  const projectImages = [];
-
-  imageData.forEach(obj => {
-    const project = obj.node.public_id.split("/")[3];
-
-    if (project === pagePath) {
-      projectImages.push(BASE_URL + obj.node.public_id);
-    }
-  });
-
-  return projectImages;
-};
 
 export default ({ data }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const imageData = data.allCloudinaryMedia.edges;
-  const path = data.allSitePage.edges[0].node.context.pagePath;
+  const {
+    name,
+    details,
+    images,
+    pagePath,
+  } = data.allSitePage.edges[0].node.context;
 
-  const images = mapImagesToProject(imageData, path);
-  const title = data.allSitePage.edges[0].node.context.name;
-  const details = data.allSitePage.edges[0].node.context.details;
+  let projectCategory = "";
+  let projectIndex = 0;
 
-  // Annoying issue with createPages not updating context data
-  // Temporary workaround to grab the project category and pass to back button
-  const strArray = images[0].split("/");
-  const workIndex = strArray.indexOf("WORK");
-  const category = strArray[workIndex + 1].toLowerCase();
+  let abort = false;
+  for (const category of workJSON) {
+    if (abort) break;
+
+    for (const [index, project] of category.items.entries()) {
+      if (abort) break;
+      if (project.path === pagePath) {
+        projectCategory = category.name;
+        projectIndex = index;
+
+        abort = true;
+      }
+    }
+  }
+
+  let previousProject = null;
+  let nextProject = null;
+
+  abort = false;
+  for (const category of workJSON) {
+    if (abort) break;
+    if (category.name === projectCategory) {
+      if (category.items[projectIndex - 1]) {
+        previousProject = category.items[projectIndex - 1];
+      }
+
+      if (category.items[projectIndex + 1]) {
+        nextProject = category.items[projectIndex + 1];
+      }
+
+      abort = true;
+    }
+  }
 
   const translateImage = (el, reset = false) => {
     if (reset) {
@@ -58,7 +73,7 @@ export default ({ data }) => {
     } else {
       diffY = targetTop - currentTop;
     }
-    
+
     // el.style.setProperty('--translate-x', `${x}px`);
     el.style.setProperty("--translate-y", `${diffY}px`);
   };
@@ -117,7 +132,7 @@ export default ({ data }) => {
         &larr; Back to {category}
       </Link> */}
       <section>
-        <h1>{title}</h1>
+        <h1>{name}</h1>
         <h3>{details.material}</h3>
         {images.map(url => (
           <figure
@@ -126,10 +141,23 @@ export default ({ data }) => {
               toggleFullscreen(e, url);
             }}
           >
-            <img src={url} alt="" />
+            <img src={BASE_URL + url} alt="" />
           </figure>
         ))}
-        <footer>Next:</footer>
+        <footer>
+          {previousProject ? (
+            <Link to={previousProject.path}>
+              Previous: {previousProject.display_name}
+            </Link>
+          ) : (
+            ""
+          )}
+          {nextProject ? (
+            <Link to={nextProject.path}>Next: {nextProject.display_name}</Link>
+          ) : (
+            ""
+          )}
+        </footer>
       </section>
     </Layout>
   );
@@ -146,16 +174,8 @@ export const query = graphql`
             }
             name
             pagePath
+            images
           }
-        }
-      }
-    }
-    allCloudinaryMedia {
-      edges {
-        node {
-          height
-          public_id
-          width
         }
       }
     }

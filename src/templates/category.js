@@ -1,25 +1,30 @@
 import React from "react";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
-import {
-  mapCloudinaryURLToCategory,
-  mapImagesToProject,
-  generateGalleryItems,
-} from "../utils/data-mapping";
 import SEO from "../components/seo";
 import Gallery from "../components/gallery";
+
+const workJSON = require("../../content/work.json");
 
 // const BASE_URL =
 //   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
 
 export default ({ data }) => {
   const category = data.allSitePage.edges[0].node.context.name;
-  const cloudinaryData = data.allCloudinaryMedia.edges;
+  const [ categoryJSON ] = workJSON.filter(cat => cat.name === category);
 
-  const imageURLs = mapCloudinaryURLToCategory(cloudinaryData, category);
-  const projectImages = mapImagesToProject(imageURLs);
+  let galleryItems = [];
 
-  const galleryItems = generateGalleryItems(projectImages, category);
+  categoryJSON.items.forEach(project => {
+    const { path, details, display_name, images } = project;
+
+    galleryItems.push({
+      title: display_name,
+      path,
+      details,
+      images,
+    });
+  });
 
   return (
     <Layout className="category">

@@ -2,7 +2,26 @@
   {
     "hero": {
       "title": "Rory Breslin",
-      "subtitle": "Artist | Sculptor"
-    }
+      "subtitle": "Artist | Sculptor",
+      "image": "r-breslin-cloudinary/HOMEPAGE/box-variation-II-03_vjjatb"
+    },
+    "cards": [
+      {
+        "path": "exhibition",
+        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/exhibition_tnz3lz"
+      },
+      {
+        "path": "masks",
+        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/masks_xo0ojk"
+      },
+      {
+        "path": "portrait",
+        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/portrait_zlgiad"
+      },
+      {
+        "path": "public",
+        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/public_k6unkl"
+      }
+    ]
   }
 ]

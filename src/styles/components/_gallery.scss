@@ -82,10 +82,10 @@ $gutter-size: 3rem;
   }
 
   .card {
-    display: block;
-    margin-bottom: $gutter-size-sm;
-    position: relative;
-    text-decoration: none;
+    // display: block;
+    // margin-bottom: $gutter-size-sm;
+    // position: relative;
+    // text-decoration: none;
 
     @include respond-to("desktop") {
       margin-bottom: $gutter-size;

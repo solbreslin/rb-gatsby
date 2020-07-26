@@ -58,7 +58,6 @@ class Gallery extends React.Component {
   render() {
     const { items } = this.props;
     const { layout, animatingOut } = this.state;
-    console.log(items);
     return (
       <div className="gallery">
         <header>

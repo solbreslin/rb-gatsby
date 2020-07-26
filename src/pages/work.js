@@ -20,6 +20,7 @@ class WorkPage extends React.Component {
 
   handleGalleryImages() {
     this.categories = getWorkCategories(workJSON);
+
     this.mappings = mapCloudinaryURLToWorkCategory(
       this.props.data.allCloudinaryMedia.edges,
       this.categories

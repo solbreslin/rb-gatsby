@@ -3,7 +3,6 @@ $card-height-mobile: 200px;
 .cards {
   background-color: $body-bg-color;
   max-width: 800px;
-  padding-bottom: 6rem;
   position: relative;
 
   @include respond-to("desktop") {
@@ -26,8 +25,11 @@ $card-height-mobile: 200px;
 
 .card {
   display: block;
-  margin: 0 0 2rem;
   text-decoration: none;
+
+  + .card {
+    margin-top: 2rem;
+  }
 
   img {
     display: block;

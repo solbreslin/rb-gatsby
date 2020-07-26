@@ -93,5 +93,7 @@ export const generateGalleryItems = (projectImages, category) => {
     item.next = items[index + 1] || null;
   });
 
+  console.log(items);
+
   return shuffle(items);
 };

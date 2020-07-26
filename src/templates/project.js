@@ -58,10 +58,7 @@ export default ({ data }) => {
     } else {
       diffY = targetTop - currentTop;
     }
-
-    console.log(diffY);
-
-    console.log(el.getBoundingClientRect());
+    
     // el.style.setProperty('--translate-x', `${x}px`);
     el.style.setProperty("--translate-y", `${diffY}px`);
   };

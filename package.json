@@ -40,7 +40,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "4000": "gatsby develop -p 4000",
+    "4": "gatsby develop -p 4000",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",

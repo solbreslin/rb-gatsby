@@ -1,6 +1,5 @@
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 
     @media screen and (min-width: $breakpoint-value) {
@@ -10,28 +9,21 @@
 }
 
 @mixin font($style) {
-  @if $style=='default' {
+  @if $style== "default" {
     font-size: 1rem;
-  }
-
-  @else if $style=='s' {
+  } @else if $style== "s" {
     font-size: calc(var(--base-font-size-mobile) / var(--ratio) * 1px);
 
     @include respond-to(mobile-l) {
       font-size: calc(var(--base-font-size) / var(--ratio) * 1px);
     }
-  }
-
-  @else if $style=='m' {
+  } @else if $style== "m" {
     font-size: calc(var(--ratio) * 1rem);
-    letter-spacing: .0125em;
-  }
-
-  @else if $style=='l' {
+    letter-spacing: 0.0125em;
+  } @else if $style== "l" {
     font-size: calc(var(--ratio) * var(--ratio) * 1rem);
   }
 }
-
 
 @mixin font-bold {
   font-family: NeuzeitGro-Bol, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -40,7 +32,45 @@
 }
 
 @mixin fancy-border {
-  background-image: repeating-linear-gradient(hsla(0, 0, 0%, .2) 1px, hsla(0, 0, 0%, 0) 2px, hsla(0, 0, 0%, 0) 3px, hsla(0, 0, 0%, .2) 4px);
-  content: '';
+  background-image: repeating-linear-gradient(
+    hsla(0, 0, 0%, 0.2) 1px,
+    hsla(0, 0, 0%, 0) 2px,
+    hsla(0, 0, 0%, 0) 3px,
+    hsla(0, 0, 0%, 0.2) 4px
+  );
+  content: "";
   height: 8px;
+}
+
+@mixin gallery-button {
+  border: 1px solid hsla(0, 0, 0%, 1);
+  color: black;
+  font-size: 0.65rem;
+  min-width: calc(4ch + 0.666em + 0.666em);
+  opacity: 0.5;
+  padding: 0.2em 0.666em;
+  position: relative;
+  text-transform: uppercase;
+  transition: filter $transition-speed $transition-timing-function;
+
+  &.active {
+    background-color: hsl(0, 0, 80%);
+    opacity: 1;
+
+    span {
+      opacity: 0;
+    }
+
+    b {
+      opacity: 1;
+    }
+  }
+
+  b {
+    left: 0;
+    margin: auto;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+  }
 }

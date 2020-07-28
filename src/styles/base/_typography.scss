@@ -45,3 +45,8 @@ h6 {
   font-weight: inherit;
   margin: 0;
 }
+
+b,
+strong {
+  @include font-bold;
+}

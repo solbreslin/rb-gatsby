@@ -23,9 +23,9 @@ const Nav = ({ menuOpen }) => {
             Home
           </Link>
         </li>
-        {data.site.siteMetadata.menuLinks.map(item => {
+        {data.site.siteMetadata.menuLinks.map((item, i) => {
           return (
-            <li>
+            <li key={item + "-" + i}>
               <Link to={item.link} activeClassName="active">
                 {item.name}
               </Link>

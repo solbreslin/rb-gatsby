@@ -66,13 +66,15 @@ class Gallery extends React.Component {
               className={layout === "grid" ? "active" : ""}
               onClick={() => this.toggleLayout("grid")}
             >
-              Grid
+              <span>Grid</span>
+              <b>Grid</b>
             </button>
             <button
               className={layout === "list" ? "active" : ""}
               onClick={() => this.toggleLayout("list")}
             >
-              List
+              <span>List</span>
+              <b>List</b>
             </button>
           </div>
         </header>
@@ -110,9 +112,6 @@ class Gallery extends React.Component {
 
             return (
               <div key={`GalleryListItem-${item.path}`}>
-                <h3>
-                  <Link to={link}>{item.title}</Link>
-                </h3>
                 <div className="images">
                   {item.images.map((url, i) => (
                     <Link to={link} key={item.path + "-" + i}>
@@ -120,6 +119,9 @@ class Gallery extends React.Component {
                     </Link>
                   ))}
                 </div>
+                <h3>
+                  <Link to={link}>{item.title}</Link>
+                </h3>
               </div>
             );
           })}

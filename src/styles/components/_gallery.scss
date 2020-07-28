@@ -11,14 +11,17 @@ $gutter-size: 3rem;
 
   header {
     align-items: center;
-    background-color: var(--body-background-colour);
+    background-color: $body-bg-color;
     display: flex;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
 
     @include respond-to("desktop") {
       justify-content: space-between;
+    }
+
+    button {
+      @include gallery-button;
     }
   }
 }
@@ -48,14 +51,10 @@ $gutter-size: 3rem;
 }
 
 .gallery-layout-options {
-  display: none;
+  display: flex;
 
-  @include respond-to("desktop") {
-    display: flex;
-  }
-
-  button + button {
-    margin-left: 0.5rem;
+  button:first-child {
+    transform: translateX(1px);
   }
 }
 
@@ -161,10 +160,11 @@ $gutter-size: 3rem;
 
   .images {
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     a {
-      height: 150px;
+      height: 100px;
       padding: 0.25em 0;
       width: auto;
 

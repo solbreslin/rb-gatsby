@@ -16,6 +16,7 @@ exports.createPages = ({ actions }) => {
       component: categoryTemplate,
       context: {
         name: categoryName,
+        title: category.display_name
       },
     });
 

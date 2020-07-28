@@ -10,8 +10,8 @@ const workJSON = require("../../content/work.json");
 //   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
 
 export default ({ data }) => {
-  const category = data.allSitePage.edges[0].node.context.name;
-  const [ categoryJSON ] = workJSON.filter(cat => cat.name === category);
+  const { name: category, title } = data.allSitePage.edges[0].node.context;
+  const [categoryJSON] = workJSON.filter(cat => cat.name === category);
 
   let galleryItems = [];
 
@@ -30,7 +30,7 @@ export default ({ data }) => {
     <Layout className="category">
       <SEO title={category} />
       <section>
-        <h1>{category} Work</h1>
+        <h1>{title}</h1>
         <Gallery items={galleryItems}></Gallery>
       </section>
     </Layout>
@@ -44,6 +44,7 @@ export const query = graphql`
         node {
           context {
             name
+            title
           }
         }
       }

@@ -2,6 +2,7 @@
   {
     "path": "public",
     "name": "public",
+    "display_name": "Public Art",
     "items": [
       {
         "path": "brian-boru",
@@ -160,6 +161,7 @@
   {
     "path": "portrait",
     "name": "portrait",
+    "display_name": "Portrait Work",
     "items": [
       {
         "path": "aenea",
@@ -296,6 +298,7 @@
   {
     "path": "exhibition",
     "name": "exhibition",
+    "display_name": "Exhibition",
     "items": [
       {
         "path": "artemision-horse-study",
@@ -419,6 +422,7 @@
   {
     "path": "masks",
     "name": "masks",
+    "display_name": "Masks",
     "items": [
       {
         "path": "mask-of-brian-boru",

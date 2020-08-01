@@ -26,6 +26,8 @@ export default ({ data }) => {
     });
   });
 
+  console.log(galleryItems);
+
   return (
     <Layout className="category">
       <SEO title={category} />

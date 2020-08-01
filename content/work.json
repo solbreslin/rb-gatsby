@@ -34,14 +34,7 @@
         "path": "bluebells",
         "display_name": "Bluebells",
         "details": {
-          "material": "Bronze, Limestone"
-        }
-      },
-      {
-        "path": "count-john-mccormack",
-        "display_name": "Count John McCormack",
-        "details": {
-          "material": "Bronze, Limestone"
+          "material": "Bronze, Limestone",
         },
         "images": [
           "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-01_vug1hd",
@@ -51,8 +44,8 @@
         ]
       },
       {
-        "path": "emigrant-monument",
-        "display_name": "Emigrant Monument",
+        "path": "count-john-mccormack",
+        "display_name": "Count John McCormack",
         "details": {
           "material": "Bronze, Limestone"
         },
@@ -61,6 +54,19 @@
           "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-02_eehety",
           "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-03_fg3css",
           "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-04_xctvgh"
+        ]
+      },
+      {
+        "path": "emigrant-monument",
+        "display_name": "Emigrant Monument",
+        "details": {
+          "material": "Bronze, Limestone"
+        },
+        "images": [
+          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-01_zvuynf",
+          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-02_gjaqka",
+          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-03_gd7l3a",
+          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
         ]
       },
       {

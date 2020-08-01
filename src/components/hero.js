@@ -3,10 +3,6 @@ import React from "react";
 const BASE_URL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto`;
 
 class Hero extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render = () => {
     const { blurb, heroImage: image } = this.props;
 

@@ -1,50 +1,45 @@
-// .is-fullscreen {
-//   --translate-x: 0;
-//   --translate-y: 0;
+.project {
+  background-color: var(--project-bg-color, black);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  padding: 0;
+  overflow: hidden;
 
-//   img {
-//     transform: translate3d(var(--translate-x), var(--translate-y), 0);
-//     will-change: transform;
-//     z-index: 200;
-//   }
-// }
-
-main.project {
-  align-items: baseline;
-  padding-top: 3rem;
-
-  &:after {
-    background-color: hsl(0, 0%, 5%);
-    bottom: 0;
-    content: "";
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transition: opacity var(--transition-speed)
-      var(--transition-timing-function);
-
-    .has-fullscreen-image & {
-      opacity: 1;
-    }
+  > a {
+    color: white;
+    font-size: $font-size-s2;
+    letter-spacing: $letter-spacing;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
-  figure {
-    // height: 100vh;
-    margin: 0 0 1rem;
-    position: relative;
+  // injected carousel wrapper
+  > div {
+    border-bottom: 1px solid hsla(0, 0, 100%, 0.15);
+    border-top: 1px solid hsla(0, 0, 100%, 0.15);
+    height: 100%;
+  }
 
-    img {
-      cursor: pointer;
-      height: 100%;
-      object-fit: contain;
-      transition: transform var(--transition-speed)
-        var(--transition-timing-function);
-      
-      width: 100%;
-      will-change: transform
+  footer {
+    background: var(--project-bg-color, black);
+    padding: $page-padding-x-mobile;
+
+    > * {
+      color: white;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: $font-size-s1;
+      letter-spacing: $letter-spacing;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: $font-size-s2;
     }
   }
 }

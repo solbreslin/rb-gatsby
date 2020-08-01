@@ -6,7 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
+    "colorthief": "^2.3.2",
     "dotenv": "^8.2.0",
+    "embla-carousel": "^3.0.22",
     "gatsby": "^2.20.12",
     "gatsby-plugin-load-script": "^1.1.0",
     "gatsby-plugin-manifest": "^2.3.3",

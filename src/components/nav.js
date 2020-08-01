@@ -18,11 +18,11 @@ const Nav = ({ menuOpen }) => {
   return (
     <nav className={`${menuOpen ? "open" : ""} rb-nav`}>
       <ul>
-        <li>
+        {/* <li>
           <Link to={"/"} activeClassName="active">
             Home
           </Link>
-        </li>
+        </li> */}
         {data.site.siteMetadata.menuLinks.map((item, i) => {
           return (
             <li key={item + "-" + i}>

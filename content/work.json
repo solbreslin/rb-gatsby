@@ -15,6 +15,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-02_d5wg55",
           "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-03_gbusht",
           "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-04_wfkslk"
+        ],
+        "bg_color": [
+          142,
+          10.3,
+          36.3
         ]
       },
       {
@@ -28,6 +33,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-02_luvsws",
           "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-03_ne7sry",
           "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-04_tiownu"
+        ],
+        "bg_color": [
+          129,
+          37.9,
+          20.2
         ]
       },
       {
@@ -41,6 +51,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu",
           "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-03_tvldi0",
           "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-04_jzru0y"
+        ],
+        "bg_color": [
+          214,
+          38.7,
+          58.4
         ]
       },
       {
@@ -54,6 +69,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-02_eehety",
           "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-03_fg3css",
           "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-04_xctvgh"
+        ],
+        "bg_color": [
+          180,
+          4.8,
+          28.8
         ]
       },
       {
@@ -67,6 +87,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-02_gjaqka",
           "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-03_gd7l3a",
           "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
+        ],
+        "bg_color": [
+          72,
+          4.5,
+          43.1
         ]
       },
       {
@@ -76,10 +101,15 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-01_zvuynf",
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-02_gjaqka",
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-03_gd7l3a",
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
+          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-01_ppl562",
+          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-02_ptiuzl",
+          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-03_ruif9k",
+          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-04_bsmuup"
+        ],
+        "bg_color": [
+          207,
+          19.4,
+          38.4
         ]
       },
       {
@@ -94,6 +124,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-03_ejziig",
           "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-04_tm3rgx",
           "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-05_uzymf6"
+        ],
+        "bg_color": [
+          216,
+          7,
+          86.1
         ]
       },
       {
@@ -108,6 +143,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-03_tinrtb",
           "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-04_qigy0m",
           "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-05_teyvza"
+        ],
+        "bg_color": [
+          93,
+          14.1,
+          25.1
         ]
       },
       {
@@ -121,6 +161,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-02_ye8xve",
           "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-03_qm7c2s",
           "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-04_cqzacw"
+        ],
+        "bg_color": [
+          171,
+          10.2,
+          75.1
         ]
       },
       {
@@ -134,6 +179,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g",
           "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-03_fo7csx",
           "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-04_eqvqab"
+        ],
+        "bg_color": [
+          205,
+          23.3,
+          85.7
         ]
       },
       {
@@ -147,6 +197,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-02_vunknf",
           "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-03_pbalxk",
           "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-04_u8uict"
+        ],
+        "bg_color": [
+          205,
+          77.2,
+          77.6
         ]
       },
       {
@@ -160,6 +215,11 @@
           "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-02_xkvstc",
           "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-03_vrfhz1",
           "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-04_fscra0"
+        ],
+        "bg_color": [
+          184,
+          18.9,
+          85.5
         ]
       }
     ]
@@ -180,6 +240,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-02_dztzwo",
           "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-03_kuiec2",
           "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-04_us5skp"
+        ],
+        "bg_color": [
+          21,
+          11.7,
+          56.5
         ]
       },
       {
@@ -193,6 +258,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-02_er9xc5",
           "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-03_sdcbis",
           "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-04_p3wrzy"
+        ],
+        "bg_color": [
+          48,
+          14,
+          43.3
         ]
       },
       {
@@ -206,6 +276,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-02_kcuamf",
           "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-03_et23nu",
           "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-04_cz8voz"
+        ],
+        "bg_color": [
+          86,
+          12.5,
+          22
         ]
       },
       {
@@ -219,6 +294,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-02_apwlpu",
           "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-03_pg5mnq",
           "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-04_pnrgap"
+        ],
+        "bg_color": [
+          80,
+          10.2,
+          23.1
         ]
       },
       {
@@ -232,6 +312,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-02_hlhsrj",
           "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-03_vvqgww",
           "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc"
+        ],
+        "bg_color": [
+          188,
+          9.3,
+          68.4
         ]
       },
       {
@@ -245,6 +330,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-02_tbt0lt",
           "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-03_umxycs",
           "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-04_nixytm"
+        ],
+        "bg_color": [
+          71,
+          10.3,
+          21
         ]
       },
       {
@@ -258,6 +348,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-02_eisyq2",
           "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-03_retjr8",
           "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-04_qzzna6"
+        ],
+        "bg_color": [
+          37,
+          12,
+          70.6
         ]
       },
       {
@@ -271,6 +366,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-02_mtfuyt",
           "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-03_qph8nv",
           "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-04_hn3vjv"
+        ],
+        "bg_color": [
+          27,
+          34.8,
+          64.5
         ]
       },
       {
@@ -284,6 +384,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi",
           "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-03_hvaixq",
           "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-04_ghrynw"
+        ],
+        "bg_color": [
+          170,
+          12,
+          59
         ]
       },
       {
@@ -297,6 +402,11 @@
           "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-02_zax51z",
           "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-03_nwhxjr",
           "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki"
+        ],
+        "bg_color": [
+          46,
+          41.9,
+          71
         ]
       }
     ]
@@ -317,6 +427,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-02_efd1yo",
           "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-03_y1upb1",
           "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-04_pkrugm"
+        ],
+        "bg_color": [
+          127,
+          8.9,
+          17.6
         ]
       },
       {
@@ -331,6 +446,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-03_ylzuiq",
           "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-04_w28qzn",
           "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-05_wowzjs"
+        ],
+        "bg_color": [
+          216,
+          41.2,
+          50
         ]
       },
       {
@@ -344,6 +464,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-02_loauxl",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-03_cryvu0",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-04_bpnhwi"
+        ],
+        "bg_color": [
+          218,
+          39.7,
+          47.5
         ]
       },
       {
@@ -357,6 +482,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-02_knfref",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-03_d8ppdr",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-04_ixf1re"
+        ],
+        "bg_color": [
+          217,
+          40.2,
+          47.8
         ]
       },
       {
@@ -369,6 +499,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-01_as2co5",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-02_mr8dot",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-03_htem21"
+        ],
+        "bg_color": [
+          215,
+          32.8,
+          49
         ]
       },
       {
@@ -382,6 +517,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-02_tbbcam",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-03_fsryrp",
           "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-04_orwdrk"
+        ],
+        "bg_color": [
+          217,
+          43.3,
+          47.1
         ]
       },
       {
@@ -395,6 +535,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-02_sjbmxg",
           "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-03_iiypfr",
           "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-04_l1tg3y"
+        ],
+        "bg_color": [
+          231,
+          16.7,
+          50.6
         ]
       },
       {
@@ -408,6 +553,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze",
           "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-03_apc8zj",
           "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-04_r4dmk1"
+        ],
+        "bg_color": [
+          21,
+          17.9,
+          18.6
         ]
       },
       {
@@ -421,6 +571,11 @@
           "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy",
           "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-03_ugxrsq",
           "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-04_hlpewi"
+        ],
+        "bg_color": [
+          216,
+          44,
+          47.6
         ]
       }
     ]
@@ -440,6 +595,11 @@
           "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-1_tnrwcz",
           "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-2_vvtqmu",
           "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-3_imfoxb"
+        ],
+        "bg_color": [
+          156,
+          16.8,
+          37.3
         ]
       },
       {
@@ -452,6 +612,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-01_appevp",
           "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-02_kmha5o",
           "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-03_yi9tla"
+        ],
+        "bg_color": [
+          105,
+          12.3,
+          25.5
         ]
       },
       {
@@ -464,6 +629,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-01_ec4bcm",
           "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo",
           "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-03_z2bqmd"
+        ],
+        "bg_color": [
+          105,
+          9.8,
+          23.9
         ]
       },
       {
@@ -476,6 +646,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-01_zxvgoz",
           "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-02_ozkxoq",
           "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-03_qqugxa"
+        ],
+        "bg_color": [
+          101,
+          14.5,
+          25.7
         ]
       },
       {
@@ -488,6 +663,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-01_yidnov",
           "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-02_afbwls",
           "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-03_zryjqd"
+        ],
+        "bg_color": [
+          65,
+          13.1,
+          19.4
         ]
       },
       {
@@ -500,6 +680,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-01_kthwwl",
           "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-02_bsrbay",
           "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-03_cenucw"
+        ],
+        "bg_color": [
+          102,
+          12.5,
+          15.7
         ]
       },
       {
@@ -512,6 +697,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-01_cluvh1",
           "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt",
           "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-03_njfamd"
+        ],
+        "bg_color": [
+          131,
+          15.7,
+          20
         ]
       },
       {
@@ -524,6 +714,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-01_wekais",
           "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-02_p31w1d",
           "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-03_xbfahm"
+        ],
+        "bg_color": [
+          66,
+          6.6,
+          29.8
         ]
       },
       {
@@ -536,6 +731,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm",
           "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-02_heyuvh",
           "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-03_ihny4z"
+        ],
+        "bg_color": [
+          131,
+          11.5,
+          35.9
         ]
       },
       {
@@ -548,6 +748,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-01_lcxdlh",
           "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-02_kash90",
           "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-03_tkpa3e"
+        ],
+        "bg_color": [
+          92,
+          22.9,
+          27.5
         ]
       },
       {
@@ -560,6 +765,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-01_f8sfiy",
           "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-02_afgqjj",
           "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-03_erbccr"
+        ],
+        "bg_color": [
+          182,
+          21.8,
+          44.1
         ]
       },
       {
@@ -572,6 +782,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-01_wmpnmu",
           "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-02_j1zasv",
           "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-03_gf2tof"
+        ],
+        "bg_color": [
+          108,
+          13,
+          56.3
         ]
       },
       {
@@ -584,6 +799,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-01_w9rcgs",
           "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-02_qnmqnb",
           "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-03_iapsot"
+        ],
+        "bg_color": [
+          117,
+          9.4,
+          45.9
         ]
       },
       {
@@ -596,6 +816,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-01_fa462p",
           "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-02_hbusd0",
           "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-03_vixpqt"
+        ],
+        "bg_color": [
+          112,
+          10.8,
+          27.3
         ]
       },
       {
@@ -608,6 +833,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-01_jv8bwy",
           "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-02_jflwee",
           "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-03_q0eebi"
+        ],
+        "bg_color": [
+          114,
+          9.2,
+          40.6
         ]
       },
       {
@@ -620,6 +850,11 @@
           "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-01_biupob",
           "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer",
           "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-03_vh4qms"
+        ],
+        "bg_color": [
+          215,
+          24.6,
+          35.9
         ]
       }
     ]

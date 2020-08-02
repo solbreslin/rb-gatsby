@@ -37,7 +37,7 @@ export const RGBToHSL = (r, g, b) => {
   s = +(s * 100).toFixed(1);
   l = +(l * 100).toFixed(1);
 
-  if (l > 30) l = l - 30;
+  console.log([h, s, l]);
 
   return "hsl(" + h + "," + s + "%," + l + "%)";
 };

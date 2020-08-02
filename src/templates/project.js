@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import { graphql, Link } from "gatsby";
-import ColorThief from "./../../node_modules/colorthief/dist/color-thief";
-import { RGBToHSL } from "../utils/rgb2hsl";
+// import ColorThief from "./../../node_modules/colorthief/dist/color-thief";
+// import { RGBToHSL } from "../utils/rgb2hsl";
 const workJSON = require("../../content/work.json");
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
@@ -15,6 +15,7 @@ export default ({ data }) => {
     details,
     images,
     pagePath,
+    bg_color,
   } = data.allSitePage.edges[0].node.context;
 
   let projectCategory = "";
@@ -69,31 +70,41 @@ export default ({ data }) => {
     [embla]
   );
 
-  const setBackgroundColor = color => {
-    if (color && color.length) {
-      color = RGBToHSL(color[0], color[1], color[2]);
+  console.log(bg_color);
 
-      document.documentElement.style.setProperty("--project-bg-color", color);
-    }
+  // const setBackgroundColor = color => {
+  //   if (color && color.length) {
+  //     color = RGBToHSL(color[0], color[1], color[2]);
+
+  //     document.documentElement.style.setProperty("--project-bg-color", color);
+  //   }
+  // };
+
+  // const colorThief = new ColorThief();
+
+  // const img = document.querySelector(".is-selected > img");
+
+  // if (img) {
+  //   if (img.complete) {
+  //     const color = colorThief.getColor(img);
+  //     setBackgroundColor(color);
+  //   } else {
+  //     img.addEventListener("load", function() {
+  //       const color = colorThief.getColor(img);
+  //       setBackgroundColor(color);
+  //     });
+  //   }
+  // }
+
+  const getHSL = () => {
+    const [h, s] = bg_color;
+    const l = 25;
+
+    return `hsl(${h}, ${s}%, ${l}%)`;
   };
 
-  const colorThief = new ColorThief();
-  const img = document.querySelector(".is-selected > img");
-
-  if (img) {
-    if (img.complete) {
-      const color = colorThief.getColor(img);
-      setBackgroundColor(color);
-    } else {
-      img.addEventListener("load", function() {
-        const color = colorThief.getColor(img);
-        setBackgroundColor(color);
-      });
-    }
-  }
-
   return (
-    <section className="project">
+    <section className="project" style={{ "--project-bg-color": getHSL() }}>
       <Link to={"/" + projectCategory}>Back</Link>
       <h1 className="visually-hidden">{name}</h1>
       <EmblaCarouselReact>
@@ -140,6 +151,7 @@ export const query = graphql`
             name
             pagePath
             images
+            bg_color
           }
         }
       }

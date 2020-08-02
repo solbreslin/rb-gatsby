@@ -16,7 +16,7 @@ exports.createPages = ({ actions }) => {
       component: categoryTemplate,
       context: {
         name: categoryName,
-        title: category.display_name
+        title: category.display_name,
       },
     });
 
@@ -25,6 +25,7 @@ exports.createPages = ({ actions }) => {
       const name = project.display_name;
       const details = project.details;
       const images = project.images;
+      const bg_color = project.bg_color;
 
       createPage({
         path,
@@ -34,7 +35,8 @@ exports.createPages = ({ actions }) => {
           name,
           details,
           categoryName,
-          images
+          images,
+          bg_color,
         },
       });
     });

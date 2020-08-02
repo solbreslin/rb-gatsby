@@ -9,23 +9,23 @@ module.exports = {
       {
         name: "exhibition",
         link: "/exhibition",
-        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/exhibition_tnz3lz"
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/exhibition_tnz3lz",
       },
       {
         name: "masks",
         link: "/masks",
-        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/masks_xo0ojk"
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/masks_xo0ojk",
       },
       {
         name: "portrait",
         link: "/portrait",
-        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/portrait_zlgiad"
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/portrait_zlgiad",
       },
       {
         name: "public",
         link: "/public",
-        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/public_k6unkl"
-      }
+        image: "r-breslin-cloudinary/HOMEPAGE/Boxes/public_k6unkl",
+      },
     ],
   },
   plugins: [
@@ -55,8 +55,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000`,
+        theme_color: `#000`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

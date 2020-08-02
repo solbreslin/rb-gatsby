@@ -70,8 +70,6 @@ export default ({ data }) => {
     [embla]
   );
 
-  console.log(bg_color);
-
   // const setBackgroundColor = color => {
   //   if (color && color.length) {
   //     color = RGBToHSL(color[0], color[1], color[2]);
@@ -98,7 +96,7 @@ export default ({ data }) => {
 
   const getHSL = () => {
     const [h, s] = bg_color;
-    const l = 25;
+    const l = 20;
 
     return `hsl(${h}, ${s}%, ${l}%)`;
   };

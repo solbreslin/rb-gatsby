@@ -66,15 +66,13 @@ class Gallery extends React.Component {
               className={layout === "grid" ? "active" : ""}
               onClick={() => this.toggleLayout("grid")}
             >
-              <span>Grid</span>
-              <b>Grid</b>
+              Grid
             </button>
             <button
               className={layout === "list" ? "active" : ""}
               onClick={() => this.toggleLayout("list")}
             >
-              <span>List</span>
-              <b>List</b>
+              List
             </button>
           </div>
         </header>

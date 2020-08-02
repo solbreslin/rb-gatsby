@@ -16,6 +16,7 @@ section {
   }
 
   h1 {
+    @include font-bold;
     border-bottom: 0.25px solid black;
     font-size: $font-size-s1;
     letter-spacing: $letter-spacing;

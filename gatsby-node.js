@@ -25,7 +25,8 @@ exports.createPages = ({ actions }) => {
       const name = project.display_name;
       const details = project.details;
       const images = project.images;
-      const bg_color = project.bg_color;
+      const bgColor = project.bg_color;
+      const primaryImage = project.primary_image;
 
       createPage({
         path,
@@ -36,7 +37,8 @@ exports.createPages = ({ actions }) => {
           details,
           categoryName,
           images,
-          bg_color,
+          bgColor,
+          primaryImage,
         },
       });
     });

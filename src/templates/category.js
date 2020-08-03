@@ -16,17 +16,16 @@ export default ({ data }) => {
   let galleryItems = [];
 
   categoryJSON.items.forEach(project => {
-    const { path, details, display_name, images } = project;
+    const { path, details, display_name, images, primary_image } = project;
 
     galleryItems.push({
       title: display_name,
       path,
       details,
       images,
+      primary_image,
     });
   });
-
-  console.log(galleryItems);
 
   return (
     <Layout className="category">

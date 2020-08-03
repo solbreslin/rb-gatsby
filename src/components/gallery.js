@@ -85,7 +85,7 @@ class Gallery extends React.Component {
           columnClassName="gallery-grid-col"
         >
           {items.map(item => {
-            const { path, project, images } = item;
+            const { path, project, primary_image } = item;
 
             // Need to construct link string with "/"
             // https://github.com/gatsbyjs/gatsby/issues/11243
@@ -94,7 +94,7 @@ class Gallery extends React.Component {
             return (
               <Link className="card" key={`GalleryGridItem-${path}`} to={link}>
                 <figure>
-                  <img alt={project} src={BASE_URL + images[0]}></img>
+                  <img alt={project} src={BASE_URL + primary_image}></img>
                   <figcaption>{item.title}</figcaption>
                 </figure>
               </Link>

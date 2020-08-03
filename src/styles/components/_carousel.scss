@@ -16,3 +16,44 @@
     }
   }
 }
+
+.rb-carousel-next {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: $page-padding-x-mobile;
+  padding-right: $page-padding-x-mobile;
+
+  a {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: $letter-spacing;
+    line-height: 1.2;
+    padding: 1rem 0;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  span:first-child {
+    opacity: 0.5;
+  }
+
+  .icon {
+    display: block;
+    margin: 1rem 0;
+
+    svg {
+      display: block;
+      width: 18px;
+
+      line {
+        stroke: white;
+      }
+
+      polygon {
+        fill: white;
+      }
+    }
+  }
+}

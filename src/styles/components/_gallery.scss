@@ -51,7 +51,11 @@ $gutter-size: 3rem;
 }
 
 .gallery-layout-options {
-  display: flex;
+  display: none;
+
+  @include respond-to(desktop) {
+    display: flex;
+  }
 
   button:first-child {
     transform: translateX(1px);
@@ -122,11 +126,11 @@ $gutter-size: 3rem;
       img {
         // display: inline-block;
         // height: auto;
-        // width: 100%;
+        // width: 100%
       }
 
       figcaption {
-        font-size: $font-size-1;
+        font-size: $font-size-s1;
         // border-bottom: 2px solid transparent;
         // color: hsl(0, 0, 20%);
         // opacity: 0;

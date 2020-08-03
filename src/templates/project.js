@@ -1,21 +1,27 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import { graphql, Link } from "gatsby";
+
+// Uncomment both import statements to process color
 // import ColorThief from "./../../node_modules/colorthief/dist/color-thief";
 // import { RGBToHSL } from "../utils/rgb2hsl";
+// const PROCESS_COLOR = true;
+
 const workJSON = require("../../content/work.json");
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
 
-export default ({ data }) => {
+export default ({ location, data }) => {
   const [EmblaCarouselReact, embla] = useEmblaCarousel({ loop: false });
-
+  const [uiShow, toggleUiShow] = useState(true);
+  console.log(location);
   const {
     name,
     details,
     images,
     pagePath,
-    bg_color,
+    bgColor,
+    primaryImage,
   } = data.allSitePage.edges[0].node.context;
 
   let projectCategory = "";
@@ -65,57 +71,100 @@ export default ({ data }) => {
     slideIndex => () => {
       if (embla && embla.clickAllowed()) {
         console.log(slideIndex);
+        toggleUiShow(uiShow => !uiShow);
       }
     },
     [embla]
   );
 
-  // const setBackgroundColor = color => {
-  //   if (color && color.length) {
-  //     color = RGBToHSL(color[0], color[1], color[2]);
+  // if (PROCESS_COLOR) {
+  //   const colorThief = new ColorThief();
 
-  //     document.documentElement.style.setProperty("--project-bg-color", color);
-  //   }
-  // };
-
-  // const colorThief = new ColorThief();
-
-  // const img = document.querySelector(".is-selected > img");
-
-  // if (img) {
-  //   if (img.complete) {
-  //     const color = colorThief.getColor(img);
-  //     setBackgroundColor(color);
-  //   } else {
-  //     img.addEventListener("load", function() {
+  //   const img = document.querySelector(".is-selected > img");
+  //   if (img) {
+  //     if (img.complete) {
   //       const color = colorThief.getColor(img);
-  //       setBackgroundColor(color);
-  //     });
+  //       RGBToHSL(color[0], color[1], color[2]);
+  //     } else {
+  //       img.addEventListener("load", function() {
+  //         const color = colorThief.getColor(img);
+  //         RGBToHSL(color[0], color[1], color[2]);
+  //       });
+  //     }
   //   }
   // }
 
   const getHSL = () => {
-    const [h, s] = bg_color;
+    const [h, s] = bgColor;
     const l = 20;
 
     return `hsl(${h}, ${s}%, ${l}%)`;
   };
 
+  // Make the first image in the carousel be the primary image
+  const sortedImages = [];
+  images.forEach(image => {
+    if (image === primaryImage) {
+      sortedImages.unshift(image);
+    } else {
+      sortedImages.push(image);
+    }
+  });
+
+  const arrow = orientation => (
+    <span className="icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0"
+        y="0"
+        viewBox="0 0 14.5 8.18"
+        style={orientation === "left" ? { transform: "rotate(-180deg)" } : {}}
+      >
+        <line
+          stroke="#2B2B2B"
+          strokeMiterlimit="10"
+          x1="0"
+          y1="4.09"
+          x2="13.42"
+          y2="4.09"
+        ></line>
+        <polygon
+          fill="#2B2B2B"
+          points="10.1,8.18 9.42,7.45 13.03,4.09 9.42,0.73 10.1,0 14.5,4.09"
+        ></polygon>
+      </svg>
+    </span>
+  );
+
   return (
     <section className="project" style={{ "--project-bg-color": getHSL() }}>
-      <Link to={"/" + projectCategory}>Back</Link>
-      <h1 className="visually-hidden">{name}</h1>
+      <header className={uiShow ? "is-active" : ""}>
+        <Link to={"/" + projectCategory}>
+          {arrow("left")} <span>{projectCategory}</span>
+        </Link>
+        <h1 className="visually-hidden">{name}</h1>
+      </header>
       <EmblaCarouselReact>
         <div className="rb-carousel">
-          {images.map((url, i) => (
+          {sortedImages.map((url, i) => (
             <figure key={url} onClick={onSlideClick(i)}>
               <img crossOrigin="anonymous" src={BASE_URL + url} alt="" />
             </figure>
           ))}
+          {nextProject ? (
+            <div className="rb-carousel-next">
+              <Link to={"/" + nextProject.path}>
+                <span>Next</span>
+                <span>{nextProject.display_name}</span>
+                {arrow()}
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </EmblaCarouselReact>
-
-      <footer>
+      <footer className={uiShow ? "is-active" : ""}>
         <h3>{name}</h3>
         <p>{details.material}</p>
         {previousProject ? (
@@ -149,7 +198,8 @@ export const query = graphql`
             name
             pagePath
             images
-            bg_color
+            bgColor
+            primaryImage
           }
         }
       }

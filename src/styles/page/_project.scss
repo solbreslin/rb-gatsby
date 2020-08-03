@@ -1,3 +1,5 @@
+$ui-transition: transform 0.2s ease, opacity 0.2s ease;
+
 .project {
   background-color: var(--project-bg-color, black);
   display: flex;
@@ -7,13 +9,66 @@
   padding: 0;
   overflow: hidden;
 
-  > a {
-    color: white;
-    font-size: $font-size-s2;
-    letter-spacing: $letter-spacing;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+  header {
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    transform: translate3d(0, -10px, 0);
+    transition: $ui-transition;
+    top: 0;
+    z-index: 1;
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:before {
+      background-image: linear-gradient(
+        to top,
+        transparent,
+        var(--project-bg-color)
+      );
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    > a {
+      color: white;
+      display: flex;
+      font-size: $font-size-s2;
+      letter-spacing: $letter-spacing;
+      padding: 0.5rem 1rem;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      .icon {
+        align-items: center;
+        display: flex;
+        margin-right: 8px;
+        position: relative;
+        width: 18px;
+
+        svg {
+          display: block;
+          width: 100%;
+
+          line {
+            stroke: white;
+          }
+
+          polygon {
+            fill: white;
+          }
+        }
+      }
+    }
   }
 
   // injected carousel wrapper
@@ -24,12 +79,40 @@
   }
 
   footer {
-    background: var(--project-bg-color, black);
+    // background: var(--project-bg-color, black);
+    left: 0;
     padding: $page-padding-x-mobile;
+    position: fixed;
+    right: 0;
+    opacity: 0;
+    top: 100%;
+    transform: translate3d(0, calc(-100% + 10px), 0);
+    transition: $ui-transition;
+    z-index: 1;
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    &:before {
+      background-image: linear-gradient(
+        to bottom,
+        transparent,
+        var(--project-bg-color)
+      );
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
 
     > * {
       color: white;
       margin: 0;
+      position: relative;
     }
 
     h3 {

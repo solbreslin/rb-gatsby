@@ -24,6 +24,10 @@
   padding-left: $page-padding-x-mobile;
   padding-right: $page-padding-x-mobile;
 
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   a {
     color: white;
     display: flex;

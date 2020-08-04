@@ -9,6 +9,9 @@ main {
   @include respond-to("desktop") {
     padding-left: 300px;
     padding-right: 3rem;
-    padding-top: 6rem;
+
+    &:not(.index) {
+      padding-top: 6rem;
+    }
   }
 }

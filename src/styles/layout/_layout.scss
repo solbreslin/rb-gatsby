@@ -4,6 +4,10 @@ main {
 
   &.index {
     margin-top: calc(var(--header-height) * -1);
+
+    @include respond-to(desktop) {
+      margin-top: 0;
+    }
   }
 }
 

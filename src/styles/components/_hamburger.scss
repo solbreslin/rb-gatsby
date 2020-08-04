@@ -9,6 +9,10 @@ $hamburger-bar-height: 4px;
   padding: 1rem $page-padding-x-mobile;
   position: relative;
   z-index: 3;
+
+  @include respond-to(desktop) {
+    display: none;
+  }
 }
 
 .hamburger {

@@ -9,7 +9,7 @@
   @include respond-to("desktop") {
     padding: 0;
     position: fixed;
-    right: 1rem;
+    left: 1rem;
     top: 3rem;
     z-index: 1000;
   }

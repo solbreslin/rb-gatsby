@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.3.0",
     "gatsby-transformer-json": "^2.4.0",
     "node-sass": "^4.13.1",
+    "paper": "^0.12.11",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

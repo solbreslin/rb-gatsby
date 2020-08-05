@@ -4,67 +4,118 @@ import image from "./../images/sculpture1.jpg";
 
 class Sculpture extends React.Component {
   componentDidMount() {
-    this.buildSculpture();
+    this.build();
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", this.onResize.bind(this));
+    }
   }
 
-  buildSculpture() {
-    var pCanvas = paper.setup("sculpture");
-    const raster = new paper.Raster(image);
-    let loaded = false;
+  componentWillUnmount() {
+    this.destroy();
+  }
 
-    raster.on("load", function() {
-      loaded = true;
-      console.log("Image Loaded");
-      onResize();
+  build() {
+    this.initCanvas();
+    this.loadImage();
+    this.lastPos = this.sculpture.view.center;
+  }
+
+  initCanvas() {
+    this.sculpture = paper.setup("sculpture");
+  }
+
+  loadImage() {
+    this.raster = new paper.Raster(image);
+
+    this.rasterLoaded = false;
+
+    this.raster.on("load", () => {
+      this.rasterLoaded = true;
+
+      this.onResize();
     });
 
-    // Make the raster invisible:
-    raster.visible = false;
+    this.raster.visible = false;
+  }
 
-    var lastPos = pCanvas.view.center;
-    function moveHandler(event) {
-      if (!loaded) return;
-      if (lastPos.getDistance(event.point) < 10) return;
-      lastPos = event.point;
+  onMouseMove(e, geoInst) {
+    console.log("moving mouse...");
+    // geoInst is the path, rectangle etc
+    const component = this;
 
-      var size = this.bounds.size.clone();
-      var isLandscape = size.width > size.height;
+    if (!component.rasterLoaded) return;
+    // if (component.lastPos.getDistance(e.point) < 1) return;
 
-      size /= isLandscape ? [2, 1] : [1, 2];
+    component.lastPos = e.point;
 
-      var path = new pCanvas.Path.Rectangle({
-        point: this.bounds.topLeft.floor(),
-        size: 200,
-        onMouseMove: moveHandler,
-      });
-      path.fillColor = raster.getAverageColor(path);
+    let size = geoInst.bounds.size.clone();
+    const isLandscape = size.width > size.height;
 
-      var path2 = new pCanvas.Path.Rectangle({
-        point: isLandscape
-          ? this.bounds.topCenter.ceil()
-          : this.bounds.leftCenter.ceil(),
-        size: size.floor(),
-        onMouseMove: moveHandler,
-      });
-      path2.fillColor = raster.getAverageColor(path);
-
-      this.remove();
+    if (isLandscape) {
+      size.width = size.width / 2;
+    } else {
+      size.height = size.height / 2;
     }
 
-    function onResize(event) {
-      if (!loaded) return;
+    const sizeCeil = {
+      height: Math.ceil(size.height),
+      width: Math.ceil(size.width),
+    };
 
-      pCanvas.project.activeLayer.removeChildren();
-      setTimeout(() => {
-        raster.fitBounds(pCanvas.view.bounds, true);
+    const sizeFloor = {
+      height: Math.floor(size.height),
+      width: Math.floor(size.width),
+    };
 
-        new paper.Path.Rectangle({
-          rectangle: pCanvas.view.bounds,
-          fillColor: raster.getAverageColor(pCanvas.view.bounds),
-          onMouseMove: moveHandler,
-        });
+    const moveHandler = function(e) {
+      const _this = this; // kill me
+      component.onMouseMove(e, _this);
+    };
+
+    const path1 = new paper.Path.Rectangle({
+      point: geoInst.bounds.topLeft.floor(),
+      size: sizeCeil,
+      onMouseMove: moveHandler,
+    });
+    path1.fillColor = component.raster.getAverageColor(path1);
+
+    const path2 = new paper.Path.Rectangle({
+      point: isLandscape
+        ? geoInst.bounds.topCenter.ceil()
+        : geoInst.bounds.leftCenter.ceil(),
+      size: sizeFloor,
+      onMouseMove: moveHandler,
+    });
+    path2.fillColor = component.raster.getAverageColor(path2);
+
+    geoInst.remove();
+  }
+
+  onResize() {
+    if (!this.rasterLoaded) return;
+
+    this.sculpture.project.activeLayer.removeChildren();
+
+    const self = this;
+    const moveHandler = function(e) {
+      const _this = this; // kill me
+      self.onMouseMove(e, _this);
+    };
+
+    setTimeout(() => {
+      this.raster.fitBounds(self.sculpture.view.bounds, true);
+
+      new paper.Path.Rectangle({
+        rectangle: self.sculpture.view.bounds,
+        fillColor: self.raster.getAverageColor(self.sculpture.view.bounds),
+        onMouseMove: moveHandler,
       });
-    }
+    });
+  }
+
+  destroy() {
+    this.sculpture.project.activeLayer.removeChildren();
   }
 
   render() {

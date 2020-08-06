@@ -19,16 +19,15 @@ nav {
   }
 
   @include respond-to("desktop") {
-    bottom: 0;
+    background-color: transparent;
     flex-direction: column;
-    left: 0;
+    flex: 1;
+    height: auto;
     opacity: 1;
+    padding: 0;
     pointer-events: auto;
-    position: fixed;
-    right: auto;
-    top: 0;
+    position: static;
     width: 300px;
-    z-index: 1;
   }
 
   ul {
@@ -38,18 +37,18 @@ nav {
     justify-content: center;
     margin: 0;
     padding: 0;
+
+    @include respond-to(desktop) {
+      flex: 1;
+    }
   }
 
   li {
     border-bottom: 1px solid hsla(0, 0, 0, 0.25);
     display: flex;
 
-    &:first-of-type {
-      // display: none;
-
-      @include respond-to("desktop") {
-        display: flex;
-      }
+    @include respond-to(desktop) {
+      border-bottom: 0;
     }
 
     &:last-of-type {
@@ -64,6 +63,10 @@ nav {
       padding: 0.35em 0;
       text-decoration: none;
       text-transform: uppercase;
+
+      @include respond-to(desktop) {
+        font-size: $font-size-1;
+      }
 
       &.active {
         // color: hsl(0, 0%, 50%);

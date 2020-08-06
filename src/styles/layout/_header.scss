@@ -7,10 +7,16 @@
   z-index: 3;
 
   @include respond-to("desktop") {
-    padding: 0;
+    align-items: start;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    left: 0;
+    padding: 1rem;
     position: fixed;
-    left: 1rem;
-    top: 3rem;
+    top: 0;
     z-index: 1000;
   }
 
@@ -24,6 +30,11 @@
     text-transform: uppercase;
     z-index: 3;
 
+    @include respond-to(desktop) {
+      color: black;
+      padding: 0;
+    }
+
     .mobile-menu-open & {
       color: black;
     }
@@ -34,6 +45,10 @@ body.index:not(.mobile-menu-open) {
   .rb-header {
     .brand {
       color: white;
+
+      @include respond-to(desktop) {
+        color: black;
+      }
     }
 
     .hamburger:before,

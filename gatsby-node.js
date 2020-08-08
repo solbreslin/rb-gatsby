@@ -45,6 +45,7 @@ exports.createPages = ({ actions }) => {
   });
 };
 
+// https://github.com/gatsbyjs/gatsby/issues/13219
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({

@@ -27,7 +27,6 @@ nav {
     padding: 0;
     pointer-events: auto;
     position: static;
-    width: 300px;
   }
 
   ul {
@@ -40,6 +39,9 @@ nav {
 
     @include respond-to(desktop) {
       flex: 1;
+      justify-content: flex-start;
+      margin-top: 3rem;
+      padding-top: 0.65rem;
     }
   }
 

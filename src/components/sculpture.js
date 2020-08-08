@@ -2,6 +2,8 @@ import React from "react";
 import paper from "paper";
 import image from "./../images/sculpture1.jpg";
 
+const CANVAS_ID = "sculpture";
+
 class Sculpture extends React.Component {
   componentDidMount() {
     this.build();
@@ -22,12 +24,11 @@ class Sculpture extends React.Component {
   }
 
   initCanvas() {
-    this.sculpture = paper.setup("sculpture");
+    this.sculpture = paper.setup(CANVAS_ID);
   }
 
   loadImage() {
     this.raster = new paper.Raster(image);
-
     this.rasterLoaded = false;
 
     this.raster.on("load", () => {
@@ -36,47 +37,61 @@ class Sculpture extends React.Component {
       this.onResize();
     });
 
-    this.raster.visible = false;
+    // this.raster.position = this.sculpture.view.center;
+
+    // this.raster.visible = false;
+  }
+
+  getSizeCeil(size) {
+    return {
+      height: Math.ceil(size.height),
+      width: Math.ceil(size.width),
+    };
+  }
+
+  getSizeFloor(size) {
+    return {
+      height: Math.floor(size.height),
+      width: Math.floor(size.width),
+    };
   }
 
   onMouseMove(e, geoInst) {
-    console.log("moving mouse...");
     // geoInst is the path, rectangle etc
     const component = this;
 
     if (!component.rasterLoaded) return;
-    // if (component.lastPos.getDistance(e.point) < 1) return;
+    if (component.lastPos.getDistance(e.point) < 20) return;
 
     component.lastPos = e.point;
 
     let size = geoInst.bounds.size.clone();
-    const isLandscape = size.width > size.height;
+    let isLandscape = size.width > size.height;
 
     if (isLandscape) {
-      size.width = size.width / 2;
+      size.width /= 2;
     } else {
-      size.height = size.height / 2;
+      size.height /= 2;
     }
 
-    const sizeCeil = {
-      height: Math.ceil(size.height),
-      width: Math.ceil(size.width),
-    };
-
-    const sizeFloor = {
-      height: Math.floor(size.height),
-      width: Math.floor(size.width),
-    };
+    const sizeCeil = component.getSizeCeil(size);
+    const sizeFloor = component.getSizeFloor(size);
 
     const moveHandler = function(e) {
       const _this = this; // kill me
       component.onMouseMove(e, _this);
     };
 
+    const clickHandler = function(e) {
+      const _this = this;
+      component.drawImage(e, _this);
+    };
+
     const path1 = new paper.Path.Rectangle({
       point: geoInst.bounds.topLeft.floor(),
       size: sizeCeil,
       onMouseMove: moveHandler,
+      onClick: clickHandler,
     });
     path1.fillColor = component.raster.getAverageColor(path1);
 
@@ -86,6 +101,7 @@ class Sculpture extends React.Component {
         : geoInst.bounds.leftCenter.ceil(),
       size: sizeFloor,
       onMouseMove: moveHandler,
+      onClick: clickHandler,
     });
     path2.fillColor = component.raster.getAverageColor(path2);
 
@@ -95,7 +111,7 @@ class Sculpture extends React.Component {
   onResize() {
     if (!this.rasterLoaded) return;
 
-    this.sculpture.project.activeLayer.removeChildren();
+    // this.sculpture.project.activeLayer.removeChildren();
 
     const self = this;
     const moveHandler = function(e) {
@@ -103,15 +119,41 @@ class Sculpture extends React.Component {
       self.onMouseMove(e, _this);
     };
 
+    const clickHandler = function(e) {
+      const _this = this; // kill me
+      self.drawImage(e, _this);
+    };
+
     setTimeout(() => {
       this.raster.fitBounds(self.sculpture.view.bounds, true);
-
       new paper.Path.Rectangle({
         rectangle: self.sculpture.view.bounds,
         fillColor: self.raster.getAverageColor(self.sculpture.view.bounds),
+        onClick: clickHandler,
         onMouseMove: moveHandler,
       });
     });
+  }
+
+  drawImage(e, geoInst) {
+    // geoInst is the path, rectangle etc
+    const component = this;
+
+    let size = geoInst.bounds.size.clone();
+    let position = geoInst.position;
+
+    const startX = position._x;
+    const startY = position._y - component.raster.bounds._y;
+    const endX = startX + size.width;
+    const endY = startY + size.height;
+
+    const rect = new paper.Rectangle({
+      from: [startX, startY],
+      to: [endX, endY],
+    });
+
+    const subraster = component.raster.getSubRaster(rect);
+    subraster.bringToFront();
   }
 
   destroy() {

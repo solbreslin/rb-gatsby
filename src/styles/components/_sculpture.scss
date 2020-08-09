@@ -1,11 +1,12 @@
 .sculpture-wrapper {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='128px' height='128px' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='rgba(255, 255, 255, .75)' stroke-width='3' fill='none' /%3E%3C/svg%3E")
-      64 64,
-    default;
+  // cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='128px' height='128px' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='rgba(255, 255, 255, .75)' stroke-width='3' fill='none' /%3E%3C/svg%3E")
+  //     64 64,
+  //   default;
   height: 100vh;
   margin-bottom: 6rem;
+  margin-right: -3rem;
   padding: 0;
-  width: 100%;
+  width: calc(100% + 3rem);
 
   canvas {
     height: 100%;

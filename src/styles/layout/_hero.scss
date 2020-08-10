@@ -6,8 +6,7 @@
   transform: translate3d(0, calc(var(--scroll-y) * 0.4px), 0);
 
   @include respond-to("desktop") {
-    display: none;
-    margin-right: -2rem;
+    height: 75vh;
   }
 
   .image {

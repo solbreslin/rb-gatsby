@@ -11,10 +11,64 @@ const workJSON = require("../../content/work.json");
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
 
+const PrevButton = ({ enabled, onClick }) => (
+  <button
+    className="rb-carousel-button prev"
+    onClick={onClick}
+    disabled={!enabled}
+  >
+    <span>
+      <svg
+        aria-hidden="true"
+        role="presentation"
+        focusable="false"
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+        </g>
+      </svg>
+    </span>
+  </button>
+);
+
+const NextButton = ({ enabled, onClick }) => (
+  <button
+    className="rb-carousel-button next"
+    onClick={onClick}
+    disabled={!enabled}
+  >
+    <span>
+      <svg
+        aria-hidden="true"
+        role="presentation"
+        focusable="false"
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+        </g>
+      </svg>
+    </span>
+  </button>
+);
+
 export default ({ location, data }) => {
   const [EmblaCarouselReact, embla] = useEmblaCarousel({ loop: false });
   const [uiShow, toggleUiShow] = useState(true);
-  console.log(location);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  const [scrollSnaps, setScrollSnaps] = useState([]);
+
+  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+  const scrollTo = useCallback(index => embla && embla.scrollTo(index), [
+    embla,
+  ]);
+
   const {
     name,
     details,
@@ -61,11 +115,19 @@ export default ({ location, data }) => {
     }
   }
 
+  const onSelect = useCallback(() => {
+    if (!embla) return;
+    setSelectedIndex(embla.selectedScrollSnap());
+    setPrevBtnEnabled(embla.canScrollPrev());
+    setNextBtnEnabled(embla.canScrollNext());
+  }, [embla, setSelectedIndex]);
+
   useEffect(() => {
-    if (embla) {
-      // Embla API is ready
-    }
-  }, [embla]);
+    if (!embla) return;
+    onSelect();
+    setScrollSnaps(embla.scrollSnapList());
+    embla.on("select", onSelect);
+  }, [embla, setScrollSnaps, onSelect]);
 
   const onSlideClick = useCallback(
     slideIndex => () => {
@@ -136,11 +198,19 @@ export default ({ location, data }) => {
     </span>
   );
 
+  const isDesktop = () => {
+    if (typeof window !== "undefined") {
+      const { matches } = window.matchMedia("(max-width: 1200px)");
+      return matches;
+    }
+  };
+
   return (
     <section className="project" style={{ "--project-bg-color": getHSL() }}>
       <header className={uiShow ? "is-active" : ""}>
         <Link to={"/" + projectCategory}>
-          {arrow("left")} <span>{projectCategory}</span>
+          {arrow("left")}
+          {/* <span>{projectCategory}</span> */}
         </Link>
         <h1 className="visually-hidden">{name}</h1>
       </header>
@@ -151,7 +221,7 @@ export default ({ location, data }) => {
               <img crossOrigin="anonymous" src={BASE_URL + url} alt="" />
             </figure>
           ))}
-          {nextProject ? (
+          {nextProject && isDesktop() ? (
             <div className="rb-carousel-next">
               <Link to={"/" + nextProject.path}>
                 <span>Next</span>
@@ -164,6 +234,8 @@ export default ({ location, data }) => {
           )}
         </div>
       </EmblaCarouselReact>
+      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
       <footer className={uiShow ? "is-active" : ""}>
         <h3>{name}</h3>
         <p>{details.material}</p>

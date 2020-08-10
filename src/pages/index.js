@@ -4,7 +4,6 @@ import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
 import SEO from "../components/seo";
-import Sculpture from "../components/sculpture";
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -76,10 +75,9 @@ class IndexPage extends React.Component {
           subtitle={heroSubtitle}
           blurb={heroBlurb}
         />
-        <Sculpture />
-        <section className="cards" id="cards">
+        <section>
           <h1>Selected Work</h1>
-          {this.cards}
+          <div className="cards">{this.cards}</div>
         </section>
       </Layout>
     );

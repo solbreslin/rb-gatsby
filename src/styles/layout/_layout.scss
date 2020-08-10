@@ -38,3 +38,8 @@ section {
     }
   }
 }
+
+section.hero + section {
+  background-color: $body-bg-color;
+  position: relative;
+}

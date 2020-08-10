@@ -8,11 +8,83 @@
   }
 
   figure {
+    @include respond-to(desktop) {
+      display: flex;
+    }
+
     img {
-      cursor: pointer;
       height: 100%;
       object-fit: contain;
       width: 100%;
+
+      @include respond-to(desktop) {
+        margin: auto;
+        max-height: 80vh;
+      }
+    }
+  }
+
+  &-button {
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 35vw;
+
+    &[disabled] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    span {
+      align-items: center;
+      background: hsla(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: center;
+      border-radius: 50%;
+      height: 50px;
+      opacity: 0;
+      padding: 0.75rem;
+      transition: opacity 0.1s ease, transform 0.2s ease;
+      width: 50px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:hover {
+      span {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      display: block;
+      fill: none;
+      height: 12px;
+      overflow: visible;
+      stroke: white;
+      stroke-width: 5.333px;
+      width: 12px;
+    }
+
+    &.prev {
+      left: 1rem;
+
+      svg {
+        transform: translateX(-2px);
+      }
+    }
+
+    &.next {
+      justify-content: flex-end;
+      right: 1rem;
+
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 }

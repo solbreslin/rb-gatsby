@@ -14,10 +14,11 @@
     justify-content: flex-start;
     min-height: 100vh;
     left: 0;
-    padding: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     position: fixed;
     top: 0;
-    width: 300px;
+    width: $header-desktop-width;
     z-index: 1000;
   }
 
@@ -33,6 +34,7 @@
 
     @include respond-to(desktop) {
       color: black;
+      margin-left: 1rem;
       padding: 0;
     }
 

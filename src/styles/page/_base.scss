@@ -7,8 +7,8 @@ main {
   flex-direction: column;
 
   @include respond-to("desktop") {
-    padding-left: 300px;
-    padding-right: 3rem;
+    padding-left: $header-desktop-width;
+    // padding-right: 3rem;
 
     &:not(.index) {
       padding-top: 6rem;

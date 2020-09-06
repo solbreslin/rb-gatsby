@@ -14,8 +14,7 @@
     justify-content: flex-start;
     min-height: 100vh;
     left: 0;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding: 2rem;
     position: fixed;
     top: 0;
     width: $header-desktop-width;
@@ -34,7 +33,6 @@
 
     @include respond-to(desktop) {
       color: black;
-      margin-left: 1rem;
       padding: 0;
     }
 

@@ -5,6 +5,10 @@
       "subtitle": "Artist | Sculptor",
       "image": "r-breslin-cloudinary/HOMEPAGE/box-variation-II-03_vjjatb"
     },
+    "carousel": {
+      "images": ["HOMEPAGE/mask-banner_v8ngrq", "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g", "HOMEPAGE/box-variation-II-03_vjjatb"]
+    
+    },
     "cards": [
       {
         "path": "exhibition",

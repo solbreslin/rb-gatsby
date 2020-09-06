@@ -2,6 +2,10 @@
   padding: 6rem $page-padding-x-mobile $page-padding-x-mobile;
   position: relative;
 
+  @include respond-to('desktop') {
+    display: none;
+  }
+
   p {
     font-size: $font-size-s1;
     margin: 0;

@@ -41,7 +41,7 @@ nav {
     @include respond-to(desktop) {
       flex: 1;
       justify-content: flex-start;
-      margin-top: 3rem;
+      margin-top: 2rem;
       padding-top: 0.65rem;
     }
   }
@@ -52,6 +52,19 @@ nav {
 
     @include respond-to(desktop) {
       border-bottom: 0;
+
+      &.has-border {
+        flex-direction: column;
+
+        &:after {
+          background-color: black;
+          content: '';
+          display: block;
+          height: 1px;
+          margin: .35em 0;
+          width: 100%;
+        }
+      }
     }
 
     &:last-of-type {
@@ -60,17 +73,13 @@ nav {
 
     a {
       color: black;
-      letter-spacing: $letter-spacing;
       font-size: $font-size-4;
-      line-height: 1;
-      padding: 0.35em 0;
+      line-height: 1.7;
       text-decoration: none;
-      text-transform: uppercase;
+      text-transform: capitalize;
 
       @include respond-to(desktop) {
-        flex: 1;
         font-size: $font-size-1;
-        padding-left: 1rem;
       }
 
       &.active {
@@ -80,14 +89,12 @@ nav {
   }
 
   footer {
-    // display: none;
+    line-height: 1.7;
+    margin-top: auto;
 
     @include respond-to("desktop") {
       display: block;
-      margin: 0 1rem;
     }
-
-    margin-top: auto;
 
     p {
       margin: 0;

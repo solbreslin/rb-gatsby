@@ -3,7 +3,7 @@ $white: hsl(0, 0, 100%);
 $grey: hsl(0, 0, 50%);
 
 $body-text-color: hsl(40, 3%, 19%);
-$body-bg-color: hsl(0, 0%, 92%);
+$body-bg-color: hsl(0, 0%, 100%);
 $mobile-menu-bg-color: hsla(152, 13%, 47%, 1);
 
 $transition-speed: 0.15s;
@@ -24,11 +24,11 @@ $breakpoints: (
 $ratio: 1.6;
 $line-height: 1.6;
 $base-font-size-mobile: 20;
-$base-font-size: 21;
+$base-font-size: 18;
 
 $page-padding-x-mobile: 1rem;
 
-$header-desktop-width: 300px;
+$header-desktop-width: 250px;
 
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};

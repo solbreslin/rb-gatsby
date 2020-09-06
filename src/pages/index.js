@@ -1,84 +1,33 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import Hero from "../components/hero";
-import Card from "../components/card";
+import Carousel from "../components/home-carousel";
 import SEO from "../components/seo";
 
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.cards = this.buildCards();
-    this.heroContent = this.getHeroContent();
+    this.carouselImages = props.data.allHomeJson.edges[0].node.carousel.images;
+    console.log('images', this.carouselImages)
   }
 
   componentDidMount() {
-    if (window) {
-      window.addEventListener("scroll", this.onScroll);
-    }
     document.body.classList.add("index");
   }
 
   componentWillUnmount() {
-    if (window) {
-      window.removeEventListener("scroll", this.onScroll);
-      document.documentElement.style.setProperty("--scroll-y", 0);
-    }
     document.body.classList.remove("index");
   }
 
-  onScroll(e) {
-    const top = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (top <= window.innerHeight) {
-      document.documentElement.style.setProperty("--scroll-y", top);
-    }
-  }
-
-  buildCards() {
-    return this.props.data.site.siteMetadata.menuLinks.map((menuLink, i) => {
-      const { link, name, image } = menuLink;
-
-      return (
-        <Card key={`${name}-${i}`} link={link} name={name} image={image}></Card>
-      );
-    });
-  }
-
-  getHeroContent() {
-    const { data } = this.props;
-
-    return {
-      image: data.allHomeJson.edges[0].node.hero.image,
-      title: data.allHomeJson.edges[0].node.hero.title,
-      subtitle: data.allHomeJson.edges[0].node.hero.subtitle,
-      blurb: data.allDatoCmsHero.edges[0].node.heroBlurb,
-    };
-  }
-
   render = () => {
-    const {
-      image: heroImage,
-      title: heroTitle,
-      subtitle: heroSubtitle,
-      blurb: heroBlurb,
-    } = this.heroContent;
-
     return (
       <Layout className="index">
         <SEO title="Home" />
 
-        <Hero
-          heroImage={heroImage}
-          title={heroTitle}
-          subtitle={heroSubtitle}
-          blurb={heroBlurb}
+        <Carousel
+          images={this.carouselImages}
         />
-        <section>
-          <h1>Selected Work</h1>
-          <div className="cards">{this.cards}</div>
-        </section>
       </Layout>
     );
   };
@@ -103,6 +52,9 @@ export const pageQuery = graphql`
             title
             subtitle
             image
+          }
+          carousel {
+            images
           }
         }
       }

@@ -46,6 +46,10 @@
     position: absolute;
     width: 100%;
 
+    @include respond-to(desktop) {
+      padding: 2rem;
+    }
+
     > * {
       color: hsl(72, 10%, 90%);
       margin: 0;
@@ -53,6 +57,11 @@
 
     p {
       max-width: 20ch;
+
+      @include respond-to(desktop) {
+        font-size: $font-size-3;
+        max-width: 35ch;
+      }
     }
 
     a {

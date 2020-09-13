@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import Nav from "./nav";
+import Nav from "./menu/nav";
 
 class Header extends React.Component {
   constructor(props) {

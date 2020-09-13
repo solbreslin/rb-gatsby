@@ -8,26 +8,20 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.carouselImages = props.data.allHomeJson.edges[0].node.carousel.images;
-    console.log('images', this.carouselImages)
+    this.getCarouselImages(props.data.allWorkJson.edges);
   }
 
-  componentDidMount() {
-    document.body.classList.add("index");
-  }
-
-  componentWillUnmount() {
-    document.body.classList.remove("index");
-  }
+  getCarouselImages = data => {
+    this.carouselImages = data.map(d => {
+      return d.node.carousel_image;
+    });
+  };
 
   render = () => {
     return (
       <Layout className="index">
         <SEO title="Home" />
-
-        <Carousel
-          images={this.carouselImages}
-        />
+        <Carousel images={this.carouselImages} />
       </Layout>
     );
   };
@@ -41,28 +35,21 @@ export const pageQuery = graphql`
         menuLinks {
           name
           link
-          image
         }
       }
     }
     allHomeJson {
       edges {
         node {
-          hero {
-            title
-            subtitle
-            image
-          }
-          carousel {
-            images
-          }
+          title
+          subtitle
         }
       }
     }
-    allDatoCmsHero {
+    allWorkJson {
       edges {
         node {
-          heroBlurb
+          carousel_image
         }
       }
     }

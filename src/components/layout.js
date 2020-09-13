@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
-
-import Header from "./header";
+import Menu from "./menu/menu";
 import Footer from "./footer";
 import "./../styles/global.scss";
 
@@ -13,18 +11,7 @@ class Layout extends React.Component {
     return (
       <>
         <span id="top"></span>
-        <StaticQuery
-          query={graphql`
-            query {
-              site {
-                siteMetadata {
-                  title
-                }
-              }
-            }
-          `}
-          render={data => <Header siteTitle={data.site.siteMetadata.title} />}
-        />
+        <Menu />
         <main className={className}>{children}</main>
         <Footer />
       </>

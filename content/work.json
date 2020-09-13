@@ -3,6 +3,7 @@
     "path": "public",
     "name": "public",
     "display_name": "Public Art",
+    "carousel_image": "HOMEPAGE/Boxes/public_k6unkl",
     "items": [
       {
         "path": "brian-boru",
@@ -11,17 +12,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-01_nb0exo",
-          "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-02_d5wg55",
-          "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-03_gbusht",
-          "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-04_wfkslk"
+          "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-01_nb0exo",
+          "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-02_d5wg55",
+          "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-03_gbusht",
+          "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-04_wfkslk"
         ],
         "bg_color": [
           142,
           10.3,
           36.3
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/brian-boru/brian-boru_brian-boru-01_nb0exo"
+        "primary_image": "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-01_nb0exo"
       },
       {
         "path": "armagh-rail-disaster",
@@ -30,17 +31,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-01_tkcpat",
-          "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-02_luvsws",
-          "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-03_ne7sry",
-          "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-04_tiownu"
+          "WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-01_tkcpat",
+          "WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-02_luvsws",
+          "WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-03_ne7sry",
+          "WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-04_tiownu"
         ],
         "bg_color": [
           129,
           37.9,
           20.2
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-01_tkcpat"
+        "primary_image": "WORK/PUBLIC/armagh-rail-disaster/armagh-rail-disaster_armagh-rail-disaster-01_tkcpat"
       },
       {
         "path": "bluebells",
@@ -49,17 +50,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-01_vug1hd",
-          "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu",
-          "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-03_tvldi0",
-          "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-04_jzru0y"
+          "WORK/PUBLIC/bluebells/bluebells_bluebells-01_vug1hd",
+          "WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu",
+          "WORK/PUBLIC/bluebells/bluebells_bluebells-03_tvldi0",
+          "WORK/PUBLIC/bluebells/bluebells_bluebells-04_jzru0y"
         ],
         "bg_color": [
           216,
           55.3,
           61.4
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu"
+        "primary_image": "WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu"
       },
       {
         "path": "count-john-mccormack",
@@ -68,17 +69,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-01_kv9a2o",
-          "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-02_eehety",
-          "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-03_fg3css",
-          "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-04_xctvgh"
+          "WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-01_kv9a2o",
+          "WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-02_eehety",
+          "WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-03_fg3css",
+          "WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-04_xctvgh"
         ],
         "bg_color": [
           180,
           4.8,
           28.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-01_kv9a2o"
+        "primary_image": "WORK/PUBLIC/count-john-mccormack/count-john-mccormack_count-john-mccormack-01_kv9a2o"
       },
       {
         "path": "emigrant-monument",
@@ -87,17 +88,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-01_zvuynf",
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-02_gjaqka",
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-03_gd7l3a",
-          "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
+          "WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-01_zvuynf",
+          "WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-02_gjaqka",
+          "WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-03_gd7l3a",
+          "WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
         ],
         "bg_color": [
           126,
           15,
           37.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
+        "primary_image": "WORK/PUBLIC/emigrant-monument/emigrant-monument_emigrant-memorial-04_wvjjz4"
       },
       {
         "path": "james-fintan-lawlor",
@@ -106,17 +107,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-01_ppl562",
-          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-02_ptiuzl",
-          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-03_ruif9k",
-          "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-04_bsmuup"
+          "WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-01_ppl562",
+          "WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-02_ptiuzl",
+          "WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-03_ruif9k",
+          "WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-04_bsmuup"
         ],
         "bg_color": [
           207,
           19.4,
           38.4
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-01_ppl562"
+        "primary_image": "WORK/PUBLIC/james-fintan-lawlor/james-fintan-lawlor_james-fintan-lawlor-01_ppl562"
       },
       {
         "path": "michael-davitt",
@@ -125,18 +126,18 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-01_gomj7q",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-02_dnkfhb",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-03_ejziig",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-04_tm3rgx",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-05_uzymf6"
+          "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-01_gomj7q",
+          "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-02_dnkfhb",
+          "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-03_ejziig",
+          "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-04_tm3rgx",
+          "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-05_uzymf6"
         ],
         "bg_color": [
           180,
           6.7,
           14.7
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-02_dnkfhb"
+        "primary_image": "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-02_dnkfhb"
       },
       {
         "path": "bellpeal",
@@ -145,18 +146,18 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-01_tnzksx",
-          "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-02_ucvffs",
-          "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-03_tinrtb",
-          "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-04_qigy0m",
-          "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-05_teyvza"
+          "WORK/PUBLIC/bellpeal/bellpeal_bellpeal-01_tnzksx",
+          "WORK/PUBLIC/bellpeal/bellpeal_bellpeal-02_ucvffs",
+          "WORK/PUBLIC/bellpeal/bellpeal_bellpeal-03_tinrtb",
+          "WORK/PUBLIC/bellpeal/bellpeal_bellpeal-04_qigy0m",
+          "WORK/PUBLIC/bellpeal/bellpeal_bellpeal-05_teyvza"
         ],
         "bg_color": [
           216,
           33.9,
           53.1
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/bellpeal/bellpeal_bellpeal-02_ucvffs"
+        "primary_image": "WORK/PUBLIC/bellpeal/bellpeal_bellpeal-02_ucvffs"
       },
       {
         "path": "michael-hartnett",
@@ -165,17 +166,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-01_eaxenv",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-02_ye8xve",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-03_qm7c2s",
-          "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-04_cqzacw"
+          "WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-01_eaxenv",
+          "WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-02_ye8xve",
+          "WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-03_qm7c2s",
+          "WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-04_cqzacw"
         ],
         "bg_color": [
           216,
           54.1,
           64.1
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-02_ye8xve"
+        "primary_image": "WORK/PUBLIC/michael-hartnett/michael-hartnett_michael-hartnett-02_ye8xve"
       },
       {
         "path": "richard-crosbie",
@@ -184,17 +185,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-01_ayjmxo",
-          "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g",
-          "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-03_fo7csx",
-          "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-04_eqvqab"
+          "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-01_ayjmxo",
+          "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g",
+          "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-03_fo7csx",
+          "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-04_eqvqab"
         ],
         "bg_color": [
           120,
           11.6,
           18.6
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g"
+        "primary_image": "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g"
       },
       {
         "path": "roses",
@@ -203,17 +204,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-01_fpimg4",
-          "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-02_vunknf",
-          "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-03_pbalxk",
-          "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-04_u8uict"
+          "WORK/PUBLIC/roses/roses_roses-01_fpimg4",
+          "WORK/PUBLIC/roses/roses_roses-02_vunknf",
+          "WORK/PUBLIC/roses/roses_roses-03_pbalxk",
+          "WORK/PUBLIC/roses/roses_roses-04_u8uict"
         ],
         "bg_color": [
           205,
           77.2,
           77.6
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/roses/roses_roses-01_fpimg4"
+        "primary_image": "WORK/PUBLIC/roses/roses_roses-01_fpimg4"
       },
       {
         "path": "trifolium",
@@ -222,17 +223,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-01_dndvyo",
-          "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-02_xkvstc",
-          "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-03_vrfhz1",
-          "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-04_fscra0"
+          "WORK/PUBLIC/trifolium/trifolium_trifolium-01_dndvyo",
+          "WORK/PUBLIC/trifolium/trifolium_trifolium-02_xkvstc",
+          "WORK/PUBLIC/trifolium/trifolium_trifolium-03_vrfhz1",
+          "WORK/PUBLIC/trifolium/trifolium_trifolium-04_fscra0"
         ],
         "bg_color": [
           208,
           44.3,
           81
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PUBLIC/trifolium/trifolium_trifolium-03_vrfhz1"
+        "primary_image": "WORK/PUBLIC/trifolium/trifolium_trifolium-03_vrfhz1"
       }
     ]
   },
@@ -240,6 +241,7 @@
     "path": "portrait",
     "name": "portrait",
     "display_name": "Portrait Work",
+    "carousel_image": "HOMEPAGE/Boxes/portrait_zlgiad",
     "items": [
       {
         "path": "aenea",
@@ -248,17 +250,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-01_x5psxm",
-          "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-02_dztzwo",
-          "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-03_kuiec2",
-          "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-04_us5skp"
+          "WORK/PORTRAIT/aenea/aenea_aenea-01_x5psxm",
+          "WORK/PORTRAIT/aenea/aenea_aenea-02_dztzwo",
+          "WORK/PORTRAIT/aenea/aenea_aenea-03_kuiec2",
+          "WORK/PORTRAIT/aenea/aenea_aenea-04_us5skp"
         ],
         "bg_color": [
           43,
           3.3,
           57.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/aenea/aenea_aenea-04_us5skp"
+        "primary_image": "WORK/PORTRAIT/aenea/aenea_aenea-04_us5skp"
       },
       {
         "path": "eamonn-o-doherty",
@@ -267,17 +269,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-01_cz9nz7",
-          "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-02_er9xc5",
-          "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-03_sdcbis",
-          "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-04_p3wrzy"
+          "WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-01_cz9nz7",
+          "WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-02_er9xc5",
+          "WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-03_sdcbis",
+          "WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-04_p3wrzy"
         ],
         "bg_color": [
           42,
           9,
           28.4
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-02_er9xc5"
+        "primary_image": "WORK/PORTRAIT/eamonn-o-doherty/eamonn-o-doherty_eamonn-o-doherty-02_er9xc5"
       },
       {
         "path": "george-bernard-shaw",
@@ -286,17 +288,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-01_kxoeiz",
-          "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-02_kcuamf",
-          "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-03_et23nu",
-          "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-04_cz8voz"
+          "WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-01_kxoeiz",
+          "WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-02_kcuamf",
+          "WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-03_et23nu",
+          "WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-04_cz8voz"
         ],
         "bg_color": [
           80,
           12.8,
           22.9
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-02_kcuamf"
+        "primary_image": "WORK/PORTRAIT/george-bernard-shaw/george-bernard-shaw_george-bernard-shaw-02_kcuamf"
       },
       {
         "path": "james-joyce",
@@ -305,17 +307,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-01_zw6c6m",
-          "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-02_apwlpu",
-          "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-03_pg5mnq",
-          "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-04_pnrgap"
+          "WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-01_zw6c6m",
+          "WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-02_apwlpu",
+          "WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-03_pg5mnq",
+          "WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-04_pnrgap"
         ],
         "bg_color": [
           69,
           12.5,
           22
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-04_pnrgap"
+        "primary_image": "WORK/PORTRAIT/james-joyce/james-joyce_james-joyce-04_pnrgap"
       },
       {
         "path": "michael-collins",
@@ -324,17 +326,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-01_pzwqgy",
-          "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-02_hlhsrj",
-          "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-03_vvqgww",
-          "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc"
+          "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-01_pzwqgy",
+          "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-02_hlhsrj",
+          "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-03_vvqgww",
+          "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc"
         ],
         "bg_color": [
           120,
           3.3,
           82.2
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc"
+        "primary_image": "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc"
       },
       {
         "path": "oscar-wilde",
@@ -343,17 +345,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-01_a9p4yh",
-          "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-02_tbt0lt",
-          "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-03_umxycs",
-          "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-04_nixytm"
+          "WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-01_a9p4yh",
+          "WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-02_tbt0lt",
+          "WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-03_umxycs",
+          "WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-04_nixytm"
         ],
         "bg_color": [
           78,
           9.4,
           20.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-02_tbt0lt"
+        "primary_image": "WORK/PORTRAIT/oscar-wilde/oscar-wilde_oscar-wilde-02_tbt0lt"
       },
       {
         "path": "samuel-beckett",
@@ -362,17 +364,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-01_ic8tmo",
-          "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-02_eisyq2",
-          "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-03_retjr8",
-          "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-04_qzzna6"
+          "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-01_ic8tmo",
+          "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-02_eisyq2",
+          "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-03_retjr8",
+          "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-04_qzzna6"
         ],
         "bg_color": [
           37,
           12,
           70.6
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-01_ic8tmo"
+        "primary_image": "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-01_ic8tmo"
       },
       {
         "path": "seamus-heaney",
@@ -381,17 +383,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-01_rpp32e",
-          "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-02_mtfuyt",
-          "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-03_qph8nv",
-          "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-04_hn3vjv"
+          "WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-01_rpp32e",
+          "WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-02_mtfuyt",
+          "WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-03_qph8nv",
+          "WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-04_hn3vjv"
         ],
         "bg_color": [
           27,
           29,
           42
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-04_hn3vjv"
+        "primary_image": "WORK/PORTRAIT/seamus-heaney/seamus-heaney_seamus-heaney-04_hn3vjv"
       },
       {
         "path": "ted-kennedy",
@@ -400,17 +402,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-01_dbx9lp",
-          "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi",
-          "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-03_hvaixq",
-          "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-04_ghrynw"
+          "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-01_dbx9lp",
+          "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi",
+          "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-03_hvaixq",
+          "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-04_ghrynw"
         ],
         "bg_color": [
           157,
           13.5,
           62.4
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi"
+        "primary_image": "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi"
       },
       {
         "path": "wb-yeats",
@@ -419,17 +421,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-01_wdv6ao",
-          "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-02_zax51z",
-          "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-03_nwhxjr",
-          "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki"
+          "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-01_wdv6ao",
+          "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-02_zax51z",
+          "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-03_nwhxjr",
+          "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki"
         ],
         "bg_color": [
           54,
           24.1,
           67.5
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki"
+        "primary_image": "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki"
       }
     ]
   },
@@ -437,6 +439,7 @@
     "path": "exhibition",
     "name": "exhibition",
     "display_name": "Exhibition",
+    "carousel_image": "HOMEPAGE/Boxes/exhibition_tnz3lz",
     "items": [
       {
         "path": "artemision-horse-study",
@@ -445,17 +448,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-01_slq8oe",
-          "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-02_efd1yo",
-          "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-03_y1upb1",
-          "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-04_pkrugm"
+          "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-01_slq8oe",
+          "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-02_efd1yo",
+          "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-03_y1upb1",
+          "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-04_pkrugm"
         ],
         "bg_color": [
           127,
           8.9,
           17.6
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-01_slq8oe"
+        "primary_image": "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-01_slq8oe"
       },
       {
         "path": "autoportrait",
@@ -464,18 +467,18 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-01_dficzx",
-          "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-02_zrwqgn",
-          "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-03_ylzuiq",
-          "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-04_w28qzn",
-          "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-05_wowzjs"
+          "WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-01_dficzx",
+          "WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-02_zrwqgn",
+          "WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-03_ylzuiq",
+          "WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-04_w28qzn",
+          "WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-05_wowzjs"
         ],
         "bg_color": [
           216,
           41.2,
           50
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-01_dficzx"
+        "primary_image": "WORK/EXHIBITION/autoportrait/EXHIBITION_autoportrait_autoportrait-01_dficzx"
       },
       {
         "path": "box-variation-II",
@@ -484,17 +487,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-01_ys72zc",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-02_loauxl",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-03_cryvu0",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-04_bpnhwi"
+          "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-01_ys72zc",
+          "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-02_loauxl",
+          "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-03_cryvu0",
+          "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-04_bpnhwi"
         ],
         "bg_color": [
           218,
           39.7,
           47.5
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-01_ys72zc"
+        "primary_image": "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-01_ys72zc"
       },
       {
         "path": "box-variation-III",
@@ -503,17 +506,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-01_ptgh19",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-02_knfref",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-03_d8ppdr",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-04_ixf1re"
+          "WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-01_ptgh19",
+          "WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-02_knfref",
+          "WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-03_d8ppdr",
+          "WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-04_ixf1re"
         ],
         "bg_color": [
           216,
           37.1,
           45.5
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-02_knfref"
+        "primary_image": "WORK/EXHIBITION/box-variation-III/EXHIBITION_box-variation-III_box-variation-III-02_knfref"
       },
       {
         "path": "box-variation-IV",
@@ -522,16 +525,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-01_as2co5",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-02_mr8dot",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-03_htem21"
+          "WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-01_as2co5",
+          "WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-02_mr8dot",
+          "WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-03_htem21"
         ],
         "bg_color": [
           215,
           32.8,
           49
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-01_as2co5"
+        "primary_image": "WORK/EXHIBITION/box-variation-IV/EXHIBITION_box-variation-IV_box-variation-IV-01_as2co5"
       },
       {
         "path": "box-variation-V",
@@ -540,17 +543,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-01_pejomr",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-02_tbbcam",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-03_fsryrp",
-          "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-04_orwdrk"
+          "WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-01_pejomr",
+          "WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-02_tbbcam",
+          "WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-03_fsryrp",
+          "WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-04_orwdrk"
         ],
         "bg_color": [
           217,
           43.3,
           47.1
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-01_pejomr"
+        "primary_image": "WORK/EXHIBITION/box-variation-V/EXHIBITION_box-variation-V_box-variation-V-01_pejomr"
       },
       {
         "path": "dance-of-the-graeae",
@@ -559,17 +562,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-01_yc0dg6",
-          "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-02_sjbmxg",
-          "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-03_iiypfr",
-          "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-04_l1tg3y"
+          "WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-01_yc0dg6",
+          "WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-02_sjbmxg",
+          "WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-03_iiypfr",
+          "WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-04_l1tg3y"
         ],
         "bg_color": [
           230,
           19.5,
           43.3
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-03_iiypfr"
+        "primary_image": "WORK/EXHIBITION/dance-of-the-graeae/EXHIBITION_dance-of-the-graeae_dance-of-the-graeae-03_iiypfr"
       },
       {
         "path": "la-petite-mort",
@@ -578,17 +581,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-01_c9djfl",
-          "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze",
-          "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-03_apc8zj",
-          "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-04_r4dmk1"
+          "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-01_c9djfl",
+          "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze",
+          "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-03_apc8zj",
+          "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-04_r4dmk1"
         ],
         "bg_color": [
           7,
           15.3,
           88.4
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze"
+        "primary_image": "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze"
       },
       {
         "path": "polyphemus",
@@ -597,17 +600,17 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-01_edjxkh",
-          "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy",
-          "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-03_ugxrsq",
-          "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-04_hlpewi"
+          "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-01_edjxkh",
+          "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy",
+          "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-03_ugxrsq",
+          "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-04_hlpewi"
         ],
         "bg_color": [
           217,
           38.6,
           47.3
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy"
+        "primary_image": "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy"
       }
     ]
   },
@@ -615,6 +618,7 @@
     "path": "masks",
     "name": "masks",
     "display_name": "Masks",
+    "carousel_image": "HOMEPAGE/Boxes/masks_xo0ojk",
     "items": [
       {
         "path": "mask-of-brian-boru",
@@ -623,16 +627,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-1_tnrwcz",
-          "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-2_vvtqmu",
-          "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-3_imfoxb"
+          "WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-1_tnrwcz",
+          "WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-2_vvtqmu",
+          "WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-3_imfoxb"
         ],
         "bg_color": [
           156,
           16.8,
           37.3
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-1_tnrwcz"
+        "primary_image": "WORK/MASKS/mask-of-brian-boru/mask-of-brian-boru-1_tnrwcz"
       },
       {
         "path": "the-atlantic",
@@ -641,16 +645,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-01_appevp",
-          "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-02_kmha5o",
-          "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-03_yi9tla"
+          "WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-01_appevp",
+          "WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-02_kmha5o",
+          "WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-03_yi9tla"
         ],
         "bg_color": [
           109,
           13.6,
           31.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-03_yi9tla"
+        "primary_image": "WORK/MASKS/the-atlantic/the-atlantic_the-atlantic-03_yi9tla"
       },
       {
         "path": "the-bann",
@@ -659,16 +663,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-01_ec4bcm",
-          "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo",
-          "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-03_z2bqmd"
+          "WORK/MASKS/the-bann/the-bann_the-bann-01_ec4bcm",
+          "WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo",
+          "WORK/MASKS/the-bann/the-bann_the-bann-03_z2bqmd"
         ],
         "bg_color": [
           117,
           9.1,
           41
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo"
+        "primary_image": "WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo"
       },
       {
         "path": "the-barrow",
@@ -677,16 +681,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-01_zxvgoz",
-          "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-02_ozkxoq",
-          "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-03_qqugxa"
+          "WORK/MASKS/the-barrow/the-barrow_the-barrow-01_zxvgoz",
+          "WORK/MASKS/the-barrow/the-barrow_the-barrow-02_ozkxoq",
+          "WORK/MASKS/the-barrow/the-barrow_the-barrow-03_qqugxa"
         ],
         "bg_color": [
           109,
           14.5,
           28.4
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-barrow/the-barrow_the-barrow-02_ozkxoq"
+        "primary_image": "WORK/MASKS/the-barrow/the-barrow_the-barrow-02_ozkxoq"
       },
       {
         "path": "the-blackwater",
@@ -695,16 +699,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-01_yidnov",
-          "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-02_afbwls",
-          "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-03_zryjqd"
+          "WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-01_yidnov",
+          "WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-02_afbwls",
+          "WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-03_zryjqd"
         ],
         "bg_color": [
           86,
           14.3,
           80.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-03_zryjqd"
+        "primary_image": "WORK/MASKS/the-blackwater/the-blackwater_the-blackwater-03_zryjqd"
       },
       {
         "path": "the-boyne",
@@ -713,16 +717,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-01_kthwwl",
-          "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-02_bsrbay",
-          "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-03_cenucw"
+          "WORK/MASKS/the-boyne/the-boyne_the-boyne-01_kthwwl",
+          "WORK/MASKS/the-boyne/the-boyne_the-boyne-02_bsrbay",
+          "WORK/MASKS/the-boyne/the-boyne_the-boyne-03_cenucw"
         ],
         "bg_color": [
           117,
           25.8,
           82.5
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-boyne/the-boyne_the-boyne-02_bsrbay"
+        "primary_image": "WORK/MASKS/the-boyne/the-boyne_the-boyne-02_bsrbay"
       },
       {
         "path": "the-erne",
@@ -731,16 +735,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-01_cluvh1",
-          "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt",
-          "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-03_njfamd"
+          "WORK/MASKS/the-erne/the-erne_the-erne-01_cluvh1",
+          "WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt",
+          "WORK/MASKS/the-erne/the-erne_the-erne-03_njfamd"
         ],
         "bg_color": [
           106,
           14.1,
           29.2
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt"
+        "primary_image": "WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt"
       },
       {
         "path": "the-foyle",
@@ -749,16 +753,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-01_wekais",
-          "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-02_p31w1d",
-          "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-03_xbfahm"
+          "WORK/MASKS/the-foyle/the-foyle_the-foyle-01_wekais",
+          "WORK/MASKS/the-foyle/the-foyle_the-foyle-02_p31w1d",
+          "WORK/MASKS/the-foyle/the-foyle_the-foyle-03_xbfahm"
         ],
         "bg_color": [
           65,
           14,
           18.2
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-foyle/the-foyle_the-foyle-02_p31w1d"
+        "primary_image": "WORK/MASKS/the-foyle/the-foyle_the-foyle-02_p31w1d"
       },
       {
         "path": "the-guinness-mask",
@@ -767,16 +771,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm",
-          "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-02_heyuvh",
-          "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-03_ihny4z"
+          "WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm",
+          "WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-02_heyuvh",
+          "WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-03_ihny4z"
         ],
         "bg_color": [
           131,
           11.5,
           35.9
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm"
+        "primary_image": "WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm"
       },
       {
         "path": "the-lagan",
@@ -785,16 +789,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-01_lcxdlh",
-          "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-02_kash90",
-          "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-03_tkpa3e"
+          "WORK/MASKS/the-lagan/the-lagan_the-lagan-01_lcxdlh",
+          "WORK/MASKS/the-lagan/the-lagan_the-lagan-02_kash90",
+          "WORK/MASKS/the-lagan/the-lagan_the-lagan-03_tkpa3e"
         ],
         "bg_color": [
           94,
           19.4,
           28.2
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-lagan/the-lagan_the-lagan-02_kash90"
+        "primary_image": "WORK/MASKS/the-lagan/the-lagan_the-lagan-02_kash90"
       },
       {
         "path": "the-lee",
@@ -803,16 +807,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-01_f8sfiy",
-          "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-02_afgqjj",
-          "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-03_erbccr"
+          "WORK/MASKS/the-lee/the-lee_the-lee-01_f8sfiy",
+          "WORK/MASKS/the-lee/the-lee_the-lee-02_afgqjj",
+          "WORK/MASKS/the-lee/the-lee_the-lee-03_erbccr"
         ],
         "bg_color": [
           182,
           21.8,
           44.1
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-lee/the-lee_the-lee-01_f8sfiy"
+        "primary_image": "WORK/MASKS/the-lee/the-lee_the-lee-01_f8sfiy"
       },
       {
         "path": "the-liffey",
@@ -821,16 +825,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-01_wmpnmu",
-          "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-02_j1zasv",
-          "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-03_gf2tof"
+          "WORK/MASKS/the-liffey/the-liffey_the-liffey-01_wmpnmu",
+          "WORK/MASKS/the-liffey/the-liffey_the-liffey-02_j1zasv",
+          "WORK/MASKS/the-liffey/the-liffey_the-liffey-03_gf2tof"
         ],
         "bg_color": [
           106,
           10.4,
           49
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-liffey/the-liffey_the-liffey-03_gf2tof"
+        "primary_image": "WORK/MASKS/the-liffey/the-liffey_the-liffey-03_gf2tof"
       },
       {
         "path": "the-nore",
@@ -839,16 +843,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-01_w9rcgs",
-          "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-02_qnmqnb",
-          "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-03_iapsot"
+          "WORK/MASKS/the-nore/the-nore_the-nore-01_w9rcgs",
+          "WORK/MASKS/the-nore/the-nore_the-nore-02_qnmqnb",
+          "WORK/MASKS/the-nore/the-nore_the-nore-03_iapsot"
         ],
         "bg_color": [
           117,
           9.4,
           45.9
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-nore/the-nore_the-nore-01_w9rcgs"
+        "primary_image": "WORK/MASKS/the-nore/the-nore_the-nore-01_w9rcgs"
       },
       {
         "path": "the-shannon",
@@ -857,16 +861,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-01_fa462p",
-          "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-02_hbusd0",
-          "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-03_vixpqt"
+          "WORK/MASKS/the-shannon/the-shannon_the-shannon-01_fa462p",
+          "WORK/MASKS/the-shannon/the-shannon_the-shannon-02_hbusd0",
+          "WORK/MASKS/the-shannon/the-shannon_the-shannon-03_vixpqt"
         ],
         "bg_color": [
           128,
           10.4,
           30.2
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-shannon/the-shannon_the-shannon-03_vixpqt"
+        "primary_image": "WORK/MASKS/the-shannon/the-shannon_the-shannon-03_vixpqt"
       },
       {
         "path": "the-slaney",
@@ -875,16 +879,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-01_jv8bwy",
-          "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-02_jflwee",
-          "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-03_q0eebi"
+          "WORK/MASKS/the-slaney/the-slaney_the-slaney-01_jv8bwy",
+          "WORK/MASKS/the-slaney/the-slaney_the-slaney-02_jflwee",
+          "WORK/MASKS/the-slaney/the-slaney_the-slaney-03_q0eebi"
         ],
         "bg_color": [
           114,
           9.2,
           40.6
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-slaney/the-slaney_the-slaney-01_jv8bwy"
+        "primary_image": "WORK/MASKS/the-slaney/the-slaney_the-slaney-01_jv8bwy"
       },
       {
         "path": "the-suir",
@@ -893,16 +897,16 @@
           "material": "Bronze, Limestone"
         },
         "images": [
-          "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-01_biupob",
-          "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer",
-          "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-03_vh4qms"
+          "WORK/MASKS/the-suir/the-suir_the-suir-01_biupob",
+          "WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer",
+          "WORK/MASKS/the-suir/the-suir_the-suir-03_vh4qms"
         ],
         "bg_color": [
           211,
           23.6,
           51.8
         ],
-        "primary_image": "r-breslin-cloudinary/WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer"
+        "primary_image": "WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer"
       }
     ]
   }

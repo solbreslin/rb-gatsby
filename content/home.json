@@ -1,31 +1,6 @@
 [
   {
-    "hero": {
-      "title": "Rory Breslin",
-      "subtitle": "Artist | Sculptor",
-      "image": "r-breslin-cloudinary/HOMEPAGE/box-variation-II-03_vjjatb"
-    },
-    "carousel": {
-      "images": ["HOMEPAGE/mask-banner_v8ngrq", "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g", "HOMEPAGE/box-variation-II-03_vjjatb"]
-    
-    },
-    "cards": [
-      {
-        "path": "exhibition",
-        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/exhibition_tnz3lz"
-      },
-      {
-        "path": "masks",
-        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/masks_xo0ojk"
-      },
-      {
-        "path": "portrait",
-        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/portrait_zlgiad"
-      },
-      {
-        "path": "public",
-        "image": "r-breslin-cloudinary/HOMEPAGE/Boxes/public_k6unkl"
-      }
-    ]
+    "title": "Rory Breslin",
+    "subtitle": "Artist | Sculptor"
   }
 ]

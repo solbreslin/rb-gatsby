@@ -1,6 +1,8 @@
 import React from "react";
 
-const BASE_URL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto/r-breslin-cloudinary`;
+const BASE_URL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto/r-breslin-cloudinary/`;
+
+const TRANSITION_TIME = 5000;
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -12,16 +14,20 @@ class Carousel extends React.Component {
   }
 
   componentDidMount() {
+    this.animate();
+  }
+
+  animate() {
     setInterval(() => {
-      const len = this.props.images.length;
+      const { length } = this.props.images;
       const { active } = this.state;
 
-      if (active === len - 1) {
-        this.setState({ active: 0 });
-      } else {
-        this.setState({ active: this.state.active + 1 });
-      }
-    }, 5000);
+      const reset = active === length - 1 ? true : false;
+
+      this.setState({
+        active: reset ? 0 : this.state.active + 1,
+      });
+    }, TRANSITION_TIME);
   }
 
   render = () => {
@@ -33,7 +39,7 @@ class Carousel extends React.Component {
               key={index}
               className={this.state.active === index ? "active" : ""}
             >
-              <img src={BASE_URL + "/" + path} alt="" />
+              <img src={BASE_URL + path} alt="" />
               <figcaption></figcaption>
             </figure>
           );

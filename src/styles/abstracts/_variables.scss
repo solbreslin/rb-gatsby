@@ -30,6 +30,14 @@ $page-padding-x-mobile: 1rem;
 
 $header-desktop-width: 250px;
 
+// Menu
+$menu-switch-breakpoint: desktop;
+$aside-width: 300px;
+$menu-toggle-line-width: 12px;
+
+$menu-bg-color: hsl(0, 0, 15%);
+$menu-color: white;
+
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};
   --base-font-size: #{$base-font-size};

@@ -1,0 +1,178 @@
+#gatsby-focus-wrapper {
+  @include respond-to($menu-switch-breakpoint) {
+    display: flex;
+
+    main {
+      flex: 1;
+    }
+  }
+}
+
+@mixin menu-link {
+  color: $menu-color;
+  display: inline-flex;
+  line-height: 1.85;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: opacity 0.2s ease-out;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+aside {
+  display: none;
+
+  @include respond-to($menu-switch-breakpoint) {
+    background: $menu-bg-color;
+    display: flex;
+    height: 100vh;
+    position: sticky;
+    transition: 0.2s ease;
+    width: $aside-width;
+    z-index: 2;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem 1rem;
+      transition: 0.2s ease;
+      min-width: $aside-width;
+    }
+
+    h3 {
+      font-weight: 500;
+      letter-spacing: 0.045em;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      a {
+        color: $menu-color;
+        text-decoration: none;
+      }
+    }
+
+    footer {
+      border-top: 1px solid $menu-color;
+      margin-top: auto;
+      padding-top: 1rem;
+
+      a,
+      p {
+        align-items: center;
+      }
+
+      a {
+        @include menu-link();
+      }
+
+      .icon {
+        display: inline-block;
+        flex: 0 0 0.75rem;
+        margin-right: 0.75rem;
+
+        svg {
+          display: block;
+          max-width: 100%;
+        }
+      }
+    }
+
+    p {
+      color: $menu-color;
+      display: inline-flex;
+      line-height: 1.85;
+      margin: 0;
+    }
+  }
+
+  &.is-hidden {
+    width: 25px;
+
+    > div {
+      opacity: 0;
+      transform: translate3d(-275px, 0, 0);
+    }
+  }
+}
+
+nav {
+  li {
+    list-style-type: none;
+
+    a {
+      @include menu-link();
+    }
+  }
+
+  &.nav-desktop {
+    ul {
+      margin-bottom: 1rem;
+
+      &.nav-menu {
+        border-bottom: 1px solid $menu-color;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
+
+header {
+  @include respond-to($menu-switch-breakpoint) {
+    display: block;
+  }
+}
+
+.toggle-menu {
+  align-items: center;
+  background: $menu-bg-color;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  left: calc(100% - 25px);
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  width: 50px;
+  z-index: 3;
+
+  .arrow {
+    border: 1px solid currentColor;
+    border-width: 0 1px 1px 0;
+    transform: translateX(1px) rotate(135deg);
+    width: $menu-toggle-line-width;
+    height: $menu-toggle-line-width;
+    display: block;
+    transition: 0.2s ease;
+
+    &:after {
+      background-color: white;
+      content: "";
+      display: block;
+      height: 1px;
+      opacity: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity 0.2s ease;
+      width: $menu-toggle-line-width;
+    }
+  }
+
+  .is-hidden & {
+    .arrow {
+      border-width: 1px 0 1px 0;
+      transform: rotate(0);
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}

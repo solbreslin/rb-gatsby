@@ -15,6 +15,11 @@ section {
   padding-left: $page-padding-x-mobile;
   padding-right: $page-padding-x-mobile;
 
+  @include respond-to(desktop) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   + section {
     padding-top: 3rem;
   }

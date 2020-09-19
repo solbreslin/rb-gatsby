@@ -64,34 +64,23 @@ $gutter-size: 3rem;
 
 .gallery-grid {
   display: none;
-  margin-left: -$gutter-size-sm;
-  width: auto;
-
-  @include respond-to("desktop") {
-    margin-left: -$gutter-size;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 3rem 2rem;
 
   &.active {
-    display: flex;
-  }
-
-  .gallery-grid-col {
-    padding-left: $gutter-size-sm;
-    background-clip: padding-box;
-
-    @include respond-to("desktop") {
-      padding-left: $gutter-size;
-    }
+    display: grid;
   }
 
   .card {
-    // display: block;
-    // margin-bottom: $gutter-size-sm;
+    margin: 0;
     position: relative;
-    // text-decoration: none;
+
+    + .card {
+      margin: 0;
+    }
 
     @include respond-to("desktop") {
-      margin-bottom: $gutter-size;
+      // margin-bottom: $gutter-size;
     }
 
     &:after {

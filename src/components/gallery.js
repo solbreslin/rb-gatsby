@@ -1,17 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-import Masonry from "react-masonry-css";
 
 const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_400,c_thumb,g_face/";
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_400,c_thumb,g_face/r-breslin-cloudinary/";
 
 const ANIMATION_TIME_IN_MS = 250;
-
-const breakpointColumnsObj = {
-  default: 3,
-  1200: 3,
-  768: 1,
-};
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -77,13 +70,7 @@ class Gallery extends React.Component {
           </div>
         </header>
 
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className={`gallery-grid ${animatingOut ? "animate-out" : ""} ${
-            layout === "grid" ? "active" : ""
-          }`}
-          columnClassName="gallery-grid-col"
-        >
+        <div className="gallery-grid active">
           {items.map(item => {
             const { path, project, primary_image } = item;
 
@@ -100,8 +87,7 @@ class Gallery extends React.Component {
               </Link>
             );
           })}
-        </Masonry>
-
+        </div>
         <article
           className={`gallery-list ${layout === "list" ? "active" : ""}`}
         >

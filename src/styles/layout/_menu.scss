@@ -20,6 +20,10 @@
   &:hover {
     opacity: 0.7;
   }
+
+  &.active {
+    opacity: 0.7;
+  }
 }
 
 aside {
@@ -30,6 +34,7 @@ aside {
     display: flex;
     height: 100vh;
     position: sticky;
+    top: 0;
     transition: 0.2s ease;
     width: $aside-width;
     z-index: 2;

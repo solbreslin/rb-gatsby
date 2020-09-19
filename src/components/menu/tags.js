@@ -7,7 +7,7 @@ const Tags = ({ tags }) => {
       {tags.map((tag, i) => {
         return (
           <li key={`${tag}-${i}`}>
-            <Link to={tag.node.path} activeClassName="active">
+            <Link to={"/" + tag.node.path} activeClassName="active">
               {tag.node.display_name}
             </Link>
           </li>

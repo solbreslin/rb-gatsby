@@ -25,22 +25,12 @@ section {
   }
 
   h1 {
-    @include font-bold;
-    border-bottom: 0.25px solid black;
-    font-size: $font-size-s1;
+    // @include font-bold;
+    font-size: $font-size-4;
     letter-spacing: $letter-spacing;
     margin-bottom: 1rem;
-    padding-bottom: 0.5em;
     position: relative;
     text-transform: uppercase;
-
-    &:after {
-      // @include fancy-border;
-      left: -#{$page-padding-x-mobile};
-      right: -#{$page-padding-x-mobile};
-      position: absolute;
-      top: 100%;
-    }
   }
 }
 

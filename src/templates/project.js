@@ -9,7 +9,7 @@ import { graphql, Link } from "gatsby";
 
 const workJSON = require("../../content/work.json");
 const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/";
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/r-breslin-cloudinary/";
 
 const PrevButton = ({ enabled, onClick }) => (
   <button

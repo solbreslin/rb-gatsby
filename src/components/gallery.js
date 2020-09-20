@@ -14,6 +14,8 @@ class Gallery extends React.Component {
       animatingOut: false,
       layout: "grid",
     };
+
+    this.interval = null;
   }
 
   componentDidMount() {
@@ -48,40 +50,94 @@ class Gallery extends React.Component {
     }, ANIMATION_TIME_IN_MS);
   }
 
+  handleMouseEnter = ({ target }) => {
+    // this.interval = setInterval(() => {
+
+    // }, 3000)
+
+    const figure = target.closest("figure");
+    const imageEls = [...figure.querySelectorAll("img")];
+    let current = 0;
+
+    if (imageEls && imageEls.length) {
+      this.interval = setInterval(() => {
+        imageEls[current].classList.remove("active");
+
+        if (current === imageEls.length - 1) {
+          current = 0;
+        } else {
+          current++;
+        }
+
+        imageEls[current].classList.add("active");
+      }, 2000);
+    }
+  };
+
+  handleMouseLeave = ({ target }) => {
+    clearInterval(this.interval);
+    this.interval = null;
+    const figure = target.closest("figure");
+    const imageEls = [...figure.querySelectorAll("img")];
+    if (imageEls && imageEls.length) {
+      imageEls.forEach(img => img.classList.remove("active"));
+      imageEls[0].classList.add("active");
+    }
+  };
+
   render() {
     const { items } = this.props;
     const { layout, animatingOut } = this.state;
     return (
       <div className="gallery">
-        <header>
-          <div className="gallery-layout-options">
-            <button
-              className={layout === "grid" ? "active" : ""}
-              onClick={() => this.toggleLayout("grid")}
-            >
-              Grid
-            </button>
-            <button
-              className={layout === "list" ? "active" : ""}
-              onClick={() => this.toggleLayout("list")}
-            >
-              List
-            </button>
-          </div>
-        </header>
+        <div className="gallery-layout-options">
+          <button
+            className={layout === "grid" ? "active" : ""}
+            onClick={() => this.toggleLayout("grid")}
+          >
+            Grid
+          </button>
+          <button
+            className={layout === "list" ? "active" : ""}
+            onClick={() => this.toggleLayout("list")}
+          >
+            List
+          </button>
+        </div>
 
-        <div className="gallery-grid active">
+        <div
+          className={`gallery-grid ${animatingOut ? "animate-out" : ""} ${
+            layout === "grid" ? "active" : ""
+          }`}
+        >
           {items.map(item => {
-            const { path, project, primary_image } = item;
+            const { images, path, project, primary_image } = item;
 
             // Need to construct link string with "/"
             // https://github.com/gatsbyjs/gatsby/issues/11243
             const link = `/${path}`;
 
             return (
-              <Link className="card" key={`GalleryGridItem-${path}`} to={link}>
+              <Link
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                className="card"
+                key={`GalleryGridItem-${path}`}
+                to={link}
+              >
                 <figure>
-                  <img alt={project} src={BASE_URL + primary_image}></img>
+                  <img
+                    className="active"
+                    alt={project}
+                    src={BASE_URL + primary_image}
+                  />
+                  {images
+                    .filter(url => {
+                      return url !== primary_image;
+                    })
+                    .map((url, i) => (
+                      <img key={url} alt={project} src={BASE_URL + url} />
+                    ))}
                   <figcaption>{item.title}</figcaption>
                 </figure>
               </Link>

@@ -43,19 +43,25 @@
 }
 
 @mixin gallery-button {
-  border: 1px solid hsla(0, 0, 0%, 1);
+  border: 1px solid hsla(0, 0, 20%, 1);
   color: black;
   font-size: 0.65rem;
   letter-spacing: $letter-spacing;
   min-width: 50px;
-  opacity: 0.5;
-  padding: 0.2em 0.666em;
+  opacity: 0.6;
+  padding: 0.3em 0.666em 0.2em;
   position: relative;
   text-transform: uppercase;
   transition: filter $transition-speed $transition-timing-function;
 
   &.active {
-    background-color: hsl(0, 0, 80%);
+    background-color: hsl(0, 0, 20%);
+    border-color: transparent;
+    color: white;
     opacity: 1;
+  }
+
+  &:first-of-type {
+    margin-right: -1px;
   }
 }

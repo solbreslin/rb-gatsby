@@ -10,6 +10,7 @@ $ui-transition: transform 0.2s ease, opacity 0.2s ease;
   overflow: hidden;
 
   header {
+    display: block !important;
     left: 0;
     opacity: 0;
     position: fixed;

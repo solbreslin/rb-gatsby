@@ -7,10 +7,6 @@ module.exports = {
     author: `Sol Breslin`,
     menuLinks: [
       {
-        name: "home",
-        link: "/",
-      },
-      {
         name: "about",
         link: "/about",
       },

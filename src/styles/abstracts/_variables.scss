@@ -32,11 +32,13 @@ $header-desktop-width: 250px;
 
 // Menu
 $menu-switch-breakpoint: desktop;
-$aside-width: 300px;
+$aside-width: 320px;
 $menu-toggle-line-width: 12px;
 
-$menu-bg-color: hsl(0, 0, 15%);
+// $menu-bg-color: hsl(0, 0, 15%);
+$menu-bg-color: hsl(217.9, 49.6%, 54.9%);
 $menu-color: white;
+$active-menu-item-bg-color: hsl(217.9, 49.6%, 34.9%);
 
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};

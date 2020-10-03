@@ -13,6 +13,25 @@ const workJSON = require("../../content/work.json");
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/r-breslin-cloudinary/";
 
+const useKeyPress = (targetKeyCode, callback) => {
+  function downHandler(e) {
+    // Prevent carousel navigation while focus is in the sidebar
+    if (document.activeElement.closest("aside")) return;
+
+    if (e.which === targetKeyCode) {
+      callback();
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("keydown", downHandler);
+
+    return () => {
+      window.removeEventListener("keydown", downHandler);
+    };
+  }, [targetKeyCode, downHandler]);
+};
+
 const PrevButton = ({ enabled, onClick }) => (
   <button
     className="rb-carousel-button prev"
@@ -134,7 +153,7 @@ export default ({ location, data }) => {
   const onSlideClick = useCallback(
     slideIndex => () => {
       if (embla && embla.clickAllowed()) {
-        console.log(slideIndex);
+        console.log("slide clicked", slideIndex);
         toggleUiShow(uiShow => !uiShow);
       }
     },
@@ -207,19 +226,23 @@ export default ({ location, data }) => {
     }
   };
 
+  useKeyPress(37, scrollPrev);
+
+  useKeyPress(39, scrollNext);
+
   return (
     <Layout className="project">
       <SEO title={"test"} />
       <section>
-        {/* <header className={uiShow ? "is-active" : ""}>
+        <div className={"project-header"}>
           <Link to={"/" + projectCategory}>
             {arrow("left")}
-            {/* <span>{projectCategory}</span> */}
-        {/* </Link>
-          <h1 className="visually-hidden">{name}</h1>
-        </header>  */}
+            <span>{projectCategory}</span>
+          </Link>
+          <h1>{name}</h1>
+        </div>
         <EmblaCarouselReact>
-          <div className="rb-carousel">
+          <div className="rb-carousel" tabIndex="0">
             {sortedImages.map((url, i) => (
               <figure key={url} onClick={onSlideClick(i)}>
                 <img crossOrigin="anonymous" src={BASE_URL + url} alt="" />
@@ -240,24 +263,24 @@ export default ({ location, data }) => {
         </EmblaCarouselReact>
         <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
         <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-        <footer className={uiShow ? "is-active" : ""}>
+        <div className={"project-footer"}>
           <h3>{name}</h3>
           <p>{details.material}</p>
           {previousProject ? (
-            <Link hidden to={"/" + previousProject.path}>
+            <Link to={"/" + previousProject.path}>
               Previous: {previousProject.display_name}
             </Link>
           ) : (
             ""
           )}
           {nextProject ? (
-            <Link hidden to={"/" + nextProject.path}>
+            <Link to={"/" + nextProject.path}>
               Next: {nextProject.display_name}
             </Link>
           ) : (
             ""
           )}
-        </footer>
+        </div>
       </section>
     </Layout>
   );

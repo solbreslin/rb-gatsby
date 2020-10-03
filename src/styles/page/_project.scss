@@ -5,15 +5,17 @@ main.project {
 }
 
 .project section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   height: 100vh;
   justify-content: space-between;
-  padding: 0;
   overflow: hidden;
+  position: relative;
 
-  header {
-    display: block !important;
+  .project-header {
+    position: relative;
+    z-index: 3;
 
     &:before {
       background-image: linear-gradient(
@@ -30,7 +32,6 @@ main.project {
     }
 
     > a {
-      color: white;
       display: flex;
       font-size: $font-size-s2;
       letter-spacing: $letter-spacing;
@@ -49,14 +50,6 @@ main.project {
         svg {
           display: block;
           width: 100%;
-
-          line {
-            stroke: white;
-          }
-
-          polygon {
-            fill: white;
-          }
         }
       }
     }
@@ -69,22 +62,10 @@ main.project {
     height: 100%;
   }
 
-  footer {
-    // background: var(--project-bg-color, black);
-    left: 0;
+  .project-footer {
     padding: $page-padding-x-mobile;
-    position: fixed;
-    right: 0;
-    opacity: 0;
-    top: 100%;
-    transform: translate3d(0, calc(-100% + 10px), 0);
-    transition: $ui-transition;
-    z-index: 1;
-
-    &.is-active {
-      opacity: 1;
-      transform: translate3d(0, -100%, 0);
-    }
+    position: relative;
+    z-index: 3;
 
     &:before {
       background-image: linear-gradient(
@@ -101,7 +82,6 @@ main.project {
     }
 
     > * {
-      color: white;
       margin: 0;
       position: relative;
     }

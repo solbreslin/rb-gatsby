@@ -28,15 +28,38 @@
     }
 
     a {
+      align-items: center;
       bottom: 1rem;
       color: white;
-      display: block;
+      display: inline-flex;
       font-size: $font-size-3;
-      left: 1.5rem;
+      right: 1.5rem;
+      line-height: 1;
       position: absolute;
       text-decoration: none;
       text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
       z-index: 3;
+
+      svg {
+        // opacity: 0;
+        transform: rotate(180deg);
+        display: block;
+        fill: none;
+        height: 12px;
+        overflow: visible;
+        position: relative;
+        stroke: white;
+        stroke-width: 5.333px;
+        top: 3px;
+        transition: opacity $transition-speed $transition-speed;
+        width: 1em;
+      }
+
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+      }
     }
 
     &:after {

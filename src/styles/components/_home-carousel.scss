@@ -9,6 +9,7 @@
     height: 100vh;
     left: 0;
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -17,12 +18,42 @@
 
     &.active {
       opacity: 1;
+      pointer-events: auto;
     }
 
     img {
       height: 100%;
       object-fit: cover;
       width: 100%;
+    }
+
+    a {
+      bottom: 1rem;
+      color: white;
+      display: block;
+      font-size: $font-size-3;
+      left: 1.5rem;
+      position: absolute;
+      text-decoration: none;
+      text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+      z-index: 3;
+    }
+
+    &:after {
+      background-image: linear-gradient(
+        to bottom,
+        hsla(0, 0%, 0%, 0),
+        70%,
+        hsla(0, 0%, 0%, 0.4)
+      );
+      bottom: 0;
+      content: "";
+      height: 200px;
+      height: 20vh;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: 2;
     }
   }
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useCallback, useState } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import { graphql, Link } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 // Uncomment both import statements to process color
 // import ColorThief from "./../../node_modules/colorthief/dist/color-thief";
@@ -206,55 +208,58 @@ export default ({ location, data }) => {
   };
 
   return (
-    <section className="project" style={{ "--project-bg-color": getHSL() }}>
-      <header className={uiShow ? "is-active" : ""}>
-        <Link to={"/" + projectCategory}>
-          {arrow("left")}
-          {/* <span>{projectCategory}</span> */}
-        </Link>
-        <h1 className="visually-hidden">{name}</h1>
-      </header>
-      <EmblaCarouselReact>
-        <div className="rb-carousel">
-          {sortedImages.map((url, i) => (
-            <figure key={url} onClick={onSlideClick(i)}>
-              <img crossOrigin="anonymous" src={BASE_URL + url} alt="" />
-            </figure>
-          ))}
-          {nextProject && isDesktop() ? (
-            <div className="rb-carousel-next">
-              <Link to={"/" + nextProject.path}>
-                <span>Next</span>
-                <span>{nextProject.display_name}</span>
-                {arrow()}
-              </Link>
-            </div>
+    <Layout className="project">
+      <SEO title={"test"} />
+      <section>
+        {/* <header className={uiShow ? "is-active" : ""}>
+          <Link to={"/" + projectCategory}>
+            {arrow("left")}
+            {/* <span>{projectCategory}</span> */}
+        {/* </Link>
+          <h1 className="visually-hidden">{name}</h1>
+        </header>  */}
+        <EmblaCarouselReact>
+          <div className="rb-carousel">
+            {sortedImages.map((url, i) => (
+              <figure key={url} onClick={onSlideClick(i)}>
+                <img crossOrigin="anonymous" src={BASE_URL + url} alt="" />
+              </figure>
+            ))}
+            {nextProject && isDesktop() ? (
+              <div className="rb-carousel-next">
+                <Link to={"/" + nextProject.path}>
+                  <span>Next</span>
+                  <span>{nextProject.display_name}</span>
+                  {arrow()}
+                </Link>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        </EmblaCarouselReact>
+        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+        <footer className={uiShow ? "is-active" : ""}>
+          <h3>{name}</h3>
+          <p>{details.material}</p>
+          {previousProject ? (
+            <Link hidden to={"/" + previousProject.path}>
+              Previous: {previousProject.display_name}
+            </Link>
           ) : (
             ""
           )}
-        </div>
-      </EmblaCarouselReact>
-      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-      <footer className={uiShow ? "is-active" : ""}>
-        <h3>{name}</h3>
-        <p>{details.material}</p>
-        {previousProject ? (
-          <Link hidden to={"/" + previousProject.path}>
-            Previous: {previousProject.display_name}
-          </Link>
-        ) : (
-          ""
-        )}
-        {nextProject ? (
-          <Link hidden to={"/" + nextProject.path}>
-            Next: {nextProject.display_name}
-          </Link>
-        ) : (
-          ""
-        )}
-      </footer>
-    </section>
+          {nextProject ? (
+            <Link hidden to={"/" + nextProject.path}>
+              Next: {nextProject.display_name}
+            </Link>
+          ) : (
+            ""
+          )}
+        </footer>
+      </section>
+    </Layout>
   );
 };
 

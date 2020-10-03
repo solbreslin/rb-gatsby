@@ -8,12 +8,18 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.getCarouselImages(props.data.allWorkJson.edges);
+    this.carouselData = this.getCarouselData(props.data.allWorkJson.edges);
   }
 
-  getCarouselImages = data => {
-    this.carouselImages = data.map(d => {
-      return d.node.carousel_image;
+  getCarouselData = data => {
+    return data.map(d => {
+      const { carousel_image, display_name, path } = d.node;
+
+      return {
+        carousel_image,
+        display_name,
+        path,
+      };
     });
   };
 
@@ -21,7 +27,7 @@ class IndexPage extends React.Component {
     return (
       <Layout className="index">
         <SEO title="Home" />
-        <Carousel images={this.carouselImages} />
+        <Carousel data={this.carouselData} />
       </Layout>
     );
   };
@@ -50,6 +56,8 @@ export const pageQuery = graphql`
       edges {
         node {
           carousel_image
+          display_name
+          path
         }
       }
     }

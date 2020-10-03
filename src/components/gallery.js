@@ -51,10 +51,6 @@ class Gallery extends React.Component {
   }
 
   handleMouseEnter = ({ target }) => {
-    // this.interval = setInterval(() => {
-
-    // }, 3000)
-
     const figure = target.closest("figure");
     const imageEls = [...figure.querySelectorAll("img")];
     let current = 0;
@@ -118,13 +114,7 @@ class Gallery extends React.Component {
             const link = `/${path}`;
 
             return (
-              <Link
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                className="card"
-                key={`GalleryGridItem-${path}`}
-                to={link}
-              >
+              <Link className="card" key={`GalleryGridItem-${path}`} to={link}>
                 <figure>
                   <img
                     className="active"

@@ -1,15 +1,16 @@
+import { Link } from "gatsby";
 import React from "react";
 
 const BASE_URL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto/r-breslin-cloudinary/`;
 
-const TRANSITION_TIME = 5000;
+const TRANSITION_TIME = 7000;
 
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      active: 0,
+      activeIndex: 0,
     };
   }
 
@@ -19,13 +20,13 @@ class Carousel extends React.Component {
 
   animate() {
     setInterval(() => {
-      const { length } = this.props.images;
-      const { active } = this.state;
+      const { length } = this.props.data;
+      const { activeIndex } = this.state;
 
-      const reset = active === length - 1 ? true : false;
+      const reset = activeIndex === length - 1 ? true : false;
 
       this.setState({
-        active: reset ? 0 : this.state.active + 1,
+        activeIndex: reset ? 0 : this.state.activeIndex + 1,
       });
     }, TRANSITION_TIME);
   }
@@ -33,14 +34,17 @@ class Carousel extends React.Component {
   render = () => {
     return (
       <section className="rb-home-carousel">
-        {this.props.images.map((path, index) => {
+        {this.props.data.map((d, index) => {
+          console.log(d);
           return (
             <figure
               key={index}
-              className={this.state.active === index ? "active" : ""}
+              className={this.state.activeIndex === index ? "active" : ""}
             >
-              <img src={BASE_URL + path} alt="" />
-              <figcaption></figcaption>
+              <img src={BASE_URL + d.carousel_image} alt="" />
+              <figcaption>
+                <Link to={d.path}>{d.display_name}</Link>
+              </figcaption>
             </figure>
           );
         })}

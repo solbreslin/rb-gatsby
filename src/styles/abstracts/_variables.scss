@@ -24,7 +24,7 @@ $breakpoints: (
 $ratio: 1.6;
 $line-height: 1.6;
 $base-font-size-mobile: 20;
-$base-font-size: 18;
+$base-font-size: 16;
 
 $page-padding-x-mobile: 1rem;
 
@@ -33,12 +33,19 @@ $header-desktop-width: 250px;
 // Menu
 $menu-switch-breakpoint: desktop;
 $aside-width: 320px;
+$aside-padding-horizontal: 1.5rem;
 $menu-toggle-line-width: 12px;
 
 // $menu-bg-color: hsl(0, 0, 15%);
-$menu-bg-color: hsl(217.9, 49.6%, 54.9%);
+$menu-bg-color: hsl(217.9, 49.6%, 34.9%);
 $menu-color: white;
-$active-menu-item-bg-color: hsl(217.9, 49.6%, 34.9%);
+$active-menu-item-hover-color: hsl(217.9, 49.6%, 30.9%);
+$active-menu-item-bg-color: hsl(217.9, 49.6%, 24.9%);
+
+$menu-bg-color: hsl(0, 0%, 20%);
+$menu-color: hsl(0, 0%, 80%);
+$active-menu-item-hover-color: hsl(0, 0%, 10%);
+$active-menu-item-bg-color: hsl(0, 0%, 10%);
 
 :root {
   --base-font-size-mobile: #{$base-font-size-mobile};

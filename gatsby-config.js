@@ -3,6 +3,7 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: `Rory Breslin`,
+    subtitle: `Artist | Sculptor`,
     description: `Rory Breslin is a leading designer and producer of bronze figurative and portrait sculpture in Ireland`,
     author: `Sol Breslin`,
     menuLinks: [

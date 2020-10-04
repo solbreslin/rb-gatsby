@@ -3,12 +3,15 @@ import { Link } from "gatsby";
 import Tags from "./tags";
 import Nav from "./nav";
 
-const MenuDesktop = ({ siteTitle, items, tags }) => {
+const MenuDesktop = ({ siteTitle, siteSubtitle, items, tags }) => {
   const [active, setActive] = useState(true);
   return (
     <aside className={active ? "is-active" : "is-hidden"}>
       <h3>
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/">
+          <span className="site-title">{siteTitle}</span>
+          <span className="site-subtitle">{siteSubtitle}</span>
+        </Link>
       </h3>
       <nav className="nav-desktop">
         <Tags tags={tags} />

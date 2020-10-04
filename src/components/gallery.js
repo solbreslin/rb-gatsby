@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_40,w_400,c_thumb,g_face/r-breslin-cloudinary/";
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_500,h_500,c_thumb,g_face/r-breslin-cloudinary/";
 
 const ANIMATION_TIME_IN_MS = 250;
 
@@ -50,37 +50,6 @@ class Gallery extends React.Component {
     }, ANIMATION_TIME_IN_MS);
   }
 
-  handleMouseEnter = ({ target }) => {
-    const figure = target.closest("figure");
-    const imageEls = [...figure.querySelectorAll("img")];
-    let current = 0;
-
-    if (imageEls && imageEls.length) {
-      this.interval = setInterval(() => {
-        imageEls[current].classList.remove("active");
-
-        if (current === imageEls.length - 1) {
-          current = 0;
-        } else {
-          current++;
-        }
-
-        imageEls[current].classList.add("active");
-      }, 2000);
-    }
-  };
-
-  handleMouseLeave = ({ target }) => {
-    clearInterval(this.interval);
-    this.interval = null;
-    const figure = target.closest("figure");
-    const imageEls = [...figure.querySelectorAll("img")];
-    if (imageEls && imageEls.length) {
-      imageEls.forEach(img => img.classList.remove("active"));
-      imageEls[0].classList.add("active");
-    }
-  };
-
   render() {
     const { items } = this.props;
     const { layout, animatingOut } = this.state;
@@ -107,30 +76,25 @@ class Gallery extends React.Component {
           }`}
         >
           {items.map(item => {
-            const { images, path, project, primary_image } = item;
+            const { path, project, primary_image } = item;
 
             // Need to construct link string with "/"
             // https://github.com/gatsbyjs/gatsby/issues/11243
             const link = `/${path}`;
 
             return (
-              <Link className="card" key={`GalleryGridItem-${path}`} to={link}>
-                <figure>
-                  <img
-                    className="active"
-                    alt={project}
-                    src={BASE_URL + primary_image}
-                  />
-                  {images
-                    .filter(url => {
-                      return url !== primary_image;
-                    })
-                    .map((url, i) => (
-                      <img key={url} alt={project} src={BASE_URL + url} />
-                    ))}
-                  <figcaption>{item.title}</figcaption>
-                </figure>
-              </Link>
+              <div
+                className="gallery-grid-item"
+                key={`GalleryGridItem-${path}`}
+              >
+                <Link to={link}>
+                  <figure>
+                    <img alt={project} src={BASE_URL + primary_image} />
+                    <figcaption className="sr-only">{item.title}</figcaption>
+                  </figure>
+                  <h4>{item.title}</h4>
+                </Link>
+              </div>
             );
           })}
         </div>
@@ -141,17 +105,20 @@ class Gallery extends React.Component {
             const link = `/${item.path}`;
 
             return (
-              <div key={`GalleryListItem-${item.path}`}>
-                <div className="images">
-                  {item.images.map((url, i) => (
-                    <Link to={link} key={item.path + "-" + i}>
-                      <img alt={item.project} src={BASE_URL + url}></img>
-                    </Link>
-                  ))}
-                </div>
-                <h3>
-                  <Link to={link}>{item.title}</Link>
-                </h3>
+              <div
+                className="gallery-list-item"
+                key={`GalleryListItem-${item.path}`}
+              >
+                <Link to={link}>
+                  <div className="images">
+                    {item.images.map((url, i) => (
+                      <figure to={link} key={item.path + "-" + i}>
+                        <img alt={item.project} src={BASE_URL + url} />
+                      </figure>
+                    ))}
+                  </div>
+                  <h3>{item.title}</h3>
+                </Link>
               </div>
             );
           })}

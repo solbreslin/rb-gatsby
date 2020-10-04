@@ -11,6 +11,7 @@ const Menu = () => {
         query {
           site {
             siteMetadata {
+              subtitle
               title
               menuLinks {
                 link
@@ -32,11 +33,13 @@ const Menu = () => {
         <>
           <MenuDesktop
             siteTitle={data.site.siteMetadata.title}
+            siteSubtitle={data.site.siteMetadata.subtitle}
             items={data.site.siteMetadata.menuLinks}
             tags={data.allWorkJson.edges}
           />
           <MenuMobile
             siteTitle={data.site.siteMetadata.title}
+            siteSubtitle={data.site.siteMetadata.subtitle}
             items={data.site.siteMetadata.menuLinks}
             tags={data.allWorkJson.edges}
           />

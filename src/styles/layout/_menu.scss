@@ -4,6 +4,8 @@
 
     main {
       flex: 1;
+      overflow: hidden;
+      width: calc(100vw - #{$aside-width});
     }
   }
 }
@@ -57,10 +59,22 @@ aside {
 
       a {
         color: $menu-color;
-        display: block;
-        line-height: 2.5;
-        padding: 1rem $aside-padding-horizontal;
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size-1;
+        line-height: 1;
+        opacity: 0.5;
+        padding: 1.5rem $aside-padding-horizontal;
         text-decoration: none;
+
+        .site-title {
+          margin-bottom: 0.5rem;
+        }
+
+        .site-subtitle {
+          font-size: $font-size-s2;
+          line-height: 1;
+        }
       }
     }
 

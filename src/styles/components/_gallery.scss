@@ -1,6 +1,6 @@
 $gutter-size-sm: 2rem;
 $gutter-size: 3rem;
-$card-height-mobile: 275px;
+$card-height-mobile: 400px;
 $card-hover-scale: 1.05;
 
 .gallery-wrapper {
@@ -36,15 +36,22 @@ $card-hover-scale: 1.05;
   }
 }
 
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: $font-size-3;
+  }
+}
+
 .gallery-layout-options {
   display: none;
 
   @include respond-to(desktop) {
     align-items: center;
-    // border-bottom: 1px solid hsla(0, 0, 0, 0.5);
     display: flex;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
   }
 
   button {
@@ -55,7 +62,7 @@ $card-hover-scale: 1.05;
 .gallery-grid {
   display: none;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 6rem 3rem;
+  grid-gap: 9rem 6rem;
 
   &.active {
     display: grid;
@@ -109,36 +116,61 @@ $card-hover-scale: 1.05;
 
 .gallery-list {
   display: none;
-  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
 
   &.active {
-    display: flex;
+    display: grid;
+  }
+}
+
+.gallery-list-preview-image {
+  position: relative;
+
+  > div {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
   }
 }
 
 .gallery-list-item {
-  margin-bottom: 6rem;
+  // margin-bottom: 6rem;
+  // margin-bottom: 1rem;
   overflow: hidden;
 
   a {
     color: inherit;
     display: block;
     text-decoration: none;
+    font-size: $font-size-2;
+    line-height: 2;
 
     &:hover {
-      h3 {
-        color: #1473ff;
-      }
+      color: #1473ff;
     }
   }
 
   h3 {
     margin-bottom: 0;
     font-size: $font-size-2;
+    line-height: 2;
   }
 
   .images {
-    display: flex;
+    display: none;
     overflow-x: scroll;
     overflow-y: hidden;
 

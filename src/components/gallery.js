@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 
 const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_500,h_500,c_thumb,g_face/r-breslin-cloudinary/";
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_800,h_500,c_thumb,g_face/r-breslin-cloudinary/";
+
+const PREVIEW_URL =
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_500/r-breslin-cloudinary/";
 
 const ANIMATION_TIME_IN_MS = 250;
 
@@ -13,6 +16,7 @@ class Gallery extends React.Component {
     this.state = {
       animatingOut: false,
       layout: "grid",
+      activePreview: 0,
     };
 
     this.interval = null;
@@ -50,24 +54,40 @@ class Gallery extends React.Component {
     }, ANIMATION_TIME_IN_MS);
   }
 
+  handleMouseMove(e) {
+    const { target } = e;
+    const li = target.parentNode;
+    const index = li.getAttribute("data-index");
+
+    if (this.state.activePreview !== index) {
+      this.setState({
+        activePreview: index,
+      });
+    }
+  }
+
   render() {
-    const { items } = this.props;
-    const { layout, animatingOut } = this.state;
+    const { items, title } = this.props;
+    const { layout, animatingOut, activePreview } = this.state;
+    console.log(activePreview);
     return (
       <div className="gallery">
-        <div className="gallery-layout-options">
-          <button
-            className={layout === "grid" ? "active" : ""}
-            onClick={() => this.toggleLayout("grid")}
-          >
-            Grid
-          </button>
-          <button
-            className={layout === "list" ? "active" : ""}
-            onClick={() => this.toggleLayout("list")}
-          >
-            List
-          </button>
+        <div className="gallery-header">
+          <h3>{title}</h3>
+          <div className="gallery-layout-options">
+            <button
+              className={layout === "grid" ? "active" : ""}
+              onClick={() => this.toggleLayout("grid")}
+            >
+              Grid
+            </button>
+            <button
+              className={layout === "list" ? "active" : ""}
+              onClick={() => this.toggleLayout("list")}
+            >
+              List
+            </button>
+          </div>
         </div>
 
         <div
@@ -101,27 +121,39 @@ class Gallery extends React.Component {
         <article
           className={`gallery-list ${layout === "list" ? "active" : ""}`}
         >
-          {items.map(item => {
-            const link = `/${item.path}`;
+          <ul
+            className="gallery-list-list"
+            onMouseMove={this.handleMouseMove.bind(this)}
+          >
+            {items.map((item, index) => {
+              const link = `/${item.path}`;
 
-            return (
-              <div
-                className="gallery-list-item"
-                key={`GalleryListItem-${item.path}`}
-              >
-                <Link to={link}>
-                  <div className="images">
-                    {item.images.map((url, i) => (
-                      <figure to={link} key={item.path + "-" + i}>
-                        <img alt={item.project} src={BASE_URL + url} />
-                      </figure>
-                    ))}
-                  </div>
-                  <h3>{item.title}</h3>
-                </Link>
-              </div>
-            );
-          })}
+              return (
+                <li
+                  className="gallery-list-item"
+                  key={`GalleryListItem-${item.path}`}
+                  data-index={index}
+                >
+                  <Link to={link}>{item.title}</Link>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="gallery-list-preview-image">
+            {items.map(({ primary_image }, index) => {
+              return (
+                <div
+                  key={`GalleryListPreviewImage-${index}`}
+                  className={
+                    index === parseInt(activePreview) ? "is-active" : ""
+                  }
+                  data-index={index}
+                >
+                  <img alt="" src={PREVIEW_URL + primary_image} />
+                </div>
+              );
+            })}
+          </div>
         </article>
       </div>
     );

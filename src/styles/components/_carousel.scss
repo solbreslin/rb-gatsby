@@ -13,6 +13,7 @@
     height: 100%;
     left: 0;
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 0;
     transition: opacity 0.5s;
@@ -24,9 +25,11 @@
 
     &.is-selected {
       opacity: 1;
+      pointer-events: auto;
     }
 
     img {
+      cursor: zoom-in;
       height: 100%;
       object-fit: contain;
       width: 100%;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import throttle from "lodash.throttle";
 
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_800,h_500,c_thumb,g_face/r-breslin-cloudinary/";
@@ -16,10 +17,10 @@ class Gallery extends React.Component {
     this.state = {
       animatingOut: false,
       layout: "grid",
-      activePreview: 0,
+      activePreview: null,
     };
 
-    this.interval = null;
+    this.throttledMouseMove = throttle(this.throttledMouseMove.bind(this), 0);
   }
 
   componentDidMount() {
@@ -54,8 +55,15 @@ class Gallery extends React.Component {
     }, ANIMATION_TIME_IN_MS);
   }
 
-  handleMouseMove(e) {
+  handleMouseLeave(e) {
+    this.setState({
+      activePreview: null,
+    });
+  }
+
+  throttledMouseMove = e => {
     const { target } = e;
+
     const li = target.parentNode;
     const index = li.getAttribute("data-index");
 
@@ -64,12 +72,17 @@ class Gallery extends React.Component {
         activePreview: index,
       });
     }
+  };
+
+  handleMouseMove(e) {
+    e.persist();
+    this.throttledMouseMove(e);
   }
 
   render() {
     const { items, title } = this.props;
     const { layout, animatingOut, activePreview } = this.state;
-    console.log(activePreview);
+
     return (
       <div className="gallery">
         <div className="gallery-header">
@@ -124,6 +137,7 @@ class Gallery extends React.Component {
           <ul
             className="gallery-list-list"
             onMouseMove={this.handleMouseMove.bind(this)}
+            onMouseLeave={this.handleMouseLeave.bind(this)}
           >
             {items.map((item, index) => {
               const link = `/${item.path}`;

@@ -1,0 +1,16 @@
+.rb-lightbox {
+  background-color: black;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+  img {
+    cursor: zoom-out;
+    margin: auto;
+    max-height: 100%;
+  }
+}

@@ -3,6 +3,7 @@ import { useEmblaCarousel } from "embla-carousel/react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Lightbox from "../components/lightbox";
 
 // Uncomment both import statements to process color
 // import ColorThief from "./../../node_modules/colorthief/dist/color-thief";
@@ -76,13 +77,14 @@ const NextButton = ({ enabled, onClick }) => (
   </button>
 );
 
-export default ({ location, data }) => {
+export default ({ data }) => {
   const [EmblaCarouselReact, embla] = useEmblaCarousel({ loop: false });
-  const [uiShow, toggleUiShow] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
   const [scrollSnaps, setScrollSnaps] = useState([]);
+
+  const [lightboxSrc, setLightboxSrc] = useState("");
 
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -150,40 +152,6 @@ export default ({ location, data }) => {
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
 
-  const onSlideClick = useCallback(
-    slideIndex => () => {
-      if (embla && embla.clickAllowed()) {
-        console.log("slide clicked", slideIndex);
-        toggleUiShow(uiShow => !uiShow);
-      }
-    },
-    [embla]
-  );
-
-  // if (PROCESS_COLOR) {
-  //   const colorThief = new ColorThief();
-
-  //   const img = document.querySelector(".is-selected > img");
-  //   if (img) {
-  //     if (img.complete) {
-  //       const color = colorThief.getColor(img);
-  //       RGBToHSL(color[0], color[1], color[2]);
-  //     } else {
-  //       img.addEventListener("load", function() {
-  //         const color = colorThief.getColor(img);
-  //         RGBToHSL(color[0], color[1], color[2]);
-  //       });
-  //     }
-  //   }
-  // }
-
-  const getHSL = () => {
-    const [h, s] = bgColor;
-    const l = 20;
-
-    return `hsl(${h}, ${s}%, ${l}%)`;
-  };
-
   // Make the first image in the carousel be the primary image
   const sortedImages = [];
   images.forEach(image => {
@@ -226,8 +194,15 @@ export default ({ location, data }) => {
     }
   };
 
-  useKeyPress(37, scrollPrev);
+  const onImageClick = (url, i) => {
+    if (url) {
+      setLightboxSrc(url);
 
+      console.log(url, i);
+    }
+  };
+
+  useKeyPress(37, scrollPrev);
   useKeyPress(39, scrollNext);
 
   return (
@@ -244,8 +219,13 @@ export default ({ location, data }) => {
         <EmblaCarouselReact>
           <div className="rb-carousel" tabIndex="0">
             {sortedImages.map((url, i) => (
-              <figure key={url} onClick={onSlideClick(i)}>
-                <img crossOrigin="anonymous" src={BASE_URL + url} alt="" />
+              <figure key={url}>
+                <img
+                  crossOrigin="anonymous"
+                  src={BASE_URL + url}
+                  alt=""
+                  onClick={() => onImageClick(url, i)}
+                />
               </figure>
             ))}
             {nextProject && isDesktop() ? (
@@ -282,6 +262,12 @@ export default ({ location, data }) => {
           )}
         </div>
       </section>
+      {lightboxSrc && (
+        <Lightbox
+          src={lightboxSrc}
+          onLightboxClick={() => setLightboxSrc(null)}
+        />
+      )}
     </Layout>
   );
 };

@@ -19,6 +19,7 @@
     "gatsby-source-cloudinary": "^0.1.11",
     "gatsby-source-filesystem": "^2.3.0",
     "gatsby-transformer-json": "^2.4.0",
+    "lodash.throttle": "^4.1.1",
     "node-sass": "^4.13.1",
     "paper": "^0.12.11",
     "prop-types": "^15.7.2",

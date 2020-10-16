@@ -5,10 +5,26 @@
   src: url("./../fonts/NeuzeitGro-Reg/font.woff2") format("woff2"),
     url("./../fonts/NeuzeitGro-Reg/font.woff") format("woff");
 }
+
 @font-face {
   font-family: "NeuzeitGro-Bol";
   src: url("./../fonts/NeuzeitGro-Bol/font.woff2") format("woff2"),
     url("./../fonts/NeuzeitGro-Bol/font.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Akkurat-Light";
+  src: url("./../fonts/Akkurat/Akkurat-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Akkurat-Reg";
+  src: url("./../fonts/Akkurat/Akkurat-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Akkurat-Bold";
+  src: url("./../fonts/Akkurat/Akkurat-Bold.woff") format("woff");
 }
 
 $font-size-s2: 0.64rem;
@@ -29,7 +45,8 @@ html {
 
 body {
   // font-family: NeuzeitGro-Reg, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Akkurat-Reg, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-style: normal;
   font-weight: 300;

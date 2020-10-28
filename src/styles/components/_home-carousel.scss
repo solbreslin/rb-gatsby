@@ -26,57 +26,26 @@
       object-fit: cover;
       width: 100%;
     }
+  }
 
-    a {
-      align-items: center;
-      bottom: 1rem;
+  div {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 2rem 3rem;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    h1,
+    h3 {
       color: white;
-      display: inline-flex;
-      font-size: $font-size-3;
-      right: 1.5rem;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
       line-height: 1;
-      position: absolute;
-      text-decoration: none;
-      text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
-      z-index: 3;
-
-      svg {
-        // opacity: 0;
-        transform: rotate(180deg);
-        display: block;
-        fill: none;
-        height: 12px;
-        overflow: visible;
-        position: relative;
-        stroke: white;
-        stroke-width: 5.333px;
-        top: 3px;
-        transition: opacity $transition-speed $transition-speed;
-        width: 1em;
-      }
-
-      &:hover {
-        svg {
-          opacity: 1;
-        }
-      }
-    }
-
-    &:after {
-      background-image: linear-gradient(
-        to bottom,
-        hsla(0, 0%, 0%, 0),
-        70%,
-        hsla(0, 0%, 0%, 0.4)
-      );
-      bottom: 0;
-      content: "";
-      height: 200px;
-      height: 20vh;
-      left: 0;
-      position: absolute;
-      right: 0;
-      z-index: 2;
+      margin: 0;
+      text-transform: uppercase;
     }
   }
 }

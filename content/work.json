@@ -2,7 +2,7 @@
   {
     "path": "public",
     "name": "public",
-    "display_name": "Public Art",
+    "display_name": "Public",
     "carousel_image": "HOMEPAGE/Boxes/public_k6unkl",
     "items": [
       {
@@ -240,7 +240,7 @@
   {
     "path": "portrait",
     "name": "portrait",
-    "display_name": "Portrait Work",
+    "display_name": "Portrait",
     "carousel_image": "HOMEPAGE/Boxes/portrait_zlgiad",
     "items": [
       {

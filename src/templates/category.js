@@ -31,7 +31,6 @@ export default ({ data }) => {
     <Layout className="category">
       <SEO title={category} />
       <section>
-        <h1 className="sr-only">{title}</h1>
         <Gallery items={galleryItems} title={title}></Gallery>
       </section>
     </Layout>

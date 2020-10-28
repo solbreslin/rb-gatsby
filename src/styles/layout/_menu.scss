@@ -11,9 +11,9 @@
 }
 
 @mixin menu-link {
-  color: $menu-color;
+  color: hsl(0, 0, 40%);
   display: inline-flex;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   line-height: 2.5;
   padding: 0 $aside-padding-horizontal;
   text-decoration: none;
@@ -22,14 +22,13 @@
   white-space: nowrap;
 
   &:hover {
-    // opacity: 0.7;
-    background-color: $active-menu-item-hover-color;
+    background-color: hsl(0, 0, 94%);
   }
 
   &.active {
     background-color: $active-menu-item-bg-color;
-    color: white;
-    font-weight: 400;
+    color: hsl(0, 0, 10%);
+    font-family: Akkurat-Bold;
   }
 }
 
@@ -38,6 +37,7 @@ aside {
 
   @include respond-to($menu-switch-breakpoint) {
     background: $menu-bg-color;
+    border-right: 1px solid hsl(0, 0%, 90%);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -50,28 +50,28 @@ aside {
     z-index: 2;
 
     h3 {
-      border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
+      border-bottom: 1px solid hsl(0, 0%, 94%);
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       white-space: nowrap;
 
       a {
         color: $menu-color;
         display: flex;
+        font-family: Akkurat-Bold;
         flex-direction: column;
-        font-size: $font-size-1;
+        font-size: $font-size-2;
         line-height: 1;
-        opacity: 0.5;
+        // opacity: 0.5;
         padding: 1.5rem $aside-padding-horizontal;
         text-decoration: none;
 
         .site-title {
-          margin-bottom: 0.5rem;
+          // margin-bottom: 0.5rem;
         }
 
         .site-subtitle {
+          display: none;
           font-size: $font-size-s2;
           line-height: 1;
         }
@@ -79,6 +79,7 @@ aside {
     }
 
     footer {
+      border-top: 1px solid hsl(0, 0%, 94%);
       display: flex;
       flex-direction: column;
       margin-top: auto;
@@ -145,15 +146,30 @@ nav {
       flex-grow: 1;
     }
   }
-
   &.nav-desktop {
     ul {
       margin-bottom: 1rem;
 
-      &.nav-tags {
+      &.nav-menu {
+        border-bottom: 1px solid hsl(0, 0%, 94%);
+        display: flex;
+
         a {
-          // font-size: $font-size-2;
+          line-height: 1;
+          padding: 1.5rem;
+
+          &.active {
+            text-decoration: underline;
+          }
+
+          &:hover {
+            background: transparent;
+            text-decoration: underline;
+          }
         }
+      }
+
+      &.nav-tags {
       }
     }
   }

@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import throttle from "lodash.throttle";
 
 const BASE_URL =
-  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_800,h_500,c_thumb,g_face/r-breslin-cloudinary/";
+  "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_500,h_500,c_thumb,g_face/r-breslin-cloudinary/";
 
 const PREVIEW_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto,w_500/r-breslin-cloudinary/";
@@ -86,7 +86,7 @@ class Gallery extends React.Component {
     return (
       <div className="gallery">
         <div className="gallery-header">
-          <h3>{title}</h3>
+          <h1>{title}</h1>
           <div className="gallery-layout-options">
             <button
               className={layout === "grid" ? "active" : ""}

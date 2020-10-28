@@ -11,7 +11,7 @@ class Layout extends React.Component {
     return (
       <>
         <span id="top"></span>
-        <Menu />
+        {/* <Menu /> */}
         <main className={className}>{children}</main>
         <Footer />
       </>

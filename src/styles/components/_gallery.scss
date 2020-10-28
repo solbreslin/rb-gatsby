@@ -1,6 +1,6 @@
 $gutter-size-sm: 2rem;
 $gutter-size: 3rem;
-$card-height-mobile: 400px;
+$card-height-mobile: 350px;
 $card-hover-scale: 1.05;
 
 .gallery-wrapper {
@@ -37,12 +37,16 @@ $card-hover-scale: 1.05;
 }
 
 .gallery-header {
+  align-items: center;
+  border-bottom: 1px solid hsl(0, 0%, 86%);
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
 
-  h3 {
-    font-size: $font-size-3;
+  h1 {
+    line-height: 1;
+    margin: 0;
   }
 }
 
@@ -62,7 +66,7 @@ $card-hover-scale: 1.05;
 .gallery-grid {
   display: none;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 9rem 6rem;
+  grid-gap: 4rem;
 
   &.active {
     display: grid;
@@ -75,16 +79,15 @@ $card-hover-scale: 1.05;
     text-decoration: none;
 
     &:hover {
-      figure {
+      img {
         transform: scale($card-hover-scale);
       }
 
-      img {
-        transform: scale(1 / $card-hover-scale);
-      }
-
       h4 {
-        color: #1473ff;
+        &:after {
+          opacity: 1;
+          transform: none;
+        }
       }
     }
   }
@@ -95,22 +98,31 @@ $card-hover-scale: 1.05;
     height: $card-height-mobile;
     justify-content: center;
     overflow: hidden;
-    position: relative;
-    transition: transform 0.5s;
     width: 100%;
   }
 
   img {
-    display: block;
-    position: absolute;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.5s;
+    width: 100%;
   }
 
   h4 {
     color: $body-text-color;
-    font-size: $font-size-2;
+    font-size: $font-size-1;
+    letter-spacing: 0.1em;
     line-height: 2.5;
-    transition: 0.5s ease;
+    text-transform: uppercase;
+
+    &:after {
+      content: "→";
+      display: inline-block;
+      margin-left: 4px;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: all $transition-speed $transition-timing-function;
+    }
   }
 }
 
@@ -129,6 +141,7 @@ $card-hover-scale: 1.05;
   > div {
     bottom: 0;
     left: 0;
+    max-width: 300px;
     opacity: 0;
     position: absolute;
     right: 0;
@@ -152,42 +165,16 @@ $card-hover-scale: 1.05;
   overflow: hidden;
 
   a {
-    color: inherit;
+    color: hsl(0, 0, 60%);
     display: block;
     text-decoration: none;
     font-size: $font-size-2;
+    letter-spacing: 0.075em;
     line-height: 2;
+    text-transform: uppercase;
 
     &:hover {
-      color: #1473ff;
-    }
-  }
-
-  h3 {
-    margin-bottom: 0;
-    font-size: $font-size-2;
-    line-height: 2;
-  }
-
-  .images {
-    display: none;
-    overflow-x: scroll;
-    overflow-y: hidden;
-
-    figure {
-      height: 200px;
-      padding: 0.25em 0;
-      width: auto;
-
-      + figure {
-        margin-left: 0.25rem;
-      }
-
-      img {
-        display: inline-block;
-        height: 100%;
-        width: auto;
-      }
+      color: hsl(0, 0, 10%);
     }
   }
 }

@@ -45,19 +45,19 @@
 @mixin gallery-button {
   border: 1px solid hsla(0, 0, 20%, 1);
   color: black;
-  font-size: 0.65rem;
-  letter-spacing: $letter-spacing;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
   min-width: 50px;
   opacity: 0.6;
-  padding: 0.3em 0.666em 0.2em;
+  padding: 0.3em 1rem 0.2em;
   position: relative;
   text-transform: uppercase;
   transition: filter $transition-speed $transition-timing-function;
 
   &.active {
-    background-color: hsl(0, 0, 20%);
-    border-color: transparent;
-    color: white;
+    background-color: hsl(0, 0, 94%);
+    color: black;
+    font-family: Akkurat-Bold;
     opacity: 1;
   }
 

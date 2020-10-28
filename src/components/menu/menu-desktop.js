@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import Tags from "./tags";
 import Nav from "./nav";
 
 const MenuDesktop = ({ siteTitle, siteSubtitle, items, tags }) => {
-  const [active, setActive] = useState(true);
   return (
-    <aside className={active ? "is-active" : "is-hidden"}>
+    <aside>
       <h3>
         <Link to="/">
           <span className="site-title">{siteTitle}</span>
@@ -14,8 +13,20 @@ const MenuDesktop = ({ siteTitle, siteSubtitle, items, tags }) => {
         </Link>
       </h3>
       <nav className="nav-desktop">
+        <ul className="nav-menu">
+          <li>
+            <Link to="/" activeClassName="active">
+              Work
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" activeClassName="active">
+              About
+            </Link>
+          </li>
+        </ul>
         <Tags tags={tags} />
-        <Nav items={items} />
+        {/* <Nav items={items} /> */}
       </nav>
       <footer>
         <p>

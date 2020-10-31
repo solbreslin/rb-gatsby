@@ -59,7 +59,7 @@ class Carousel extends React.Component {
 export default Carousel;
 
 const Container = styled.div`
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   position: relative;
 `;

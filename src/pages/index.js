@@ -3,12 +3,16 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Carousel from "../components/home-carousel";
 import SEO from "../components/seo";
+import WorkPreview from "../components/work-preview";
 
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.carouselData = this.getCarouselData(props.data.allWorkJson.edges);
+    this.workPreviewData = this.getWorkPreviewData(
+      props.data.allWorkJson.edges
+    );
   }
 
   getCarouselData = data => {
@@ -23,11 +27,37 @@ class IndexPage extends React.Component {
     });
   };
 
+  getWorkPreviewData = data => {
+    return data.map(d => {
+      const { path, display_name, items } = d.node;
+
+      const images = [];
+      items.forEach((item, index) => {
+        const { path, display_name, primary_image } = item;
+
+        if (index < 4) {
+          images.push({
+            path,
+            display_name,
+            primary_image,
+          });
+        }
+      });
+
+      return {
+        path,
+        display_name,
+        images,
+      };
+    });
+  };
+
   render = () => {
     return (
       <Layout className="index">
         <SEO title="Home" />
         <Carousel data={this.carouselData} />
+        <WorkPreview data={this.workPreviewData} />
       </Layout>
     );
   };
@@ -58,6 +88,11 @@ export const pageQuery = graphql`
           carousel_image
           display_name
           path
+          items {
+            path
+            display_name
+            primary_image
+          }
         }
       }
     }

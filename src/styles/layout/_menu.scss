@@ -1,14 +1,14 @@
-#gatsby-focus-wrapper {
-  @include respond-to($menu-switch-breakpoint) {
-    display: flex;
+// #gatsby-focus-wrapper {
+//   @include respond-to($menu-switch-breakpoint) {
+//     display: flex;
 
-    main {
-      flex: 1;
-      overflow: hidden;
-      width: calc(100vw - #{$aside-width});
-    }
-  }
-}
+//     main {
+//       flex: 1;
+//       overflow: hidden;
+//       width: calc(100vw - #{$aside-width});
+//     }
+//   }
+// }
 
 @mixin menu-link {
   color: hsl(0, 0, 40%);

@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import Carousel from "../components/home-carousel";
 import SEO from "../components/seo";
 import WorkPreview from "../components/work-preview";
-
+import styled, { css } from "styled-components";
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -33,9 +33,9 @@ class IndexPage extends React.Component {
 
       const images = [];
       items.forEach((item, index) => {
-        const { path, display_name, primary_image } = item;
+        const { path, display_name, primary_image, display_on_home } = item;
 
-        if (index < 4) {
+        if (display_on_home) {
           images.push({
             path,
             display_name,
@@ -58,6 +58,11 @@ class IndexPage extends React.Component {
         <SEO title="Home" />
         <Carousel data={this.carouselData} />
         <WorkPreview data={this.workPreviewData} />
+        <AboutPreview
+          dangerouslySetInnerHTML={{
+            __html: this.props.data.allAboutJson.edges[0].node.content,
+          }}
+        />
       </Layout>
     );
   };
@@ -92,7 +97,15 @@ export const pageQuery = graphql`
             path
             display_name
             primary_image
+            display_on_home
           }
+        }
+      }
+    }
+    allAboutJson {
+      edges {
+        node {
+          content
         }
       }
     }
@@ -100,3 +113,10 @@ export const pageQuery = graphql`
 `;
 
 export default IndexPage;
+
+const AboutPreview = styled.section`
+  p {
+    font-size: 1.333rem;
+    max-width: 70ch;
+  }
+`;

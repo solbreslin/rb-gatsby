@@ -18,21 +18,28 @@ class WorkPreview extends React.Component {
             <Category key={`${data.path}-${index}`}>
               <Header>
                 <Name>{data.display_name}</Name>
-                <Linky>
-                  <Link to={"/"}>See all</Link>
-                </Linky>
+                <SeeMoreLink>
+                  <Link to={"/" + data.path}>See all</Link>
+                </SeeMoreLink>
               </Header>
               <Images>
                 {data.images.map((image, index) => {
                   return (
-                    <Link to={"/"}>
-                      <Figure key={`${image.path}-${index}`}>
-                        <Image
-                          alt="todo"
-                          src={BASE_URL + image.primary_image}
-                        />
-                      </Figure>
-                    </Link>
+                    <ImageLink>
+                      <Link
+                        to={"/" + image.path}
+                        key={`${image.path}-${index}`}
+                      >
+                        <Figure>
+                          <Image
+                            alt="todo"
+                            src={BASE_URL + image.primary_image}
+                          />
+                        </Figure>
+                        {/* Add figcaption to figure and keep effect */}
+                        <Caption>{image.display_name}</Caption>
+                      </Link>
+                    </ImageLink>
                   );
                 })}
               </Images>
@@ -67,7 +74,7 @@ const Name = styled.h3`
   margin-right: auto;
 `;
 
-const Linky = styled.span`
+const SeeMoreLink = styled.span`
   color: inherit;
   font-size: 2rem;
 
@@ -100,6 +107,13 @@ const Images = styled.div`
   align-items: center;
 `;
 
+const ImageLink = styled.div`
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
+
 const Image = styled.img`
   display: block;
   height: 100%;
@@ -108,11 +122,24 @@ const Image = styled.img`
   width: 100%;
 `;
 
+const Caption = styled.h5`
+  color: black;
+  text-decoration: none;
+  opacity: 0.7;
+  margin-top: 1rem;
+`;
+
 const Figure = styled.figure`
   height: auto;
   overflow: hidden;
 
-  &:hover ${Image} {
-    transform: scale(1.035);
+  &:hover {
+    ${Image} {
+      transform: scale(1.035);
+    }
+
+    + ${Caption} {
+      opacity: 1;
+    }
   }
 `;

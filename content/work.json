@@ -22,7 +22,8 @@
           10.3,
           36.3
         ],
-        "primary_image": "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-01_nb0exo"
+        "primary_image": "WORK/PUBLIC/brian-boru/brian-boru_brian-boru-01_nb0exo",
+        "display_on_home": true
       },
       {
         "path": "armagh-rail-disaster",
@@ -60,7 +61,8 @@
           55.3,
           61.4
         ],
-        "primary_image": "WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu"
+        "primary_image": "WORK/PUBLIC/bluebells/bluebells_bluebells-02_gcngeu",
+        "display_on_home": true
       },
       {
         "path": "count-john-mccormack",
@@ -137,7 +139,8 @@
           6.7,
           14.7
         ],
-        "primary_image": "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-02_dnkfhb"
+        "primary_image": "WORK/PUBLIC/michael-davitt/michael-davitt_michael-davitt-02_dnkfhb",
+        "display_on_home": true
       },
       {
         "path": "bellpeal",
@@ -195,7 +198,8 @@
           11.6,
           18.6
         ],
-        "primary_image": "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g"
+        "primary_image": "WORK/PUBLIC/richard-crosbie/richard-crosbie_richard-crosbie-02_ooju7g",
+        "display_on_home": true
       },
       {
         "path": "roses",
@@ -336,7 +340,8 @@
           3.3,
           82.2
         ],
-        "primary_image": "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc"
+        "primary_image": "WORK/PORTRAIT/michael-collins/michael-collins_michael-collins-04_l2xxwc",
+        "display_on_home": true
       },
       {
         "path": "oscar-wilde",
@@ -374,7 +379,8 @@
           12,
           70.6
         ],
-        "primary_image": "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-01_ic8tmo"
+        "primary_image": "WORK/PORTRAIT/samuel-beckett/samuel-beckett_samuel-beckett-01_ic8tmo",
+        "display_on_home": true
       },
       {
         "path": "seamus-heaney",
@@ -412,7 +418,8 @@
           13.5,
           62.4
         ],
-        "primary_image": "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi"
+        "primary_image": "WORK/PORTRAIT/ted-kennedy/ted-kennedy_ted-kennedy-02_r4nfwi",
+        "display_on_home": true
       },
       {
         "path": "wb-yeats",
@@ -431,7 +438,8 @@
           24.1,
           67.5
         ],
-        "primary_image": "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki"
+        "primary_image": "WORK/PORTRAIT/wb-yeats/wb-yeats_wb-yeats-04_ogl6ki",
+        "display_on_home": true
       }
     ]
   },
@@ -458,7 +466,8 @@
           8.9,
           17.6
         ],
-        "primary_image": "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-01_slq8oe"
+        "primary_image": "WORK/EXHIBITION/artemision-horse-study/EXHIBITION_artemision-horse-study_artemision-horse-study-01_slq8oe",
+        "display_on_home": true
       },
       {
         "path": "autoportrait",
@@ -497,7 +506,8 @@
           39.7,
           47.5
         ],
-        "primary_image": "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-01_ys72zc"
+        "primary_image": "WORK/EXHIBITION/box-variation-II/EXHIBITION_box-variation-II_box-variation-II-01_ys72zc",
+        "display_on_home": true
       },
       {
         "path": "box-variation-III",
@@ -591,7 +601,8 @@
           15.3,
           88.4
         ],
-        "primary_image": "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze"
+        "primary_image": "WORK/EXHIBITION/la-petite-mort/EXHIBITION_la-petite-mort_la-petite-mort-02_g5ncze",
+        "display_on_home": true
       },
       {
         "path": "polyphemus",
@@ -610,7 +621,8 @@
           38.6,
           47.3
         ],
-        "primary_image": "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy"
+        "primary_image": "WORK/EXHIBITION/polyphemus/EXHIBITION_polyphemus_polyphemus-02_peyqiy",
+        "display_on_home": true
       }
     ]
   },
@@ -672,7 +684,8 @@
           9.1,
           41
         ],
-        "primary_image": "WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo"
+        "primary_image": "WORK/MASKS/the-bann/the-bann_the-bann-02_vhjywo",
+        "display_on_home": true
       },
       {
         "path": "the-barrow",
@@ -744,7 +757,8 @@
           14.1,
           29.2
         ],
-        "primary_image": "WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt"
+        "primary_image": "WORK/MASKS/the-erne/the-erne_the-erne-02_bkkmzt",
+        "display_on_home": true
       },
       {
         "path": "the-foyle",
@@ -780,7 +794,8 @@
           11.5,
           35.9
         ],
-        "primary_image": "WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm"
+        "primary_image": "WORK/MASKS/the-guinness-mask/the-guinness-mask_the-guinness-mask-01_mrw2zm",
+        "display_on_home": true
       },
       {
         "path": "the-lagan",
@@ -906,7 +921,8 @@
           23.6,
           51.8
         ],
-        "primary_image": "WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer"
+        "primary_image": "WORK/MASKS/the-suir/the-suir_the-suir-02_ghqeer",
+        "display_on_home": true
       }
     ]
   }

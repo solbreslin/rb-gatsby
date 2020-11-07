@@ -134,6 +134,21 @@ class Gallery extends React.Component {
         <article
           className={`gallery-list ${layout === "list" ? "active" : ""}`}
         >
+          <div className="gallery-list-preview-image">
+            {items.map(({ primary_image }, index) => {
+              return (
+                <div
+                  key={`GalleryListPreviewImage-${index}`}
+                  className={
+                    index === parseInt(activePreview) ? "is-active" : ""
+                  }
+                  data-index={index}
+                >
+                  <img alt="" src={PREVIEW_URL + primary_image} />
+                </div>
+              );
+            })}
+          </div>
           <ul
             className="gallery-list-list"
             onMouseMove={this.handleMouseMove.bind(this)}
@@ -153,21 +168,6 @@ class Gallery extends React.Component {
               );
             })}
           </ul>
-          <div className="gallery-list-preview-image">
-            {items.map(({ primary_image }, index) => {
-              return (
-                <div
-                  key={`GalleryListPreviewImage-${index}`}
-                  className={
-                    index === parseInt(activePreview) ? "is-active" : ""
-                  }
-                  data-index={index}
-                >
-                  <img alt="" src={PREVIEW_URL + primary_image} />
-                </div>
-              );
-            })}
-          </div>
         </article>
       </div>
     );

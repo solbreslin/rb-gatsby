@@ -1,7 +1,8 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import Nav from "./menu/nav";
+import Menu from "./menu/menu";
+import styled from "styled-components";
 
 class Header extends React.Component {
   constructor(props) {
@@ -37,21 +38,22 @@ class Header extends React.Component {
     const { menuOpen } = this.state;
 
     return (
-      <header
+      <HeaderEl
         ref={headerEl => {
           this.headerEl = headerEl;
         }}
-        className=""
       >
-        <Link to="/" className="brand">
-          {siteTitle}
-        </Link>
+        <Brand>
+          <Link to="/" className="brand">
+            Rory Breslin
+          </Link>
+        </Brand>
+        <Menu />
         <button onClick={this.toggleMenu} className="hamburger-button">
           <span className="visually-hidden">{menuOpen ? "Close" : "Menu"}</span>
           <span className="hamburger"></span>
         </button>
-        {/* <Nav menuOpen={menuOpen} /> */}
-      </header>
+      </HeaderEl>
     );
   };
 }
@@ -65,3 +67,20 @@ Header.defaultProps = {
 };
 
 export default Header;
+
+const HeaderEl = styled.header`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem 3rem;
+`;
+
+const Brand = styled.div`
+  display: flex;
+
+  a {
+    color: black;
+    letter-spacing: 0.075em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+`;

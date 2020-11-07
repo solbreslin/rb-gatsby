@@ -101,10 +101,12 @@ export default ({ data }) => {
               <span>{projectCategory}</span>
             </Link>
           </Crumb>
-          <h1>{name}</h1>
-          <p>{details.material}</p>
+          <Details>
+            <h1>{name}</h1>
+            <p>{details.material}</p>
+          </Details>
         </ProjectHeader>
-        <ProjectBody>
+        <ProjectBody data->
           {sortedImages.map((image, index) => {
             return (
               <figure key={image + index} onClick={() => openCarousel(index)}>
@@ -161,37 +163,37 @@ export const query = graphql`
   }
 `;
 
-const ProjectHeader = styled.header``;
+const ProjectHeader = styled.header`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+`;
 
 const Crumb = styled.div`
-  display: flex;
-  font-size: 0.64rem;
-  letter-spacing: 0.05em;
-  padding: 0.5rem 1rem;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-
   a {
-    display: flex;
-    font-size: 0.64rem;
-    letter-spacing: 0.05em;
-    padding: 0.5rem 1rem;
-    position: relative;
+    color: black;
+    display: inline-flex;
+    letter-spacing: 0.075em;
+    position: relative; // ??
     text-decoration: none;
     text-transform: uppercase;
   }
 `;
 
+const Details = styled.div`
+  grid-column: 2;
+`;
+
 const ProjectBody = styled.div`
   display: grid;
+  /* grid-auto-rows: 90vh; */
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
 
   figure {
     cursor: pointer;
 
-    &:first-child {
+    &:nth-of-type(3n + 1),
+    &:nth-of-type(3n + 1):last-child {
       grid-column: 1 / -1;
     }
   }

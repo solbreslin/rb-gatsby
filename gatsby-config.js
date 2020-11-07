@@ -8,16 +8,8 @@ module.exports = {
     author: `Sol Breslin`,
     menuLinks: [
       {
-        name: "about",
-        link: "/about",
-      },
-      {
-        name: "process",
-        link: "/process",
-      },
-      {
-        name: "exhibitions",
-        link: "/exhibitions",
+        name: "information",
+        link: "/info",
       },
     ],
   },

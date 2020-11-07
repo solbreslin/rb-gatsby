@@ -115,7 +115,11 @@ export const pageQuery = graphql`
 export default IndexPage;
 
 const AboutPreview = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
   p {
+    grid-column: 2;
     font-size: 1.333rem;
     max-width: 70ch;
   }

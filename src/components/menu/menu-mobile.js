@@ -5,13 +5,13 @@ import Nav from "./nav";
 
 const MenuMobile = ({ siteTitle, items, tags }) => {
   return (
-    <header>
+    <div hidden>
       <Link to="/">{siteTitle}</Link>
       <nav className="nav-mobile">
         <Nav items={items} />
         <Tags tags={tags} />
       </nav>
-    </header>
+    </div>
   );
 };
 

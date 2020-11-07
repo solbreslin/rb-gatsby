@@ -128,7 +128,7 @@ $card-hover-scale: 1.05;
 
 .gallery-list {
   display: none;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 
   &.active {
     display: grid;

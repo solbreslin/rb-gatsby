@@ -1,103 +1,24 @@
-import React, { useEffect, useCallback, useState } from "react";
-import { useEmblaCarousel } from "embla-carousel/react";
+import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Lightbox from "../components/lightbox";
-
-// Uncomment both import statements to process color
-// import ColorThief from "./../../node_modules/colorthief/dist/color-thief";
-// import { RGBToHSL } from "../utils/rgb2hsl";
-// const PROCESS_COLOR = true;
+import styled, { css } from "styled-components";
+import Carousel from "../components/carousel";
+import Arrow from "../components/arrow";
 
 const workJSON = require("../../content/work.json");
 const BASE_URL =
   "https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_80/r-breslin-cloudinary/";
 
-const useKeyPress = (targetKeyCode, callback) => {
-  function downHandler(e) {
-    // Prevent carousel navigation while focus is in the sidebar
-    if (document.activeElement.closest("aside")) return;
-
-    if (e.which === targetKeyCode) {
-      callback();
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-
-    return () => {
-      window.removeEventListener("keydown", downHandler);
-    };
-  }, [targetKeyCode, downHandler]);
-};
-
-const PrevButton = ({ enabled, onClick }) => (
-  <button
-    className="rb-carousel-button prev"
-    onClick={onClick}
-    disabled={!enabled}
-  >
-    <span>
-      <svg
-        aria-hidden="true"
-        role="presentation"
-        focusable="false"
-        viewBox="0 0 32 32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
-        </g>
-      </svg>
-    </span>
-  </button>
-);
-
-const NextButton = ({ enabled, onClick }) => (
-  <button
-    className="rb-carousel-button next"
-    onClick={onClick}
-    disabled={!enabled}
-  >
-    <span>
-      <svg
-        aria-hidden="true"
-        role="presentation"
-        focusable="false"
-        viewBox="0 0 32 32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
-        </g>
-      </svg>
-    </span>
-  </button>
-);
-
 export default ({ data }) => {
-  const [EmblaCarouselReact, embla] = useEmblaCarousel({ loop: false });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
-
-  const [lightboxSrc, setLightboxSrc] = useState("");
-
-  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
-  const scrollTo = useCallback(index => embla && embla.scrollTo(index), [
-    embla,
-  ]);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   const {
     name,
     details,
     images,
     pagePath,
-    bgColor,
     primaryImage,
   } = data.allSitePage.edges[0].node.context;
 
@@ -138,21 +59,7 @@ export default ({ data }) => {
     }
   }
 
-  const onSelect = useCallback(() => {
-    if (!embla) return;
-    setSelectedIndex(embla.selectedScrollSnap());
-    setPrevBtnEnabled(embla.canScrollPrev());
-    setNextBtnEnabled(embla.canScrollNext());
-  }, [embla, setSelectedIndex]);
-
-  useEffect(() => {
-    if (!embla) return;
-    onSelect();
-    setScrollSnaps(embla.scrollSnapList());
-    embla.on("select", onSelect);
-  }, [embla, setScrollSnaps, onSelect]);
-
-  // Make the first image in the carousel be the primary image
+  // Make the first image be the primary image
   const sortedImages = [];
   images.forEach(image => {
     if (image === primaryImage) {
@@ -162,31 +69,6 @@ export default ({ data }) => {
     }
   });
 
-  const arrow = orientation => (
-    <span className="icon">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0"
-        y="0"
-        viewBox="0 0 14.5 8.18"
-        style={orientation === "left" ? { transform: "rotate(-180deg)" } : {}}
-      >
-        <line
-          stroke="#2B2B2B"
-          strokeMiterlimit="10"
-          x1="0"
-          y1="4.09"
-          x2="13.42"
-          y2="4.09"
-        ></line>
-        <polygon
-          fill="#2B2B2B"
-          points="10.1,8.18 9.42,7.45 13.03,4.09 9.42,0.73 10.1,0 14.5,4.09"
-        ></polygon>
-      </svg>
-    </span>
-  );
-
   const isDesktop = () => {
     if (typeof window !== "undefined") {
       const { matches } = window.matchMedia("(max-width: 1200px)");
@@ -194,58 +76,44 @@ export default ({ data }) => {
     }
   };
 
-  const onImageClick = (url, i) => {
-    if (url) {
-      setLightboxSrc(url);
+  const openCarousel = index => {
+    setGalleryOpen(true);
+    setGalleryIndex(index);
 
-      console.log(url, i);
-    }
+    document.body.style.overflow = "hidden";
   };
 
-  useKeyPress(37, scrollPrev);
-  useKeyPress(39, scrollNext);
+  const closeCarousel = () => {
+    setGalleryOpen(false);
+    setGalleryIndex(0);
+
+    document.body.style.overflow = "initial";
+  };
 
   return (
     <Layout className="project">
       <SEO title={"test"} />
       <section>
-        <div className={"project-header"}>
-          <Link to={"/" + projectCategory}>
-            {arrow("left")}
-            <span>{projectCategory}</span>
-          </Link>
+        <ProjectHeader>
+          <Crumb>
+            <Link to={"/" + projectCategory}>
+              <Arrow orientation="left"></Arrow>
+              <span>{projectCategory}</span>
+            </Link>
+          </Crumb>
           <h1>{name}</h1>
-        </div>
-        <EmblaCarouselReact>
-          <div className="rb-carousel" tabIndex="0">
-            {sortedImages.map((url, i) => (
-              <figure key={url}>
-                <img
-                  crossOrigin="anonymous"
-                  src={BASE_URL + url}
-                  alt=""
-                  onClick={() => onImageClick(url, i)}
-                />
-              </figure>
-            ))}
-            {nextProject && isDesktop() ? (
-              <div className="rb-carousel-next">
-                <Link to={"/" + nextProject.path}>
-                  <span>Next</span>
-                  <span>{nextProject.display_name}</span>
-                  {arrow()}
-                </Link>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-        </EmblaCarouselReact>
-        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-        <div className={"project-footer"}>
-          <h3>{name}</h3>
           <p>{details.material}</p>
+        </ProjectHeader>
+        <ProjectBody>
+          {sortedImages.map((image, index) => {
+            return (
+              <figure key={image + index} onClick={() => openCarousel(index)}>
+                <img src={BASE_URL + image} />
+              </figure>
+            );
+          })}
+        </ProjectBody>
+        <ProjectFooter>
           {previousProject ? (
             <Link to={"/" + previousProject.path}>
               Previous: {previousProject.display_name}
@@ -260,14 +128,14 @@ export default ({ data }) => {
           ) : (
             ""
           )}
-        </div>
+        </ProjectFooter>
       </section>
-      {lightboxSrc && (
-        <Lightbox
-          src={lightboxSrc}
-          onLightboxClick={() => setLightboxSrc(null)}
-        />
+      {galleryOpen && (
+        <CloseGalleryButton onClick={closeCarousel}>
+          <span className="sr-only">Close</span>
+        </CloseGalleryButton>
       )}
+      {galleryOpen && <Carousel images={sortedImages} index={galleryIndex} />}
     </Layout>
   );
 };
@@ -290,5 +158,78 @@ export const query = graphql`
         }
       }
     }
+  }
+`;
+
+const ProjectHeader = styled.header``;
+
+const Crumb = styled.div`
+  display: flex;
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  a {
+    display: flex;
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+`;
+
+const ProjectBody = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+
+  figure {
+    cursor: pointer;
+
+    &:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+`;
+const ProjectFooter = styled.footer``;
+
+const CloseGalleryButton = styled.button`
+  height: 30px;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 30px;
+  z-index: 5;
+
+  &:before,
+  &:after {
+    background-color: hsl(0, 0%, 100%);
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform-origin: center;
+    width: 30px;
+  }
+
+  &:before {
+    transform: translateY(12.5px) rotate(45deg);
+  }
+
+  &:after {
+    transform: translateY(12.5px) rotate(-45deg);
   }
 `;

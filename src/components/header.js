@@ -41,7 +41,7 @@ class Header extends React.Component {
         ref={headerEl => {
           this.headerEl = headerEl;
         }}
-        className="rb-header"
+        className=""
       >
         <Link to="/" className="brand">
           {siteTitle}
@@ -50,7 +50,7 @@ class Header extends React.Component {
           <span className="visually-hidden">{menuOpen ? "Close" : "Menu"}</span>
           <span className="hamburger"></span>
         </button>
-        <Nav menuOpen={menuOpen} />
+        {/* <Nav menuOpen={menuOpen} /> */}
       </header>
     );
   };

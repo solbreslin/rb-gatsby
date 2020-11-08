@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled, { css } from "styled-components";
 import Carousel from "../components/carousel";
 import Arrow from "../components/arrow";
+import simpleParallax from "simple-parallax-js";
 
 const workJSON = require("../../content/work.json");
 const BASE_URL =
@@ -13,6 +14,14 @@ const BASE_URL =
 export default ({ data }) => {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
+
+  useEffect(() => {
+    const imageEls = document.querySelectorAll("img");
+    console.log("test", imageEls);
+    new simpleParallax(imageEls, {
+      scale: 1.1,
+    });
+  }, []);
 
   const {
     name,

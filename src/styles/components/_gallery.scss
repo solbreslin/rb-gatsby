@@ -80,7 +80,7 @@ $card-hover-scale: 1.05;
 
     &:hover {
       img {
-        transform: scale($card-hover-scale);
+        // transform: scale($card-hover-scale);
       }
 
       h4 {

@@ -5,6 +5,7 @@ import Carousel from "../components/home-carousel";
 import SEO from "../components/seo";
 import WorkPreview from "../components/work-preview";
 import styled, { css } from "styled-components";
+
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);

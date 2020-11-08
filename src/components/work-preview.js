@@ -1,13 +1,22 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled, { css } from "styled-components";
+import simpleParallax from "simple-parallax-js";
 
 const BASE_URL = `https://res.cloudinary.com/r-breslin/image/upload/f_auto,q_auto/r-breslin-cloudinary/`;
 
 class WorkPreview extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+  }
+
+  componentDidMount() {
+    console.log("mounted");
+    const imageEls = document.querySelectorAll("img");
+    console.log(imageEls);
+    new simpleParallax(imageEls, {
+      scale: 1.2,
+    });
   }
 
   render = () => {
@@ -25,11 +34,8 @@ class WorkPreview extends React.Component {
               <Images>
                 {data.images.map((image, index) => {
                   return (
-                    <ImageLink>
-                      <Link
-                        to={"/" + image.path}
-                        key={`${image.path}-${index}`}
-                      >
+                    <ImageLink key={`${image.path}-${index}`}>
+                      <Link to={"/" + image.path}>
                         <Figure>
                           <Image
                             alt="todo"
@@ -90,24 +96,18 @@ const SeeMoreLink = styled.span`
   }
 `;
 
-const COLS = 2;
-const COL_GAP = `10vw`;
-const ROW_GAP = `10vw`;
-const ColWidth = {
-  MAX: `400px`,
-  MIN: `250px`,
-};
-
 const Images = styled.div`
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(${ColWidth.MIN}, 1fr));
-  max-width: calc(${ColWidth.MAX} * ${COLS} + ${COL_GAP});
-  grid-gap: ${ROW_GAP} ${COL_GAP};
   align-items: center;
+  display: grid;
+  grid-gap: 12rem 0;
+  grid-template-columns: 1fr 2fr;
+  margin: 0 auto;
 `;
 
 const ImageLink = styled.div`
+  grid-column: 2;
+  max-width: 650px;
+
   a {
     color: inherit;
     text-decoration: none;
@@ -118,7 +118,7 @@ const Image = styled.img`
   display: block;
   height: 100%;
   object-fit: cover;
-  transition: transform 1.25s ease-in;
+  /* transition: transform 1.25s ease-in; */
   width: 100%;
 `;
 
@@ -135,7 +135,7 @@ const Figure = styled.figure`
 
   &:hover {
     ${Image} {
-      transform: scale(1.035);
+      /* transform: scale(1.035); */
     }
 
     + ${Caption} {
